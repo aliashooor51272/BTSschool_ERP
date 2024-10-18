@@ -72,14 +72,8 @@
         <div class="col-md-12 mt-4" id="classFormContainers">
             <div class="style-0" id="classFormData" style="max-width:100%; margin:0px;">
                 <div class="col-12 d-flex justify-content-center">
-                <h5 class="formTitle">Subject List</h5>
                 </div>
-                <!-- Add Campus Button -->
-                <div class="d-flex justify-content-end mb-3">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignSubjectModal">
-                        Assign Subject
-                    </button>
-                </div>
+
 
                 <div class="table-responsive">
                                         <div class="card">
@@ -89,35 +83,36 @@
                         <div class="card-body">
                             <form id="filterForm">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="firstNameFilter">Teacher</label>
                                             <input type="text" class="form-control" id="firstNameFilter" placeholder="Teacher" />
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="firstNameFilter">Class</label>
                                             <input type="text" class="form-control" id="lastNameFilter" placeholder="Class" />
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="subFilter">Subject</label>
                                             <input type="text" class="form-control" id="emailFilter" placeholder="Subject" />
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="emailFilter">Section</label>
-                                            <input type="text" class="form-control" id="subFilter" placeholder="Section " />
-                                        </div>
-                                    </div>
+
 
                                 </div>
 
                             </form>
                         </div>
+                    </div>
+                    <!-- Add Campus Button -->
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignSubjectModal">
+                            Assign Subject
+                        </button>
                     </div>
                     <table id="subjectAllocationsTable" class="display mt-2" style="width:100%">
                     <thead style="background-color: rgb(94, 114, 228); color: white;">
