@@ -76,7 +76,7 @@
 
 
                 <div class="table-responsive">
-                                        <div class="card">
+                                     
                         <div class="card-header">
                             <h5>Search Filters</h5>
                         </div>
@@ -107,7 +107,7 @@
 
                             </form>
                         </div>
-                    </div>
+                   
                     <!-- Add Campus Button -->
                     <div class="d-flex justify-content-end mb-3">
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignSubjectModal">
@@ -141,6 +141,21 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
+            // Store DataTable instance
+            var table = $('#subjectAllocationsTable').DataTable({
+                // Adjust your data source here if needed
+                ajax: {
+                    url: '@Url.Action("GetSubjectAllocations")',
+                    dataSrc: 'data' // Adjust if the data structure is different
+                },
+                columns: [
+                    { "data": "teacher" },
+                    { "data": "class" },
+                    { "data": "subject" },
+                    { "data": "section" }
+                ]
+            });
+
             // Function to check if the combination already exists
             function doesCombinationExist(classId, sectionId, subjectId) {
                 let exists = false;
@@ -158,7 +173,7 @@
             }
 
             // Handle form submission
-            $('#addClassForm').on('submit', function (e) {
+            $('#assignSubjectForm').on('submit', function (e) {
                 let classId = $('#classDropdown option:selected').text().trim();
                 let sectionId = $('#sectionDropdown option:selected').text().trim();
                 let subjectId = $('#subjectDropdown option:selected').text().trim();
@@ -169,44 +184,19 @@
                 }
             });
 
-            // Update DataTable with existing data
-            $.ajax({
-                url: '@Url.Action("GetSubjectAllocations")',
-                type: 'GET',
-                success: function (response) {
-                    console.log('Response:', response);
-
-                    // Initialize DataTable
-                    $('#subjectAllocationsTable').DataTable({
-                        data: response.data,
-                        columns: [
-                            { "data": "teacher" },
-                            { "data": "class" },
-                            { "data": "subject" },
-                            { "data": "section" }
-                        ]
-                    });
-                },
-                error: function (xhr, status, error) {
-                    console.error('An error occurred:', status, error);
-                }
-            });
-
-                        // Filter by First Name
+            // Filter by Teacher
             $('#firstNameFilter').on('keyup', function () {
                 table.column(0).search(this.value).draw();
             });
+
+            // Filter by Class
             $('#lastNameFilter').on('keyup', function () {
                 table.column(1).search(this.value).draw();
             });
 
-            // Filter by Email
+            // Filter by Subject
             $('#emailFilter').on('keyup', function () {
                 table.column(2).search(this.value).draw();
-            });
-            // Filter by Email
-            $('#subFilter').on('keyup', function () {
-                table.column(3).search(this.value).draw();
             });
 
             // Update sections when a class is selected
@@ -238,12 +228,10 @@
                         type: 'GET',
                         data: { sectionId: sectionId },
                         success: function (data) {
-                            console.log('Received data:', data);
                             var subjectDropdown = $('#subjectDropdown');
                             subjectDropdown.empty();
                             subjectDropdown.append('<option value="">Select Subject</option>');
                             $.each(data, function (index, item) {
-                                console.log('Appending option:', item);
                                 subjectDropdown.append('<option value="' + item.id + '">' + item.subjectName + '</option>');
                             });
                         },
@@ -256,6 +244,7 @@
         });
     </script>
 }
+
 
 
 
