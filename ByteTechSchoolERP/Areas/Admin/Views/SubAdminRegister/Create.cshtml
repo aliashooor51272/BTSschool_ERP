@@ -17,8 +17,7 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 
-<div class="page-wrapper"
-
+<div class="page-wrapper" style="min-height: 643px;margin-top: -46px !important;margin-left: 263px;">
 
 
    <div class="tab-container container-fluid">
@@ -26,9 +25,7 @@
             <div class="style-0" style="max-width: 97%;">
                 <div class="row p-2">
              <div class="table-responsive">
-                  <div  class="d-flex justify-content-end p-2">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSubAdminModal">Add New</button>
-                  </div>
+               
                                       <div class="card">
        <div class="card-header">
            <h5>Search Filters</h5>
@@ -36,24 +33,24 @@
        <div class="card-body">
            <form id="filterForm">
                <div class="row">
-                   <div class="col-md-4">
+                 @*   <div class="col-md-4">
                        <div class="form-group">
                            <label for="firstNameFilter">ID</label>
                            <input type="text" class="form-control" id="firstNameFilter" placeholder="Id" />
                        </div>
-                   </div>
+                   </div> *@
                    <div class="col-md-4">
                        <div class="form-group">
                            <label for="firstNameFilter">User Name</label>
                            <input type="text" class="form-control" id="lastNameFilter" placeholder="User Name" />
                        </div>
                    </div>
-                                                                   <div class="col-md-4">
+              @*                                                      <div class="col-md-4">
                        <div class="form-group">
                            <label for="emailFilter">Email</label>
                            <input type="text" class="form-control" id="emailFilter" placeholder="Email" />
                        </div>
-                   </div>
+                   </div> *@
                   
                    <div class="col-md-4">
                        <div class="form-group">
@@ -62,12 +59,12 @@
                        </div>
                    </div>
              
-                   <div class="col-md-4">
+             @*       <div class="col-md-4">
                        <div class="form-group">
                            <label for="campusFilter">Campus Name</label>
                            <input type="text" class="form-control" id="campusFilter" placeholder="Campus Name" />
                        </div>
-                   </div>
+                   </div> *@
                    <div class="col-md-4">
                        <div class="form-group">
                            <label for="cnicFilter">CNIC Number</label>
@@ -76,16 +73,19 @@
                    </div>
              
               
-                   <div class="col-md-4">
+             @*       <div class="col-md-4">
                        <div class="form-group">
                            <label for="sourceFilter">Status</label>
                            <input type="text" class="form-control" id="sourceFilter" placeholder="Status" />
                        </div>
-                   </div>
+                   </div> *@
 
                </div>
            </form>
        </div>
+          <div  class="d-flex justify-content-end p-2">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSubAdminModal">Add New</button>
+                  </div>
    </div>
                     <!-- Table to display existing SubAdmin records -->
                     <table id="subAdminTable" class="display table mt-2" style="width:100%;">
@@ -143,52 +143,68 @@
 <!-- Modal for adding new SubAdmin -->
 <div class="modal fade" id="addSubAdminModal" tabindex="-1" aria-labelledby="addSubAdminModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="width: 150%;">
+    
             <div class="modal-header">
                 <h5 class="modal-title" id="addSubAdminModalLabel">Add New SubAdmin</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form asp-action="RegisterSubAdmin" asp-controller="SubAdminRegister" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label Name="UserName" class="control-label">User Name</label>
-                        <input Name="UserName" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label Name="Email" class="control-label" >Email</label>
-                        <input Name="Email" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label Name="PhoneNumber" class="control-label">Phone Number</label>
-                        <input Name="PhoneNumber" class="form-control"  required  title="Please enter a valid phone number"/>
-                    </div>
-                    <div class="form-group">
-                        <label Name="CNICNumber" class="control-label">CNIC Number</label>
-                        <input Name="CNICNumber" class="form-control"   minlength="15"  required/>
-                    </div>
-                        <div class="form-group">
-                            <label for="CampusName" class="control-label">Campus Name</label>
-                            <select id="CampusName" name="CampusName" class="form-control" required>
-                                <option value="">Select Campus</option>
-                                @if (ViewBag.Campuses != null)
-                                {
-                                    foreach (var campus in (IEnumerable<SelectListItem>)ViewBag.Campuses)
-                                    {
-                                        <option value="@campus.Value">@campus.Text</option>
-                                    }
-                                }
-                            </select>
-
-                        </div>
-
-                    <div class="form-group">
-                        <label Name="Password" class="control-label">Password</label>
-                        <input Name="Password" type="password" class="form-control" />
-                    </div>
-                    <div class="form-group">
+                       <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="userName" class="control-label">User Name</label>
+                <input type="text" name="UserName" id="userName" class="form-control" required />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="email" class="control-label">Email</label>
+                <input type="email" name="Email" id="email" class="form-control" required />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="phoneNumber" class="control-label">Phone Number</label>
+                <input type="tel" name="PhoneNumber" id="phoneNumber" class="form-control" required title="Please enter a valid phone number" />
+            </div>
+        </div>
+    </div>
+                  <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="cnicNumber" class="control-label">CNIC Number</label>
+                <input type="text" name="CNICNumber" id="cnicNumber" class="form-control" minlength="15" required />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="CampusName" class="control-label">Campus Name</label>
+                <select id="CampusName" name="CampusName" class="form-control" required>
+                    <option value="">Select Campus</option>
+                                            @if (ViewBag.Campuses != null)
+                                            {
+                                                foreach (var campus in (IEnumerable<SelectListItem>)ViewBag.Campuses)
+                                                {
+                                    <option value="@campus.Value">@campus.Text</option>
+                                                }
+                                            }
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="password" class="control-label">Password</label>
+                <input type="password" name="Password" id="password" class="form-control" required />
+            </div>
+        </div>
+    </div>
+      <div class="row">
+                    <div class="col-md-4">
                         <label Name="ConfirmPassword" class="control-label">Confirm Password</label>
                         <input Name="ConfirmPassword" type="password" class="form-control" />
-                    </div>
+                    </div>                    </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Save</button>
                     </div>

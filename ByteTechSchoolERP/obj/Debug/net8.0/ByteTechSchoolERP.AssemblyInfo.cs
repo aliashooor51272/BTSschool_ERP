@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ByteTechSchoolERP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1de5a13416700d4790304802d3cbbf06735bae7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b8283f5fbf548f090b960f2648cb98bc75fe176")]
 [assembly: System.Reflection.AssemblyProductAttribute("ByteTechSchoolERP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ByteTechSchoolERP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
