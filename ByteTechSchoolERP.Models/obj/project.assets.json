@@ -1172,11 +1172,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Sohail Khan\\.nuget\\packages\\": {}
+>>>>>>> ef81e2828fe8e135252013b9e1b5b7c629594ae6
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
       "projectName": "ByteTechSchoolERP.Models",
       "projectPath": "C:\\Users\\Administrator\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
@@ -1185,6 +1190,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+      "projectName": "ByteTechSchoolERP.Models",
+      "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+      "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> ef81e2828fe8e135252013b9e1b5b7c629594ae6
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

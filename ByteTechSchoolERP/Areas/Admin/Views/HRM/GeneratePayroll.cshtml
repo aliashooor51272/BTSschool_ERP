@@ -11,7 +11,9 @@
             Generate Payroll
         </div>
         <div class="tab-container container-fluid mt-3" style="background-color: #f7f7fa;">
-    <form asp-area="Admin" asp-controller="HRM" asp-action="GeneratePayroll" method="post" class="w-50" id="payrollForm">
+    <div class="row justify-content-center"> 
+
+            <form asp-area="Admin" asp-controller="HRM"   asp-action="GeneratePayroll" method="post" class="w-50" id="payrollForm">
         <div class="form-group">
             <label class="control-label"></label>
             <input name="PayrollDate" id="payrollDate" class="form-control" type="date" required />
@@ -20,7 +22,7 @@
             <button type="submit" class="btn btn-primary">Generate Payroll</button>
         </div>
     </form>
-
+            </div>
     <hr />
 
    
