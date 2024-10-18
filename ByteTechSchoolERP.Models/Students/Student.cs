@@ -32,6 +32,7 @@ namespace ByteTechSchoolERP.Models.Students
 
 
         public string? PlaceOfBirth { get; set; }
+      
 
 
         public string? ParentName { get; set; }
@@ -95,7 +96,7 @@ namespace ByteTechSchoolERP.Models.Students
 
 
 
-        public Parent Parent { get; set; }  // Navigation property
+      
 
         public string? GuardianEmail { get; set; }
 

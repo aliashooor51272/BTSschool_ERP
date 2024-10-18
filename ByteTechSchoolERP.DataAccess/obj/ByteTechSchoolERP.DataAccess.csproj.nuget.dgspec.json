@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\Administrator\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {}
   },
   "projects": {
@@ -16,6 +17,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {}
+  },
+  "projects": {
+    "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
+        "projectName": "ByteTechSchoolERP.DataAccess",
+        "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2618206478b1935bc108a58ffe576c4b5b3a70c1
 =======
     "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {}
   },
@@ -47,8 +64,13 @@
             "targetAlias": "net8.0",
             "projectReferences": {
 <<<<<<< HEAD
+<<<<<<< HEAD
               "C:\\Users\\Administrator\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
                 "projectPath": "C:\\Users\\Administrator\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
+=======
+              "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+                "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
+>>>>>>> 2618206478b1935bc108a58ffe576c4b5b3a70c1
 =======
               "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
                 "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
@@ -114,6 +136,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\Administrator\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -125,6 +148,19 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "projectName": "ByteTechSchoolERP.Models",
+        "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2618206478b1935bc108a58ffe576c4b5b3a70c1
 =======
     "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
       "version": "1.0.0",

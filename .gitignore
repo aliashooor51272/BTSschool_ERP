@@ -2,4 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
+/.vs/ByteTechSchoolERP
+=======
 /.vs
+>>>>>>> ef81e2828fe8e135252013b9e1b5b7c629594ae6

@@ -210,7 +210,7 @@ namespace ByteTechSchoolERP.Areas.Admin.Controllers
                     FirstName = e.FirstName,
                     LastName = e.LastName,
                     FatherName = e.FatherName,
-                    DateOfBirth = e.DateOfBirth,
+                   
                     DateOfJoining = e.DateOfJoining,
                     Email = e.Email,
                     Phone = e.Phone,
@@ -269,7 +269,7 @@ namespace ByteTechSchoolERP.Areas.Admin.Controllers
                      FirstName = e.FirstName,
                      LastName = e.LastName,
                      FatherName = e.FatherName,
-                     DateOfBirth = e.DateOfBirth,
+                     
                      DateOfJoining = e.DateOfJoining,
                      Email = e.Email,
                      Phone = e.Phone,

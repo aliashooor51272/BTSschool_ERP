@@ -18,7 +18,7 @@ namespace ByteTechSchoolERP.Models.HR
          public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? FatherName { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         public DateTime? DateOfJoining { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
@@ -33,7 +33,7 @@ namespace ByteTechSchoolERP.Models.HR
         public decimal? Salary { get; set; } // Add this property
 
         // Foreign keys for relationships
-        public string DepartmentName { get; set; }
+        public string? DepartmentName { get; set; }
       
         public string? RoleId { get; set; }
         public IdentityRole Role { get; set; }
