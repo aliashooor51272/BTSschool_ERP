@@ -84,61 +84,10 @@
 
 
     </div>
-    <button type="button" class="btn btn-primary mt-3 mr-4" data-bs-toggle="modal" data-bs-target="#createLessonModal" style="float: right;">
-        Create Lesson
-    </button>
+ 
 
     <div class="tab-container container-fluid d-md-flex">
-@*         <div class="col-md-4 " id="classFormContainer">
-            <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
-                <form id="addLessonForm" method="post">
-                    <div class="col-12 d-flex justify-content-center">
-                        <h5 class="formTitle">Create Lesson</h5>
-                    </div>
-                    <br />
-                    <br />
 
-                    <div class="col-md-12 local-forms label">
-                        <label id="label-color">Class<span class="login-danger">*</span></label>
-                        <select asp-for="ClassId" class="form1-input form-select" asp-items="@ViewBag.Classes" id="class-dropdown" onchange="SelectClass()" style="border-radius: 19px;">
-                            <option value="">Select Class</option>
-                        </select>
-                    </div>
-                    </br>
-
-                    <div class="col-md-12 local-forms label">
-                        <label id="label-color">Section<span class="login-danger">*</span></label>
-                        <select asp-for="SectionId" class="form-control" asp-items="@ViewBag.Sections">
-                            <option value="">Select Section</option>
-                        </select>
-                    </div>
-                    </br>
-
-                    <div class="col-md-12 local-forms label">
-                        <label id="label-color">Subject<span class="login-danger">*</span></label>
-                        <select asp-for="SubjectId" class="form-control" asp-items="@ViewBag.Subjects">
-                            <option value="">Select Subject</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-12 local-forms label">
-                        <label id="label-color">Lesson<span class="login-danger">*</span></label>
-                        <select asp-for="LessonId" class="form-control" asp-items="@ViewBag.Lessons">
-                            <option value="">Select Lesson</option>
-                        </select>
-                    </div>
-
-                    <div class="inputContainer">
-                        <label class="formLabel requiredLabel"> Topic Name*</label>
-                        <input type="text" placeholder="Topic Name" asp-for="TopicName" required class="formInput" />
-                    </div>
-
-                    <div class="buttonContainer">
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
-                </form>
-            </div>
-        </div> *@
 
         <div class="col-md-12 mt-3" id="classFormContainers">
             <div class="style-0" id="SubjectDataId" style="max-width:100%; margin:0px;">
@@ -172,7 +121,7 @@
                          <input type="text" class="form-control" id="emailFilter" placeholder="Subject" />
                      </div>
                  </div>
-                 <div class="col-md-4">
+             @*     <div class="col-md-4">
                      <div class="form-group">
                          <label for="emailFilter">Lesson</label>
                          <input type="text" class="form-control" id="subFilter" placeholder="Lesson " />
@@ -183,14 +132,19 @@
                          <label for="newFilter">Topic</label>
                          <input type="text" class="form-control" id="newFilter" placeholder="Topic " />
                      </div>
-                 </div>
+                 </div> *@
 
              </div>
 
          </form>
      </div>
  </div>
-                  
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createLessonModal">
+                            Create Topic
+                        </button>
+                    </div>
+                    
                     <table id="TopicId" class="display mt-2" style="width:100%">
                         <thead style="background-color:rgb(94, 114, 228);">
                             <tr style="color: white;">
