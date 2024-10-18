@@ -8,8 +8,18 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- jQuery (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+
+    <!-- Toastr CSS and JS for toast notifications -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <style>
 
@@ -770,7 +780,7 @@
 </head>
 
 <body>
-    <!-- Modal: Add/Edit Section -->
+    <!-- Modal: Add/E Section -->
     <div class="modal fade" id="sectionFormModal" tabindex="-1" role="dialog" aria-labelledby="sectionFormModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -785,7 +795,7 @@
                         <input type="hidden" name="Id" />
                         <div class="inputContainer">
                             <label class="formLabel requiredLabel">Class *</label>
-                            <select name="ClassId" class="form-control form-select" required>
+                            <select name="ClassId" class=" form-select formInput" required>
                                 <option value="">Select Class</option>
                                 @foreach (var classItem in classes)
                                 {
@@ -806,7 +816,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
                     <button type="submit" class="btn btn-primary" id="saveButton" form="addSectionForm">Save</button>
                 </div>
             </div>
@@ -826,19 +836,19 @@
                         <div class="card-body">
                             <form id="filterForm">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="firstNameFilter">Class </label>
                                             <input type="text" class="form-control" id="firstNameFilter" placeholder="Class Name" />
                                         </div>
                                     </div>                           
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="firstNameFilter">Section</label>
                                             <input type="text" class="form-control" id="lastNameFilter" placeholder="Section" />
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="newNameFilter">Description</label>
                                             <input type="text" class="form-control" id="newNameFilter" placeholder="Description" />
@@ -880,7 +890,7 @@
                 <form id="editClassForm" method="post">
                     <div class="modal-header">
                         <h5 class="modal-title">Edit Section</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" id="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -900,17 +910,27 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="closeButton" >Save changes</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery and DataTables scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+
+
+    <!-- Toastr CSS and JS for toast notifications -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
     <script>
         $(document).ready(function () {
             // Initialize DataTable
@@ -952,17 +972,21 @@
                 table.column(2).search(this.value).draw();
             });
 
-            // Add Section Modal
+            // Add Section Modal - Submit form
             $('#addSectionForm').submit(function (e) {
                 e.preventDefault();
                 var formData = $(this).serialize();
                 $.post('/Admin/ClassesandSection/AddNewSection', formData, function (response) {
-                    handleResponse(response, 'Section added successfully.', 'Failed to add section.');
-                    $('#sectionFormModal').modal('hide');
-                    $('#SectionId').DataTable().ajax.reload();
+                    $('#close').click();
+                    handleResponse(response, 'Section added successfully.', 'Failed to add section.',);
+                    $('#close').click();
                 });
             });
-
+            // Optional: Force hide if the modal doesn't close
+            $('#sectionFormModal').on('hidden.bs.modal', function () {
+               
+                $(this).css('display', 'none'); // This ensures it's not displayed even if not hidden properly
+            });
             // Edit Section Modal
             $('#SectionId').on('click', '.edit-btn', function () {
                 var id = $(this).data('id');
@@ -982,16 +1006,35 @@
                     });
                 });
             });
+            $(document).ready(function () {
+                $('#editClassForm').submit(function (e) {
+                    e.preventDefault(); // Prevent default form submission
 
-            $('#editClassForm').submit(function (e) {
-                e.preventDefault();
-                var formData = $(this).serialize();
-                $.post('/Admin/ClassesandSection/UpdateSection', formData, function (response) {
-                    handleResponse(response, 'Section updated successfully.', 'Failed to update section.');
-                    $('#editModal').modal('hide');
-                    $('#SectionId').DataTable().ajax.reload();
+                    var formData = $(this).serialize(); // Serialize form data
+
+                    $.post('/Admin/ClassesandSection/UpdateSection', formData, function (response) {
+                        // Handle the response message
+                        handleResponse(response, 'Section updated successfully.', 'Failed to update section.');
+
+                        // Hide the modal after successful update
+                        $('#editModal').modal('hide');
+                    }).fail(function (xhr, status, error) {
+                        // Optional: Handle AJAX error response
+                        alert('An error occurred: ' + xhr.responseText);
+                    });
                 });
             });
+
+            // $('#editClassForm').submit(function (e) {
+            //     e.preventDefault();
+            //     var formData = $(this).serialize();
+            //     $.post('/Admin/ClassesandSection/UpdateSection', formData, function (response) {
+            //         // Handle the response message
+            //         $('#close').click();
+            //         handleResponse(response, 'Section updated successfully.', 'Failed to update section.');
+            //         $('#close').click();
+            //     });
+            // });
 
             // Delete Section
             $('#SectionId').on('click', '.delete-btn', function () {

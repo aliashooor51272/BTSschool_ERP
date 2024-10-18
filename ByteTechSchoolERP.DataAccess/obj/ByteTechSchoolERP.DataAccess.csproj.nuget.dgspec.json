@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {}
+    "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {}
   },
   "projects": {
-    "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
+    "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
         "projectName": "ByteTechSchoolERP.DataAccess",
-        "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
-                "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
+              "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+                "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
               }
             }
           }
@@ -91,17 +91,17 @@
         }
       }
     },
-    "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+    "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
         "projectName": "ByteTechSchoolERP.Models",
-        "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\obj\\",
+        "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

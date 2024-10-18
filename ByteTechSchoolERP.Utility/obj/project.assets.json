@@ -8535,19 +8535,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\Sohail Khan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
+      "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
       "projectName": "ByteTechSchoolERP.Utility",
-      "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Utility\\obj\\",
+      "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
+      "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8562,8 +8562,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
-              "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
+            "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
             }
           }
         }
