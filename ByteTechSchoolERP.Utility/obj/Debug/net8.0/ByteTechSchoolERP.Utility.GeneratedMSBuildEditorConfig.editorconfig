@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ByteTechSchoolERP.Utility
-build_property.ProjectDir = G:\ByteTechSchoolERP7766\ByteTechSchoolERP.Utility\
+build_property.ProjectDir = D:\SCHOOL\BTSschool_ERP\ByteTechSchoolERP.Utility\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

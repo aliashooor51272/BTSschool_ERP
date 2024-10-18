@@ -1,8 +1,10 @@
 ﻿using ByteTechSchoolERP.DataAccess.Data;
+using ByteTechSchoolERP.Models.ViewModels;
 using ByteTechSchoolERP.Models.ViewModels.LoginVM;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ByteTechSchoolERP.Controllers
@@ -34,6 +36,7 @@ namespace ByteTechSchoolERP.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 // Check if the credentials match a SubAdmin
                 var subAdmin = await _context.SubAdminn
                     .FirstOrDefaultAsync(s => s.Email == model.Username && s.Password == model.Password);
@@ -44,8 +47,28 @@ namespace ByteTechSchoolERP.Controllers
 
                     // Redirect to the SubAdmin dashboard and stop further execution
                     return Redirect("/Admin/Dashboard/Index");
+                                  }
+     // Check if the credentials match a SubAdmin
+                var Teacher = await _context.Employee
+                    .FirstOrDefaultAsync(s => s.Email == model.Username && s.Password == model.Password);
+                if (Teacher != null)
+                {// Store the SubAdminn ID in the session
+                    _httpContextAccessor.HttpContext.Session.SetString("TeacherId", Teacher.EmployeeId.ToString());
+                    var parentRole = await _context.Roles
+                              
+                               .Select(r => new RoleViewModel { Id = r.Id, Name = r.Name })
+                               .FirstOrDefaultAsync();
+                    // Redirect to the SubAdmin dashboard and stop further execution
+                    if (parentRole.Name == "Teacher")
+                    {
+                        return Redirect("/Teacher/Home/Index");
+                    }
+                    else
+                    if(parentRole.Name == "Parent")
+                    {
+                        return Redirect("/Parent/Home/Index");
+                    }
                 }
-
                 // Check if the credentials match an IdentityUser
                 var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {}
+    "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {}
   },
   "projects": {
-    "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+    "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "projectUniqueName": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
         "projectName": "ByteTechSchoolERP.Models",
-        "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\obj\\",
+        "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+        "outputPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

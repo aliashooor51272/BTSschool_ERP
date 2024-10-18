@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 using ByteTechSchoolERP.Models.Students;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using ByteTechSchoolERP.Models.HR;
+using System.Data;
 
 namespace ByteTechSchoolERP.DataAccess.Repository.Services.StudentService
 {
@@ -29,110 +33,146 @@ namespace ByteTechSchoolERP.DataAccess.Repository.Services.StudentService
         public async Task<ResponseModel> CreateStudentAdmit(StudentViewModel std)
         {
             var currentUserId = _httpContextAccessor.HttpContext.Session.GetString("UserId");
-           
+
             var responseModel = new ResponseModel();
-            Student stds = new Student();
-            stds.FullName = std.FullName;
-            stds.Surname = std.Surname;
-            stds.Cast = std.Cast;
-            stds.RelationWithParent = std.RelationWithParent;
-            stds.RelationWithGuardian = std.RelationWithGuardian;
-            stds.Gender = std.Gender;
-            stds.DateOfBirth = std.DateOfBirth;
-            stds.PlaceOfBirth = std.PlaceOfBirth;
-            stds.ParentName = std.ParentName;
-            stds.ParentCNIC = std.ParentCNIC;
-            stds.ParentEmail = std.ParentEmail;
-            stds.ParentContactNo = std.ParentContactNo;
-            stds.ParentOtherNo = std.ParentOtherNo;
-            stds.ParentOccupation = std.ParentOccupation;
-            stds.ParentIncome = std.ParentIncome;
-            stds.AdmissionDate = std.AdmissionDate;
-            stds.Religion = std.Religion;
-            stds.PreviousSchoolName = std.PreviousSchoolName;
-            stds.PreviousObtainedMarks = std.PreviousObtainedMarks;
-            stds.PreviousTotalMarks = std.PreviousTotalMarks;
-            stds.PreviousClass = std.PreviousClass;
-            stds.PreviousRemarks = std.PreviousRemarks;
-            stds.Address = std.Address;
-            stds.ClassId = std.ClassId;
-            stds.SectionId = std.SectionId;
-            stds.Shift = std.Shift;
-            stds.GuardianName = std.GuardianName;
-            stds.GuardianContactNo = std.GuardianContactNo;
-            stds.GuardianOtherNo = std.GuardianOtherNo;
-            stds.GuardianOccupation = std.GuardianOccupation;
-            stds.GuardianIncome = std.GuardianIncome;
-            stds.GuardianCNIC = std.GuardianCNIC;
-            stds.GuardianEmail = std.GuardianEmail;
-            stds.CampusId = std.CampusId;
-            stds.UserId = currentUserId;
 
+            // Validate password and confirm password
 
-            var imageProperties = typeof(StudentViewModel).GetProperties().Where(p => p.PropertyType == typeof(IFormFile));
+            var parentRole = await _context.Roles
+                               .Where(r => r.Name == "Parent")
+                               .Select(r => new RoleViewModel { Id = r.Id, Name = r.Name })
+                               .FirstOrDefaultAsync();
+            // Now, save the guardian's information to the Employee table
+            var guardianEmail = std.GuardianEmail;
+            var guardianPhone = std.GuardianContactNo;
+            var employee = new Employee
+            {
+                FirstName = std.GuardianName, // You might want to adjust this
+                Email = guardianEmail,
+                Phone = guardianPhone,
+                Password = "Parent123@#$", // This should be hashed before saving
+                RoleId = parentRole.Id,// Assign the role ID
+                
+            };
+            // Hash the password if you're using Identity
+            
+
+            _context.Employee.Add(employee);
+            await _context.SaveChangesAsync();
+            var guardianId = await _context.Employee
+    .Where(e => e.Email == std.GuardianEmail)
+    .Select(e => e.EmployeeId)
+    .FirstOrDefaultAsync();
+            // Create the Student entity
+            Student stds = new Student
+            {
+                FullName = std.FullName,
+                Surname = std.Surname,
+                Cast = std.Cast,
+                ParentId = guardianId,
+                RelationWithParent = std.RelationWithParent,
+                RelationWithGuardian = std.RelationWithGuardian,
+                Gender = std.Gender,
+                DateOfBirth = std.DateOfBirth,
+                PlaceOfBirth = std.PlaceOfBirth,
+                ParentName = std.ParentName,
+                ParentCNIC = std.ParentCNIC,
+                ParentEmail = std.ParentEmail,
+                ParentContactNo = std.ParentContactNo,
+                ParentOtherNo = std.ParentOtherNo,
+                ParentOccupation = std.ParentOccupation,
+                ParentIncome = std.ParentIncome,
+                AdmissionDate = std.AdmissionDate,
+                Religion = std.Religion,
+                PreviousSchoolName = std.PreviousSchoolName,
+                PreviousObtainedMarks = std.PreviousObtainedMarks,
+                PreviousTotalMarks = std.PreviousTotalMarks,
+                PreviousClass = std.PreviousClass,
+                PreviousRemarks = std.PreviousRemarks,
+                Address = std.Address,
+                ClassId = std.ClassId,
+                SectionId = std.SectionId,
+                Shift = std.Shift,
+                GuardianName = std.GuardianName,
+                GuardianContactNo = std.GuardianContactNo,
+                GuardianOtherNo = std.GuardianOtherNo,
+                GuardianOccupation = std.GuardianOccupation,
+                GuardianIncome = std.GuardianIncome,
+                GuardianCNIC = std.GuardianCNIC,
+                GuardianEmail = std.GuardianEmail,
+                CampusId = std.CampusId,
+                UserId = currentUserId,
+                StudentProfileUrl = std.StudentProfileUrl ?? string.Empty,
+                GuardianProfileUrl = std.GuardianProfileUrl ?? string.Empty,
+                SchoolLeavingCertificateUrl = std.SchoolLeavingCertificateUrl ?? string.Empty,
+                StudentFormBUrl = std.StudentFormBUrl ?? string.Empty,
+                GuardianCNICFrontUrl = std.GuardianCNICFrontUrl ?? string.Empty,
+                GuardianCNICBackUrl = std.GuardianCNICBackUrl ?? string.Empty,
+                OtherDocumentsUrl1 = std.OtherDocumentsUrl1 ?? string.Empty,
+                OtherDocumentsUrl2 = std.OtherDocumentsUrl2 ?? string.Empty
+            };
+
+            // Handle file uploads
+            var imageProperties = typeof(StudentViewModel).GetProperties()
+                .Where(p => p.PropertyType == typeof(IFormFile));
+
             foreach (var imageProperty in imageProperties)
             {
-                var images = (IFormFile)imageProperty.GetValue(std);
-                if (images != null)
+                var file = (IFormFile)imageProperty.GetValue(std);
+                if (file != null)
                 {
-                    // Create the voucherImage folder if it doesn't exist
-                    var ImageFolder = Path.Combine(_hostingEnvironment.WebRootPath, "StudentImage");
-                    if (!Directory.Exists(ImageFolder))
+                    // Define the folder path to save images
+                    var imageFolder = Path.Combine(_hostingEnvironment.WebRootPath, "StudentImage");
+                    if (!Directory.Exists(imageFolder))
                     {
-                        Directory.CreateDirectory(ImageFolder);
+                        Directory.CreateDirectory(imageFolder);
                     }
 
-                    // Save the uploaded image
-                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(images.FileName);
-                    var imagePathOnDisk = Path.Combine(ImageFolder, uniqueFileName);
+                    // Generate a unique file name and save the uploaded file
+                    var uniqueFileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+                    var imagePathOnDisk = Path.Combine(imageFolder, uniqueFileName);
 
                     using (var stream = new FileStream(imagePathOnDisk, FileMode.Create))
                     {
-                        await images.CopyToAsync(stream);
+                        await file.CopyToAsync(stream);
                     }
 
-                    // Associate the image filename with the corresponding property in the Student entity
-                    if (imageProperty.Name == nameof(StudentViewModel.StudentProfileUrlPathMV))
+                    // Associate the uploaded file's filename with the respective Student property
+                    switch (imageProperty.Name)
                     {
-                        stds.StudentProfileUrl = uniqueFileName;
+                        case nameof(StudentViewModel.StudentProfileUrlPathMV):
+                            stds.StudentProfileUrl = uniqueFileName;
+                            break;
+                        case nameof(StudentViewModel.GuardianProfileUrlPathMV):
+                            stds.GuardianProfileUrl = uniqueFileName;
+                            break;
+                        case nameof(StudentViewModel.SchoolLeavingCertificateUrlPathMV):
+                            stds.SchoolLeavingCertificateUrl = uniqueFileName;
+                            break;
+                        case nameof(StudentViewModel.StudentFormBUrlPathMV):
+                            stds.StudentFormBUrl = uniqueFileName;
+                            break;
+                        case nameof(StudentViewModel.GuardianCNICFrontUrlPathMV):
+                            stds.GuardianCNICFrontUrl = uniqueFileName;
+                            break;
+                        case nameof(StudentViewModel.GuardianCNICBackUrlPathMV):
+                            stds.GuardianCNICBackUrl = uniqueFileName;
+                            break;
+                        case nameof(StudentViewModel.OtherDocumentsUrl1PathMV):
+                            stds.OtherDocumentsUrl1 = uniqueFileName;
+                            break;
+                        case nameof(StudentViewModel.OtherDocumentsUrl2PathMV):
+                            stds.OtherDocumentsUrl2 = uniqueFileName;
+                            break;
                     }
-                    else if (imageProperty.Name == nameof(StudentViewModel.GuardianProfileUrlPathMV))
-                    {
-                        stds.GuardianProfileUrl = uniqueFileName;
-                    }
-                    else if (imageProperty.Name == nameof(StudentViewModel.SchoolLeavingCertificateUrlPathMV))
-                    {
-                        stds.SchoolLeavingCertificateUrl = uniqueFileName;
-                    }
-                    else if (imageProperty.Name == nameof(StudentViewModel.StudentFormBUrlPathMV))
-                    {
-                        stds.StudentFormBUrl = uniqueFileName;
-                    }
-                    else if (imageProperty.Name == nameof(StudentViewModel.GuardianCNICFrontUrlPathMV))
-                    {
-                        stds.GuardianCNICFrontUrl = uniqueFileName;
-                    }
-                    else if (imageProperty.Name == nameof(StudentViewModel.GuardianCNICBackUrlPathMV))
-                    {
-                        stds.GuardianCNICBackUrl = uniqueFileName;
-                    }
-                    else if (imageProperty.Name == nameof(StudentViewModel.OtherDocumentsUrl1PathMV))
-                    {
-                        stds.OtherDocumentsUrl1 = uniqueFileName;
-                    }
-                    else if (imageProperty.Name == nameof(StudentViewModel.OtherDocumentsUrl2PathMV))
-                    {
-                        stds.OtherDocumentsUrl2 = uniqueFileName;
-                    }
-
-
-
-
                 }
             }
 
+            // Save the student record to the database
             _context.Students.Add(stds);
             await _context.SaveChangesAsync();
+
+            // Prepare the response model
             responseModel.isSuccess = true;
             responseModel.Message = "Student Admit submitted successfully!";
             return responseModel;

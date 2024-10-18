@@ -14591,19 +14591,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\Hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP\\ByteTechSchoolERP.csproj",
+      "projectUniqueName": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP\\ByteTechSchoolERP.csproj",
       "projectName": "ByteTechSchoolERP",
-      "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP\\ByteTechSchoolERP.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP\\obj\\",
+      "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP\\ByteTechSchoolERP.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -14618,14 +14618,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
-              "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
+            "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
+              "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
             },
-            "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
-              "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
+            "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+              "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
             },
-            "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj": {
-              "projectPath": "G:\\ByteTechSchoolERP7766\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj"
+            "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj": {
+              "projectPath": "D:\\SCHOOL\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj"
             }
           }
         }

@@ -16,7 +16,7 @@ namespace ByteTechSchoolERP.Models.Parents
         public string? Gender { get; set; }
         public string? Address { get; set; }
         public string? Cnic { get; set; }
-        public ICollection<Student> Students { get; set; }
+
 
     }
 }
