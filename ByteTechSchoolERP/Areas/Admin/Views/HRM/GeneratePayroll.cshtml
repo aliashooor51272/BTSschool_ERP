@@ -23,7 +23,7 @@
 
     <hr />
 
-    <h3 class="text-center">Payroll Records</h3>
+   
     <div class="table-responsive">
                 <div class="card">
                     <div class="card-header">
@@ -56,25 +56,29 @@
 
                         </form>
                     </div>
-                </div>
-        <table id="payrollTable" class="table table-bordered table-striped">
-                    <thead style="background-color: #3d5ee1; color: #fff;">
-                <tr>
-                    <th>Payroll Date</th>
-                    <th>Total Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var payroll in Model)
-                {
-                    <tr>
-                        <td>@payroll.PayrollDate.ToString("yyyy-MM-dd")</td>
-                                <td>@payroll.TotalAmount.ToString("N0")</td>
 
-                    </tr>
-                }
-            </tbody>
-        </table>
+                    <table id="payrollTable" class="table table-bordered table-striped">
+                        <thead style="background-color: #3d5ee1; color: #fff;">
+                            <tr>
+                                <th>Payroll Date</th>
+                                <th>Total Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var payroll in Model)
+                            {
+                                <tr>
+                                    <td>@payroll.PayrollDate.ToString("yyyy-MM-dd")</td>
+                                    <td>@payroll.TotalAmount.ToString("N0")</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+                </div>
+      
     </div>
    </div>
 </div>   

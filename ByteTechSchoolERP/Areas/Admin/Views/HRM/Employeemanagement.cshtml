@@ -7,11 +7,6 @@
             Employee Management
         </div>
 
-        <div style="justify-content: right!important;">
-            <a asp-area="Admin" asp-controller="HRM" asp-action="AddEmployee" class="btn btn-info" style="margin-left: 55px;margin-top: 20px;color: #fff;">
-                <i class="fas fa-user-plus"></i> Add Employee
-            </a>
-        </div>
         <div class="tab-container container-fluid mt-3">
             <div class="card">
                 <div class="card-header">
@@ -34,17 +29,18 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    <label for="phoneFilter">Phone Number</label>
+                                    <input type="text" class="form-control" id="phoneFilter" placeholder="Phone Number" />
+                                </div>
+                            </div>
+                          @*   <div class="col-md-4">
+                                <div class="form-group">
                                     <label for="emailFilter">Email</label>
                                     <input type="text" class="form-control" id="emailFilter" placeholder="Email" />
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="phoneFilter">Phone Number</label>
-                                    <input type="text" class="form-control" id="phoneFilter" placeholder="Phone Number" />
-                                </div>
-                            </div>
+                         
                        
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -71,60 +67,68 @@
                                     <label for="roleFilter">Role</label>
                                     <input type="text" class="form-control" id="roleFilter" placeholder="Role Name" />
                                 </div>
-                            </div>
+                            </div> *@
 
                         </div>
 
                     </form>
                 </div>
-            </div>
-            <div class="col-md-12">
-                <div class="style-0" style="max-width:100%; margin:0px;">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            
-                            <table id="table" class="display responsive nowrap table-responsive" style="width:100%;">
-                                <thead style="background-color: #3d5ee1; color: #fff;">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Father Name</th>
-                                        <th>Date of Birth</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Salary</th>
-                                        <th>Department</th>
-                                        <th>Role</th>
-                                        <th>Edit</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var employee in Model)
-                                    {
-                                        <tr>
-                                            <td>@employee.FirstName</td>
-                                            <td>@employee.FatherName</td>
-                                            <td>@(employee.DateOfJoining?.ToShortDateString() ?? "N/A")</td>
-                                            <td>@employee.Email</td>
-                                            <td>@employee.Phone</td>
-                                            @* <td>@employee.Salary</td> *@
-                                            <td>
-                                                @(decimal.TryParse(employee.Salary.ToString(), out var salaryValue)
-                                                    ? salaryValue.ToString("N0")
-                                                    : "N/A")
-                                            </td>
-                                            <td>@employee.DepartmentName</td>
-                                            <td>@employee.RoleName</td>
-                                            <td>
-                                                <a href="@Url.Action("Edit", new { id = employee.Id })" class="btn btn-primary">Edit</a>
-                                            </td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div style="justify-content: right!important;">
+                            <a asp-area="Admin" asp-controller="HRM" asp-action="AddEmployee" class="btn btn-info" style="float: right;
+  margin-bottom: 7px;color: #fff;">
+                                <i class="fas fa-user-plus"></i> Add Employee
+                            </a>
                         </div>
+
+                        <table id="table" class="display responsive nowrap table-responsive" style="width:100%;">
+                            <thead style="background-color: #3d5ee1; color: #fff;">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Father Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Salary</th>
+                                    <th>Department</th>
+                                    <th>Role</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var employee in Model)
+                                {
+                                    <tr>
+                                        <td>@employee.FirstName</td>
+                                        <td>@employee.FatherName</td>
+                                        <td>@(employee.DateOfJoining?.ToShortDateString() ?? "N/A")</td>
+                                        <td>@employee.Email</td>
+                                        <td>@employee.Phone</td>
+                                        @* <td>@employee.Salary</td> *@
+                                        <td>
+                                            @(decimal.TryParse(employee.Salary.ToString(), out var salaryValue)
+                                                ? salaryValue.ToString("N0")
+                                                : "N/A")
+                                        </td>
+                                        <td>@employee.DepartmentName</td>
+                                        <td>@employee.RoleName</td>
+                                        <td>
+                                            <a href="@Url.Action("Edit", new { id = employee.Id })" class="btn btn-primary">Edit</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+           
+
+            
+             
+             
+           
         </div>
     </div>
 </div>

@@ -716,14 +716,10 @@
 <div class="tab-container container-fluid d-md-flex">
     <div class="col-md-12 mt-4" id="classFormContainers">
         <div class="style-0" id="classFormData" style="max-width:100%; margin:0px;">
-            <h5 class="formTitle pb-2 pt-3">Campus</h5>
+    
 
             <!-- Add Campus Button -->
-            <div class="d-flex justify-content-end mb-3">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCampusModal">
-                    Add Campus
-                </button>
-            </div>
+           
 
             <!-- Table starts here -->
             <div class="table-responsive">
@@ -742,10 +738,16 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
+                                            <label for="phoneFilter">Phone Number</label>
+                                            <input type="text" class="form-control" id="phoneFilter" placeholder="Phone Number" />
+                                        </div>
+                                    </div>
+                                   @*  <div class="col-md-4">
+                                        <div class="form-group">
                                             <label for="firstNameFilter">City Name</label>
                                             <input type="text" class="form-control" id="lastNameFilter" placeholder="City Name" />
                                         </div>
-                                    </div>
+                                    </div> 
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="emailFilter">Area</label>
@@ -753,26 +755,28 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="phoneFilter">Phone Number</label>
-                                            <input type="text" class="form-control" id="phoneFilter" placeholder="Phone Number" />
-                                        </div>
-                                    </div>
+                                 
                                 
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="sourceFilter">Description</label>
                                             <input type="text" class="form-control" id="sourceFilter" placeholder="Description" />
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </form>
                         </div>
                     </div>
-                <table id="CampusId" class="display mt-2" style="width:100%">
-                    <thead style="background-color: rgb(94, 114, 228); color: white;">
-                        <tr>
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCampusModal">
+                            Add Campus
+                        </button>
+                    </div>
+
+                    <table id="CampusId" class="display table mt-2" style="width:100%;">
+                        <thead style="background-color:rgb(94, 114, 228);">
+                            <tr style="color: white;">
+             
                             <th>Campus</th>
                             <th>City</th>
                             <th>Area</th>
@@ -853,9 +857,10 @@
                         <label for="editAreaName" class="col-form-label">Area Name:</label>
                         <input type="text" class="form-control" id="editAreaName" name="Area">
                     </div>
+     
                     <div class="form-group">
                         <label for="editDescription" class="col-form-label">Description:</label>
-                        <textarea class="form-control" id="editDescription" name="Description"></textarea>
+                        <input type="text" class="form-control" id="editDescription" name="Description">
                     </div>
                 </div>
 
