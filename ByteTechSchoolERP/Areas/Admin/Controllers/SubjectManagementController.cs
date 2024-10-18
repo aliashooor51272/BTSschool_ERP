@@ -3,11 +3,14 @@ using ByteTechSchoolERP.DataAccess.Filters;
 using ByteTechSchoolERP.DataAccess.Repository.IRepository.UnitOfWork;
 using ByteTechSchoolERP.Models.ClassAndSection;
 using ByteTechSchoolERP.Models.Subjects;
+using ByteTechSchoolERP.Models.ViewModels;
 using ByteTechSchoolERP.Models.ViewModels.LoginVM;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Hosting.Internal;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace ByteTechSchoolERP.Areas.Admin.Controllers
 {
@@ -35,7 +38,7 @@ namespace ByteTechSchoolERP.Areas.Admin.Controllers
                 .Select(sa => new
                 {
                     sa.Id,
-                    Teacher = _context.StaffTemps.Where(t => t.Id == sa.TeacherId).Select(t => t.FirstName + " " + t.LastName).FirstOrDefault(),
+                    Teacher = _context.Employee.Where(t => t.EmployeeId == sa.TeacherId).Select(t => t.FirstName + " " + t.LastName).FirstOrDefault(),
                     Class = _context.Classes.Where(c => c.Id == sa.ClassId).Select(c => c.ClassName).FirstOrDefault(),
                     Subject = _context.SubjectModels.Where(s => s.Id == sa.SubjectId).Select(s => s.SubjectName).FirstOrDefault(),
                     Section = _context.Sections.Where(s => s.Id == sa.SectionId).Select(s => s.Name).FirstOrDefault(),
@@ -45,10 +48,15 @@ namespace ByteTechSchoolERP.Areas.Admin.Controllers
             return Json(new { data });
         }
 
-        public IActionResult AssignSubject()
+        public async Task<IActionResult> AssignSubject()
         {
             // Get the current user ID
             var currentUserId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var teacherRole = await _context.Roles
+                                .Where(r => r.Name == "Teacher")
+                                .Select(r => new RoleViewModel { Id = r.Id, Name = r.Name })
+                                .FirstOrDefaultAsync();
+            var teacher = teacherRole.Id;
 
             // Fetch classes and teachers as before
             var classes = _context.Classes
@@ -59,12 +67,15 @@ namespace ByteTechSchoolERP.Areas.Admin.Controllers
                     Value = c.Id.ToString()
                 }).ToList();
 
-            var teachers = _context.StaffTemps
-                .Select(t => new
-                {
-                    Id = t.Id,
-                    Name = t.FirstName + " " + t.LastName
-                }).ToList();
+            var teachers = _context.Employee
+     .Where(t => t.RoleId == teacher)
+     .Select(t => new
+     {
+         Id = t.EmployeeId,
+         Name = t.FirstName + " " + t.LastName
+     })
+     .ToList();
+
 
             ViewBag.Classes = new SelectList(classes, "Value", "Text");
             ViewBag.Teachers = new SelectList(teachers, "Id", "Name");

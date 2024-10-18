@@ -1,0 +1,16 @@
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.deps.json
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.dll
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.pdb
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.Models.dll
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.Models.pdb
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.sourcelink.json
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTech.35FE5FEA.Up2Date
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.dll
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\refint\ByteTechSchoolERP.DataAccess.dll
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.pdb
+C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ref\ByteTechSchoolERP.DataAccess.dll
