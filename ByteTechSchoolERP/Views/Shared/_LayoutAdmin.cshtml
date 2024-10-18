@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ByteTech SchoolERP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/assets/plugins/feather/feather.css">
+
+    <link rel="stylesheet" href="~/assets/plugins/icons/flags/flags.css">
+
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/custom-style.css">
+     <!-- DataTables Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <!-- Animate.css CDN -->
+ 
+    <style>
+        .icon-container {
+            text-align: center;
+            margin: 0px 5px;
+            background-color: white;
+            border-radius: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+            .icon-container i {
+                font-size: 3em;
+                color: blueviolet;
+            }
+
+            .icon-container:hover {
+                transform: scale(1.1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .icon-container a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+        .ss {
+            width: 7.333%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="https://img.freepik.com/premium-vector/school-logo-design_706452-12.jpg" alt="Logo">
+                    ByteTech School
+                </a>
+                <a href="index.html" class="logo logo-small">
+                    <img src="https://img.freepik.com/premium-vector/school-logo-design_706452-12.jpg" alt="Logo">
+                    ByteTech School
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <a href="javascript:void(0);" id="toggle_btn">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+
+            <div class="top-nav-search">
+                <form>
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <a class="mobile_btn" id="mobile_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+
+            <ul class="nav user-menu">
+                <li class="nav-item dropdown noti-dropdown language-drop me-2">
+                    <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                        <img src="~/assets/img/icons/header-icon-01.svg" alt="">
+                    </a>
+                    <div class="dropdown-menu ">
+                        <div class="noti-content">
+                            <div>
+                                <a class="dropdown-item" href="javascript:;">
+                                    <i class="flag flag-lr me-2"></i>English
+                                </a>
+                                <a class="dropdown-item" href="javascript:;">
+                                    <i class="flag flag-bl me-2"></i>Francais
+                                </a>
+                                <a class="dropdown-item" href="javascript:;"><i class="flag flag-cn me-2"></i>Turkce</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown noti-dropdown me-2">
+                    <a href="#" class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown">
+                        <img src="~/assets/img/icons/header-icon-05.svg" alt="">
+                    </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span class="notification-title">Notifications</span>
+                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+                        </div>
+                        <div class="noti-content">
+                            <ul class="notification-list">
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media d-flex">
+                                            <span class="avatar avatar-sm flex-shrink-0">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                     src="~/assets/img/profiles/avatar-02.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">Carlson Tech</span> has
+                                                    approved <span class="noti-title">your estimate</span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">4 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media d-flex">
+                                            <span class="avatar avatar-sm flex-shrink-0">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                     src="~/assets/img/profiles/avatar-11.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">
+                                                        International Software
+                                                        Inc
+                                                    </span> has sent you a invoice in the amount of <span class="noti-title">$218</span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">6 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media d-flex">
+                                            <span class="avatar avatar-sm flex-shrink-0">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                     src="~/assets/img/profiles/avatar-17.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">John Hendry</span> sent
+                                                    a cancellation request <span class="noti-title">
+                                                        Apple iPhone
+                                                        XR
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">8 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="notification-message">
+                                    <a href="#">
+                                        <div class="media d-flex">
+                                            <span class="avatar avatar-sm flex-shrink-0">
+                                                <img class="avatar-img rounded-circle" alt="User Image"
+                                                     src="~/assets/img/profiles/avatar-13.jpg">
+                                            </span>
+                                            <div class="media-body flex-grow-1">
+                                                <p class="noti-details">
+                                                    <span class="noti-title">
+                                                        Mercury Software
+                                                        Inc
+                                                    </span> added a new product <span class="noti-title">
+                                                        Apple
+                                                        MacBook Pro
+                                                    </span>
+                                                </p>
+                                                <p class="noti-time">
+                                                    <span class="notification-time">12 mins ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="topnav-dropdown-footer">
+                            <a href="#">View all Notifications</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item zoom-screen me-2">
+                    <a href="#" class="nav-link header-nav-list win-maximize">
+                        <img src="~/assets/img/icons/header-icon-04.svg" alt="">
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown has-arrow new-user-menus">
+                    <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <span class="user-img">
+                            <img class="rounded-circle" src="~/assets/img/profiles/avatar-01.jpg" width="31"
+                                 alt="Soeng Souy">
+                            <div class="user-text">
+                                <h6>Super Admin  </h6>
+                                <p class="text-muted mb-0">Administrator</p>
+                            </div>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="user-header">
+                            <div class="avatar avatar-sm">
+                                <img src="~/assets/img/profiles/avatar-01.jpg" alt="User Image"
+                                     class="avatar-img rounded-circle">
+                            </div>
+                            <div class="user-text">
+                                <h6>Soeng Souy</h6>
+                                <p class="text-muted mb-0">Administrator</p>
+                            </div>
+                        </div>
+                        <a class="dropdown-item" href="profile.html">My Profile</a>
+                        <a class="dropdown-item" href="inbox.html">Inbox</a>
+                        <a class="dropdown-item" href="https://localhost:7119/">Logout</a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">
+                            <span>Main Menu</span>
+                        </li>
+                        <li class="submenu active">
+                            <a href="#">
+                                 Admin Dashboard
+                            </a>
+                         @*    <ul>
+                                <li><a asp-area="Admin" asp-controller="Dashboard" asp-action="Teacher">Admin Dashboard</a></li>
+                                <li><a asp-area="Admin" asp-controller="Dashboard" asp-action="Teacher"> Teacher Dashboard</a></li>       
+                                <li><a asp-area="Admin" asp-controller="Dashboard" asp-action="Parent"> Parent Dashboard</a></li>
+                              
+                            </ul> *@
+                        </li>
+                        @if (ViewBag.SubAdminn == null)
+                        {
+                            <li class="submenu">
+                                <a href="#">
+                                    <i class="feather-grid"></i> <span> Register SubAdmin </span> <span class="menu-arrow"></span>
+                                </a>
+                                <ul>
+                                    <li><a asp-area="Admin" asp-controller="SubAdminRegister" asp-action="Create">   Register SubAdmin    </a></li>
+                                    <li><a asp-area="Admin" asp-controller="SubAdminRegister" asp-action="CreateCampus">   Add Campus     </a></li>
+                                </ul>
+                            </li>
+                        }
+                        <li class="submenu ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> HR  Management </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="HRM" asp-action="AddDepartment">Departments</a></li>
+                                <li><a asp-area="Admin" asp-controller="HRM" asp-action="ManageRole">Role</a></li>
+                                <li><a asp-area="Admin" asp-controller="HRM" asp-action="Employeemanagement">Employee Management</a></li>
+                                @*
+                                <li>
+                                <a asp-area="Admin" asp-controller="HRM" asp-action="EmployeeAttendence" class=" ">  Employee Attendence     </a>
+                                </li> *@
+                                @*  <li>
+                                <a asp-area="Admin" asp-controller="HRM" asp-action="LeaveRequest" class=" ">  Approve Leave     request   </a>
+                                </li> *@
+                                <li>
+                                    <a asp-area="Admin" asp-controller="HRM" asp-action="GeneratePayroll">    Payrole         </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Admin" asp-controller="HRM" asp-action="Loan">    Loan         </a>
+                                    <a asp-area="Admin" asp-controller="HRM" asp-action="LoanDetails">    Loan Details         </a>
+                                </li>
+                                <li>
+                                    <a asp-area="Admin" asp-controller="HRM" asp-action="SalaryList">     Salries         </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Classes & Sections</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="ClassesandSection" asp-action="AddNewClass">Add New Classes</a></li>
+
+                                <li><a asp-area="Admin" asp-controller="ClassesandSection" asp-action="AddNewSection">Add New Sections</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Subject Management</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="SubjectManagement" asp-action="AddSubject">Add New Subject</a></li>
+
+                                <li><a asp-area="Admin" asp-controller="SubjectManagement" asp-action="AssignSubject">Assign Subject</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Admission  Management </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="AdmissionManagement" asp-action="AdmitStudent">   Admit Student     </a></li>
+                                <li><a asp-area="Admin" asp-controller="AdmissionManagement" asp-action="UploadStudentExcel">   Admit Bulk Student     </a></li>
+                               @*     <li><a asp-area="Admin" asp-controller="AdmissionManagement" asp-action="AdmissionRequest">   Admission Request       </a></li>
+                                <li><a asp-area="Admin" asp-controller="AdmissionManagement" asp-action="AdmissionInquries">   Admission Inquiries       </a></li>
+                             <li><a asp-area="Admin" asp-controller="AdmissionManagement" asp-action="AdmissionReports">   Admission Reports       </a></li> *@
+
+                            </ul>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Student  Management </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="StudentManagement" asp-action="StudentInformation">    Student  Information   </a></li>
+                                <li><a asp-area="Admin" asp-controller="StudentManagement" asp-action="StudentPromotion">    Student  Promotion   </a></li>
+                                <li><a asp-area="Admin" asp-controller="StudentManagement" asp-action="StudentTransfer">    Student  Transfer   </a></li>
+                                <li><a asp-area="Admin" asp-controller="StudentManagement" asp-action="StudentReport">    Student  Report   </a></li>
+                                <li><a asp-area="Admin" asp-controller="StudentManagement" asp-action="StudentAttendence">    Student  Attendance   </a></li>
+                            </ul>
+                        </li>
+                       
+
+
+@* 
+                        <li class="submenu ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Parent  Management </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="Parent" asp-action="ManageAccount">Manage Account</a></li>
+
+                            </ul>
+                        </li> *@
+                        <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Academics</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="Academics" asp-action="ClassTimetable"> Class Timetable </a></li>
+                                <li><a asp-area="Admin" asp-controller="Academics" asp-action="TeacherTimetable"> Teacher Timetable </a></li>
+                                <li><a asp-area="Admin" asp-controller="Academics" asp-action="AssignClassTeacher"> Assign Class Teacher  </a></li>
+                                <li><a asp-area="Admin" asp-controller="Academics" asp-action=""> Promote Students  </a></li>
+                              
+                            </ul>
+                        </li>
+                        <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Examinations</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="Examinations" asp-action="MarkSheetDesing"> Desing Mark Sheet  </a></li>
+                                <li><a asp-area="Admin" asp-controller="Examinations" asp-action="DesingCard"> Desing Admit Card  </a></li>
+                                <li><a asp-area="Admin" asp-controller="Exams" asp-action="AddTerm"> Create Term  </a></li>
+                                <li><a asp-area="Admin" asp-controller="Exams" asp-action="AddGrade"> Create Grade  </a></li>
+                              
+                            
+                                <li><a asp-area="Admin" asp-controller="Examinations" asp-action="CreateExam"> Exam Type </a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> TimeTable Management</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="timetable-management.html">Add Timetable</a></li>
+
+
+
+                            </ul>
+                        </li>
+
+                     
+
+
+                  @*       <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> General Settings </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="GeneralSetting" asp-action="InstituteProfile" class=" "> Institue Profile </a></li>
+                                <li><a asp-area="Admin" asp-controller="GeneralSetting" asp-action="FeeParticulars" class=" "> Fee Particulars  </a></li>
+                                <li><a asp-area="Admin" asp-controller="GeneralSetting" asp-action="MarksGrading" class=" "> Marks Grading  </a></li>
+                                <li><a asp-area="Admin" asp-controller="GeneralSetting" asp-action="FeeChallanDetails" class=" "> Fee Challan Details  </a></li>
+                                <li><a asp-area="Admin" asp-controller="GeneralSetting" asp-action="RulesAndRegulation" class=" "> Rules And Regulation  </a></li>
+                                <li><a asp-area="Admin" asp-controller="GeneralSetting" asp-action="AddRole" class=" "> Role  </a></li>
+                                <li><a asp-area="Admin" asp-controller="GeneralSetting" asp-action="AccountSettings" class=" "> Account Settings  </a></li>
+                                <li><a href="login.html"> Logout    </a></li>
+                            </ul>
+                        </li> *@
+                        <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Accounts Management </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="AccountsManagement" asp-controller="Element" asp-action="CreateElement" class=" "> Element Account </a></li>
+                                <li><a asp-area="AccountsManagement" asp-controller="Control" asp-action="CreateControl" class=" "> Control Account </a></li>
+                                <li><a asp-area="AccountsManagement" asp-controller="Ledger" asp-action="CreateLedger" class=" ">Ledger Account </a></li>
+                                <li><a asp-area="AccountsManagement" asp-controller="Inventory" asp-action="CreateInventory" class=" ">Inventory Account </a></li>
+
+                               
+                            </ul>
+                        </li>
+                    @*     <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span>Manage Vourchar  </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+
+                                <li><a asp-area="VourcharManagement" asp-controller="ManageVourchar" asp-action="BankReceiptVourchar"> Bank Receipt Vourchars</a></li>
+                               <li><a asp-area="VourcharManagement" asp-controller="ManageBankPayement" asp-action="BankPayementVourchar"> Bank Payement Vourchars</a></li>
+                                <li><a asp-area="VourcharManagement" asp-controller="ManageCashPayement" asp-action="CashPayementVourchar"> Cash Payement Vourchars</a></li>
+                                <li><a asp-area="VourcharManagement" asp-controller="ManageCashReceipt" asp-action="CashReceiptVourchar"> Cash Receipt Vourchars</a></li>
+
+                            </ul>
+                        </li> *@
+@* 
+                        <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span>Payrolls  </span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+
+                                <li><a asp-area="Payrolls" asp-controller="AddSalary" asp-action="AddNewSalary"> Add Salary</a></li>
+                                <li><a asp-area="Payrolls" asp-controller="AddLoan" asp-action="AddNewLoan"> Add Loan</a></li>
+                                <li><a asp-area="Payrolls" asp-controller="ManageLoan" asp-action="ManageNewLoan"> Manage Loan</a></li>
+                                <li><a asp-area="Payrolls" asp-controller="ManageOverTime" asp-action="AddNewOverTime"> Manage Over Time</a></li>
+
+                            </ul>
+                        </li> *@
+
+
+                        <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Lesson Plan</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="LessonPlan" asp-action="AddLesson"> Add Lesson </a></li>
+                                <li><a asp-area="Admin" asp-controller="Topic" asp-action="AddTopic"> Add Topic </a></li>
+                          @*       <li><a asp-area="Admin" asp-controller="LessonPlan" asp-action="ManageLesson"> Manage Lesson Plan </a></li>
+                                <li><a asp-area="Admin" asp-controller="LessonPlan" asp-action="ManageSyllabus"> Manage Syllabus Status </a></li>
+                            *@ </ul>
+                        </li>
+                        
+
+               @*          <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Transport</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+
+                                <li><a asp-area="Admin" asp-controller="Transport" asp-action="Routes"> Routes  </a></li>
+                                <li><a asp-area="Admin" asp-controller="Transport" asp-action="Vehicle"> Vehicle  </a></li>
+                                <li><a asp-area="Admin" asp-controller="Transport" asp-action="AssignVehicle"> Assign Vehicle  </a></li>
+                            </ul>
+                        </li> *@
+                      
+                       @*  <li class="submenu  ">
+                            <a href="#">
+                                <i class="feather-grid"></i> <span> Inventory</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a asp-area="Admin" asp-controller="Inventory" asp-action="IssueItem"> Issue Item  </a></li>
+                                <li><a asp-area="Admin" asp-controller="Inventory" asp-action="AddItemStock">Add Item Stock </a></li>
+                                <li><a asp-area="Admin" asp-controller="Inventory" asp-action="AddItem"> Add Item </a></li>
+                                <li><a asp-area="Admin" asp-controller="Inventory" asp-action="ItemCategory"> Item Category</a></li>
+                                <li><a asp-area="Admin" asp-controller="Inventory" asp-action="ItemStore"> Item Store </a></li>
+                                <li><a asp-area="Admin" asp-controller="Inventory" asp-action="ItemSupplier"> Item Supplier  </a></li>
+                               
+                            </ul>
+                        </li> *@
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @RenderBody()
+        
+            
+       
+    </div>
+       
+       
+       
+  
+
+
+    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/feather.min.js"></script>
+    <script src="~/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="~/assets/plugins/apexchart/chart-data.js"></script>
+    <script src="~/assets/js/script.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <!-- DataTables Responsive JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <!-- DataTables Bootstrap JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

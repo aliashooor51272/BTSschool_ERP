@@ -1,0 +1,117 @@
+﻿     <div class="page-wrapper">
+           
+
+            <div class="tab-container container-fluid mt-4">
+               
+
+                 <div class="col-md-12">
+
+                     <div class="style-0" style="max-width:100%; margin:0px;">
+                         <strong>Inventory</strong> |          
+                         <i class="fas fa-home home-icon"></i> - Add Item Category
+                     </div>
+                 </div>
+                
+
+            </div>
+
+
+
+
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-4 mt-4">
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <h5>Add Item Category</h5>
+                <br>
+                <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Item Category <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="itemCategory" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Description <span class="login-danger">*</span></label>
+                            <textarea class="form-control" name="description" rows="4" required></textarea>
+                        </div>
+                        <br />
+                        <div class="col-md-12">
+                            <button type="submit" name="updateterm" class="btn btn-primary" style="float: right;">Save</button>
+                        </div>
+                    </div>
+                    <br>
+                   
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-8 mt-4">
+            <div>
+                <div>
+                    <div class="style-0" style="max-width:100%; margin:0px;">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>Item Category List</h5>
+                            </div>
+                            <div class="col-12 text-right">
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fas fa-file-csv"></i> CSV
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <button type="button" class="btn btn-info">
+                                    <i class="fas fa-file-excel"></i> Excel
+                                </button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="table-responsive">
+                            <table id="example" class="display mt-2 table table-striped" style="width:100%">
+                                <thead style="background-color: rgb(94, 114, 228);">
+                                    <tr style="color: white;">
+                                        <th>Item Category</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Stationery</td>
+                                        <td>abc...</td>
+                                        <td>
+                                            <button class="btn btn-primary"><i class="fas fa-edit edit-icon"></i></button>
+                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+     </div>
+
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+     @section Scripts{
+    <!-- DataTables Initialization Script -->
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+     }

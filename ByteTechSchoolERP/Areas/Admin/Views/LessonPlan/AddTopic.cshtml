@@ -1,0 +1,175 @@
+﻿<div class="page-wrapper">
+
+
+    <div class="row container">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0">
+                <strong>Lesson Plan</strong> |
+                <i class="fas fa-home home-icon"></i> - Add Topic
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="row container mt-2">
+
+        <div class="col-md-4">
+            <div class="style-0">
+                <h3>Add Topic </h3>
+                </br>
+                <form method="post" enctype="multipart/form-data">
+
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Class<span class="login-danger">*</span></label>
+                            <select class="form-control" name="class" style="padding-right: 30px;">
+                                <option value="One">One</option>
+                                <option value="Two">Two</option>
+                                <option value="Three">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Section<span class="login-danger">*</span></label>
+                            <select class="form-control" name="class" style="padding-right: 30px;">
+                                <option value="One">A</option>
+                                <option value="Two">B</option>
+                                <option value="Three">C</option>
+                            </select>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Subject Group<span class="login-danger">*</span></label>
+                            <select class="form-control" name="class" style="padding-right: 30px;">
+                                <option value="One">Group 1</option>
+                                <option value="Two">Group 2</option>
+                                <option value="Three">Group 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Subject <span class="login-danger">*</span></label>
+                            <select class="form-control" name="class" style="padding-right: 30px;">
+                                <option value="One">English</option>
+                                <option value="Two">Computer</option>
+                                <option value="Three"> Math</option>
+                                <option value="Three"> Physics</option>
+                            </select>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Lesson <span class="login-danger">*</span></label>
+                            <select class="form-control" name="class" style="padding-right: 30px;">
+                                <option value="One">Lesson 1</option>
+                                <option value="Two">Lesson 2</option>
+                                <option value="Three"> lesson 3</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="col-md-12 local-forms label">
+                        <div style="position: relative;">
+                            <label id="label-color">Topic Name <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <p class="style-27">
+                        <button type="submit" name="updateterm" class="btn btn-primary" style="margin-top:12px;margin-left:145px;">  Add Topic</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div id="customTableContainer" class="col-md-8 mt-3">
+            <div class="style-0" style="margin-top: 7px;">
+            <div class="custom-table-container" style="margin-top: 0px;">
+                <h3>Topic List</h3>
+                </br>
+                <div class="custom-table-header">
+                    <div class="custom-table-header-left">
+                        <label for="example_length" class="table-label">
+                            Show
+                            <select id="example_length" name="example_length" aria-controls="example">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> entries
+                        </label>
+                    </div>
+                    <div class="custom-table-header-right">
+                        <label for="searchInput" class="table-label">
+                            Search:
+                            <input type="search" id="searchInput" placeholder="" aria-controls="example">
+                        </label>
+                    </div>
+                </div>
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped">
+                            <thead style="background-color:rgb(94, 114, 228);">
+                                <tr style="color: white;">
+                                    <th>Class</th>
+                                    <th>Section</th>
+                                    <th>Subject Group</th>
+                                    <th>Subject</th>
+                                    <th>Lesson</th>
+                                    <th>Lesson</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Class">One</td>
+                                    <td data-label="Section">A</td>
+                                    <td data-label="Subject Group">Group 1</td>
+                                    <td data-label="Subject">English</td>
+
+                                    <td>Lesson 1</td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-primary editBtn"><i class="fas fa-edit edit-icon"></i></button>
+                                        <button class="btn btn-danger dltBtn">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+     </div>
+ </div>
+

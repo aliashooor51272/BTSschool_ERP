@@ -1,0 +1,203 @@
+﻿<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid mt-3">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <strong>Lesson Plan</strong> |
+                <i class="fas fa-home home-icon"></i> - Add Item Stock
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="tab-container container-fluid d-md-flex ">
+
+        <div class="col-md-4 mt-3">
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <h5>
+                    Add Item Stock</h3>
+                    <br>
+                    <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Item Category<span class="login-danger">*</span></label>
+                                <select class="form-control  form-select" name="item_category" style="padding-right: 30px;" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Stationary">Stationary</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Furniture">Furniture</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Item<span class="login-danger">*</span></label>
+                                <select class="form-control  form-select" name="item" style="padding-right: 30px;" required>
+                                    <option value="">Select Item</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Supplier<span class="login-danger">*</span></label>
+                                <select class="form-control  form-select" name="supplier" style="padding-right: 30px;" required>
+                                    <option value="">Select Supplier</option>
+                                    <option value="Group 1">Group 1</option>
+                                    <option value="Group 2">Group 2</option>
+                                    <option value="Group 3">Group 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Store<span class="login-danger">*</span></label>
+                                <select class="form-control  form-select" name="store" style="padding-right: 30px;" required>
+                                    <option value="">Select Store</option>
+                                    <option value="store1">store1</option>
+                                    <option value="store2">store2</option>
+                                    <option value="store3">store3</option>
+                                    <option value="store4">store4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Quantity<span class="login-danger">*</span></label>
+                                <input type="number" class="form-control" name="quantity" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Purchase Prize<span class="login-danger">*</span></label>
+                                <input type="number" class="form-control" name="quantity" required>
+                            </div>
+                        </div>
+                        </br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Purchase Date<span class="login-danger">*</span></label>
+                                <input type="date" class="form-control" name="purchase_date" required>
+                            </div>
+                        </div>
+                        </br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Upload File<span class="login-danger">*</span></label>
+                                <input type="file" class="form-control" name="uploaded_file" required>
+                            </div>
+                        </div>
+                        </br>
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Description<span class="login-danger">*</span></label>
+                                <textarea class="form-control" name="description" rows="4" required></textarea>
+                            </div>
+                            <br />
+                            <p>
+                                <button type="submit" name="updateterm" class="btn btn-primary" style="margin-left: 76%;">Save</button>
+                            </p>
+                        </div>
+                      
+
+                     
+                    </form>
+            </div>
+        </div>
+        <div class="col-md-8 mt-3">
+            <div class="row">
+                <div class="col-md-">
+                    <div class="style-0" style="max-width:100%; margin:0px">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5> Item Stock List</h5>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fas fa-file-csv"></i> CSV
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <button type="button" class="btn btn-info">
+                                    <i class="fas fa-file-excel"></i> Excel
+                                </button>
+                            </div>
+                        </div>
+
+                        <br />
+                        <div class="table-responsive">
+                            <table id="example" class="display mt-2 table table-striped" style="width:100%">
+                                <thead style="background-color:rgb(94, 114, 228);">
+                                    <tr style="color: white;">
+                                        <th>Item</th>
+                                        <th> Category</th>
+                                        <th>Supplier</th>
+                                        <th>Store</th>
+                                        <th>Quantity </th>
+                                        <th>Purchase Prize</th>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Books</td>
+                                        <td>Stationary</td>
+                                        <td>Abc</td>
+                                        <td>Store1</td>
+                                        <td>22</td>
+                                        <td>15000</td>
+                                        <td>15000</td>
+                                        <td>abc...</td>
+
+                                        <td>
+                                            <button class="btn btn-primary"><i class="fas fa-edit edit-icon"></i></button>
+                                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+

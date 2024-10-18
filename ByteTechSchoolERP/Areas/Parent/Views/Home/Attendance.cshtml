@@ -1,0 +1,65 @@
+﻿@using ByteTechSchoolERP.Models.ViewModels
+@model IEnumerable<AttendanceViewModel>
+
+<div class="page-wrapper">
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%;margin:0px;">
+                <strong>Student</strong> |
+                <i class="fas fa-home home-icon"></i> -  Attendance
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-12 mt-4" id="classFormContainer">
+            <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                <div class="table-responsive">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h5 class="formTitle">Attendance List</h5>
+                    </div>
+
+                    <table id="HostelRoomTypetableId" class="display mt-2" style="width:100%">
+                        <thead style="background-color: rgb(94, 114, 228); color: white;">
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Attendance Date</th>
+                                <th>Status</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.StudentName</td>
+                                    <td>@item.AttendanceDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.Status</td>
+                                    <td>@item.Remarks</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include DataTables CSS and JS Files -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#HostelRoomTypetableId').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "lengthChange": true,
+            "autoWidth": false
+        });
+    });
+</script>

@@ -1,0 +1,355 @@
+﻿ @model ByteTechSchoolERP.Models.ViewModels.StudentAttendanceVM
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+</head>
+<div class="page-wrapper">
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <strong>Student Management </strong> |
+                <i class="fas fa-home home-icon"></i> - Student Attendence
+            </div>
+        </div>
+
+
+    </div>
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <div class="row ">
+                    <div class="col-sm-12">
+                        <form class="row">
+                            <!-- First Column -->
+                            <!-- Second Column -->
+                            <div class="col-md-4 local-forms label">
+                                <div style="position: relative;">
+                                    <label id="label-color"> Class<span class="login-danger">*</span></label>
+                                    <select class="form-control" asp-for="PromoteClassId" id="PromoteClassId" asp-items="@ViewBag.Classlist" onchange="SelectClass()" style="padding-right: 30px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'black\' width=\'18px\' height=\'18px\'><path d=\'M7 10l5 5 5-5z\'/><path d=\'M0 0h24v24H0z\' fill=\'none\'/></svg>'); background-repeat: no-repeat; background-position: right center;">
+                                        <option value="">Select Class</option>
+
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 local-forms label">
+                                <div style="position: relative;">
+                                    <label id="label-color"> Section<span class="login-danger">*</span></label>
+                                    <select class="form-control" asp-for="PromoteSectionId" id="PromoteSectionId" style="padding-right: 30px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'black\' width=\'18px\' height=\'18px\'><path d=\'M7 10l5 5 5-5z\'/><path d=\'M0 0h24v24H0z\' fill=\'none\'/></svg>'); background-repeat: no-repeat; background-position: right center;">
+                                        <option value="">Select Section</option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 local-forms label">
+                                <div class="local-forms label" style="position: relative;">
+                                    <label id="label-color"> Attendance Date*</label>
+                                    <input type="date" class="form-control" asp-for="AttendanceDate" id="AttendanceDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                                </div>
+                                </br>
+                                <div class="student-submit" style="text-align: center;">
+                                    <button type="button" id="filterButton" class="btn btn-primary">
+                                        <i class="fas fa-search"></i> Filter Data
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>
+                            Student List
+                        </h4>
+                        <div class="staff-member">
+
+                            <div class="attendance-options">
+                                <label>
+                                    <input type="radio" name="attendance_john" class="attendance-option" value="Present">
+                                    Present
+                                </label>
+                                <label><input type="radio" name="attendance_john" value="Absent" class="attendance-option"> Absent</label>
+
+                                <label><input type="radio" name="attendance_john" value="Late" class="attendance-option"> Late</label>
+                               
+                                <label>
+                                    <input type="radio" name="attendance_john" value="On Leave" class="attendance-option">
+                                    On Leave
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="student-submit" style="float: right; text-align: right;">
+                            <button type="button" class="btn btn-primary" id="submitAttendance">
+                                <i class="fas fa-save"></i> Save Attendance
+                            </button>
+                        </div>
+                    </div>
+                </div><br />
+
+
+                <div class="table-responsive">
+                    <table id="attendenceid" class="table table-striped">
+                        <thead style="background-color:rgb(94, 114, 228);">
+                            <tr style="color: white;">
+                                <th><input type="checkbox" id="select-all"></th>
+
+                                <th>Student Name</th>
+                                <th>Class</th>
+                                <th>Section</th>
+                                <th>Attendance</th>
+                                <th>Remarks</th>
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+@section Scripts {
+
+    <script>
+        function SelectClass() {
+            debugger
+            var classId = $('#PromoteClassId').val();
+            $.ajax({
+                type: "GET",
+                url: "/Admin/StudentManagement/GetSectiondata",
+                data: { classId: classId },
+                success: function (data) {
+                    var sectionDropdown = $('#PromoteSectionId');
+                    sectionDropdown.empty();  // Clear existing options
+
+                    // Add default option
+                    sectionDropdown.append('<option value="">Select Section</option>');
+
+                    // Check if data.data is defined and has length
+                    if (data && data.data && data.data.length > 0) {
+                        // Iterate through data.data and add options
+                        $.each(data.data, function (index, item) {
+                            sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                        });
+                    } else {
+                        console.error("No data or incorrect data format received.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error fetching section data:", status, error);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            var table = $('#attendenceid').DataTable({
+                columns: [
+                    {
+                        data: null,
+                        render: function (data, type, row) {
+                            return '<input type="checkbox" class="student-checkbox" value="' + data.id + '">';
+                        },
+                        orderable: false
+                    },
+                    { data: 'fullName', title: 'Name' },
+                    { data: 'className', title: 'Class' },
+                    { data: 'sectionName', title: 'Section' },
+                    {
+                        data: null,
+                        render: function (data, type, row) {
+                            return `
+                            <div class="form-check">
+                                <input class="form-check-input attendance-checkbox" type="radio" name="attendance-${data.id}" value="Present" id="present-${data.id}">
+                                <label class="form-check-label" for="present-${data.id}">Present</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input attendance-checkbox" type="radio" name="attendance-${data.id}" value="Absent" id="absent-${data.id}">
+                                <label class="form-check-label" for="absent-${data.id}">Absent</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input attendance-checkbox" type="radio" name="attendance-${data.id}" value="Late" id="late-${data.id}">
+                                <label class="form-check-label" for="late-${data.id}">Late</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input attendance-checkbox" type="radio" name="attendance-${data.id}" value="On Leave" id="on-leave-${data.id}">
+                                <label class="form-check-label" for="on-leave-${data.id}">On Leave</label>
+                            </div>
+                        `;
+                        },
+                        orderable: false
+                    },
+                    {
+                        data: null,
+                        render: function (data, type, row) {
+                            return '<textarea class="form-control" rows="1" placeholder="Remarks"></textarea>';
+                        },
+                        orderable: false
+                    }
+                ]
+            });
+
+            $('.attendance-option').on('change', function () {
+                var selectedValue = $(this).val();
+                $('.attendance-checkbox').each(function () {
+                    var $radioButtons = $(this).closest('td').find('input[type="radio"]');
+                    $radioButtons.prop('checked', false); // Uncheck all radio buttons
+                    $radioButtons.filter(`[value="${selectedValue}"]`).prop('checked', true); // Check the selected value
+                });
+            });
+
+            // Function to filter data
+
+            // Function to filter data
+            function filterData() {
+                debugger
+                var isValid = true;
+
+                var classId = $('#PromoteClassId').val();
+                var sectionId = $('#PromoteSectionId').val();
+                
+                if (classId === '') {
+                    $('#PromoteClassId').focus();
+                    isValid = false;
+                } else if (sectionId === '') {
+                    $('#PromoteSectionId').focus();
+                    isValid = false;
+                } 
+
+                if (isValid) {
+                    calltheTable();
+                }
+            }
+
+            // Function to call the table and fetch data
+            function calltheTable() {
+                var classId = $('#PromoteClassId').val();
+                var sectionId = $('#PromoteSectionId').val();
+
+                $.ajax({
+                    url: "/Admin/StudentManagement/GetFilteredStudentData",
+                    type: "GET",
+                    data: {
+                        classId: classId,
+                        sectionId: sectionId
+                    },
+                    success: function (response) {
+                         
+                        if (response !== null && response.data && response.data.length > 0) {
+                            table.clear().rows.add(response.data).draw();
+                        } else {
+                            table.clear().draw();
+                            alert('No records found!');
+                        }
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            }
+
+            // Attach filterData function to button click
+            $('#filterButton').on('click', filterData);
+
+
+
+            $('#select-all').on('click', function () {
+                var rows = table.rows({ 'search': 'applied' }).nodes();
+                $('input[type="checkbox"].student-checkbox', rows).prop('checked', this.checked);
+            });
+
+            // Handle individual row checkbox
+            $('#studentPromotiontable tbody').on('change', 'input[type="checkbox"].student-checkbox', function () {
+                var allCheckboxes = $('input[type="checkbox"].student-checkbox', table.rows().nodes());
+                var checkedCheckboxes = allCheckboxes.filter(':checked');
+
+                // Set the state of the 'select-all' checkbox
+                if (checkedCheckboxes.length === allCheckboxes.length) {
+                    $('#select-all').prop('checked', true).prop('indeterminate', false);
+                } else if (checkedCheckboxes.length === 0) {
+                    $('#select-all').prop('checked', false).prop('indeterminate', false);
+                } else {
+                    $('#select-all').prop('checked', false).prop('indeterminate', true);
+                }
+            });
+
+            $('#submitAttendance').click(function () {
+                var classID = $('#PromoteClassId').val();
+                var sectionID = $('#PromoteSectionId').val();
+                var attendanceDate = $('#AttendanceDate').val();
+                var attendanceData = [];
+
+                $('#attendenceid tbody tr').each(function () {
+                    // Check if the student checkbox is checked
+                    var studentCheckbox = $(this).find('.student-checkbox');
+                    if (studentCheckbox.is(':checked')) {
+                        var studentId = studentCheckbox.val();
+                        var attendanceStatus = $(this).find('.attendance-checkbox:checked').val();
+                        var remarks = $(this).find('textarea').val();
+
+                        attendanceData.push({
+                            StudentIds: studentId,
+                            Status: attendanceStatus,
+                            Remarks: remarks,
+                            PromoteClassId: classID,
+                            PromoteSectionId: sectionID,
+                            AttendanceDate: attendanceDate,
+                        });
+                    }
+                });
+
+                if (attendanceData.length > 0) {
+                    $.ajax({
+                        url: '/Admin/StudentManagement/SubmitAttendance',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(attendanceData),
+                        success: function (response) {
+                             toastr.success('Attendance submitted successfully.');
+                            table.clear().draw();
+                        },
+                        error: function (xhr, status, error) {
+                            console.error('Error submitting attendance:', error);
+                            alert('An error occurred while submitting attendance.');
+                        }
+                    });
+                } else {
+                    alert('Please select at least one student to submit attendance.');
+                }
+            });
+
+
+
+        });
+    </script>
+}

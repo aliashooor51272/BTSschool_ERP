@@ -1,0 +1,37 @@
+Academics
+
+>Promote student
+>subject Group
+>subject
+>class
+>Section
+
+Examination
+
+>
+
+Time Table Mangement
+
+>AddTimtabe
+
+Hr
+
+>Report
+
+General Settings
+
+>RulesAndRegulation
+>logout
+
+Account Management 
+>?
+>?
+>?
+>?
+>?
+
+Lesson
+>Add Lesson
+>?
+>?
+>?

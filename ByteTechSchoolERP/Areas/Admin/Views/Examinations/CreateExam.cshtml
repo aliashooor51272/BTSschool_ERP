@@ -1,0 +1,661 @@
+﻿@model ByteTechSchoolERP.Models.Exam.ExamList
+
+@{
+    ViewData["Title"] = "Exam Management";
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+
+    </style>
+</head>
+
+<div class="page-wrapper">
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%; margin:0px;">
+                <strong>Exam Management</strong>
+                <i class="fas fa-home home-icon"></i> - Exam List
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Form Modal -->
+    <div class="modal fade" id="examFormModal" tabindex="-1" aria-labelledby="examFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-3 shadow-lg">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="examFormModalLabel">Add New Exam</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="examForm">
+                        <input type="hidden" id="examId" name="Id" />
+
+                        <div class="mb-3">
+                            <label for="examName" class="form-label">Exam Name</label>
+                            <input type="text" asp-for="ExamName" class="form-control" id="examName" name="ExamName" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="examDescription" class="form-label">Description</label>
+                            <textarea class="form-control" asp-for="Description" id="examDescription" name="Description" rows="3"></textarea>
+                        </div>
+
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Class<span class="login-danger">*</span></label>
+                                <select asp-for="ClassId" class="form1-input form-select" asp-items="@ViewBag.Clasess" id="class-dropdown" onchange="SelectClass()" style="border-radius: 19px;">
+                                    <option value="">Select Class</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        </br>
+
+                        <div class="col-md-12 local-forms label">
+                            <div style="position: relative;">
+                                <label id="label-color">Section<span class="login-danger">*</span></label>
+                                <select id="SectionId" class="form-control" asp-for="SeactionId">
+                                    <option value="">Select Section</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="termId" class="form-label">Terms</label>
+                            <select asp-for="TermId" class="form-select" asp-items="@ViewBag.Terms" id="termId" required>
+                                <option value="">Select Term</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="gradeId" class="form-label">Grade</label>
+                            <select asp-for="GradeId" class="form-select" id="gradeId" required>
+                                <option value="">Select Grade</option>
+                                @foreach (var grade in ViewBag.Grade)
+                                {
+                                    <option value="@grade.Value">@grade.Text</option>
+                                }
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="team" class="form-label">Session</label>
+                            <input type="text" asp-for="Session" class="form-control" id="team" name="Session" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="AddExamDate" class="form-label">Date</label>
+                            <input type="date" asp-for="AddExamDate" class="form-control" id="AddExamDate" name="AddExamDate" required
+                                   min="2001-01-01" max="2024-12-31">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="isPublished" class="form-label">Is Published</label>
+                            <select asp-for="IsPublished" class="form-select" id="isPublished" required>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Exam</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Exam Form Modal -->
+    <div class="tab-container container-fluid mt-3">
+        <div>
+            <div class="col-md8">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <!-- Edit All Button -->
+
+                    <button type="button" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete All
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-file-csv"></i> CSV
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <i class="fas fa-file-pdf"></i> PDF
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                    <button type="button" class="btn btn-info">
+                        <i class="fas fa-file-excel"></i> Excel
+                    </button>
+                    <button type="button" class="btn btn-primary" id="filterButton" style="float: right;margin-left: 281px;">
+                        <i class="fas fa-plus"></i> Add Exam
+                    </button>
+                </div>
+                <br /><br />
+                <div class="row">
+                    <div class="col-md-12" style="overflow-x: auto;">
+                        <table id="examTable" class="display mt-2" style="width:100%">
+                            <thead style="background-color:rgb(94, 114, 228);">
+                                <tr style="color: white;">
+                                    <th>Exam Name</th>
+                                    <th>Description</th>
+                                    <th>Class</th>
+                                    <th>Section</th>
+                                    <th>Term</th>
+                                    <th>Grade</th>
+                                    <th>Session</th>
+                                    <th>Published</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be populated by DataTables -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="subjectFormModal" tabindex="-1" aria-labelledby="subjectFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-3 shadow-lg" style="width: 130%;">
+            <form id="examSchedulerForm" method="post" action="/Admin/Examinations/SaveExamSchedule">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="subjectFormModalLabel">Add Subject</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <h5 id="modalExamName"></h5>
+                        <h5 id="modalClassName"></h5>
+                        <h5 id="modalSectionName"></h5>
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-sm-8"><h2>Add Exam Subject<b>Details</b></h2></div>
+                                    <div class="col-sm-4">
+                                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-bordered" id="examTable">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Name</th>
+                                        <th>Date</th>
+                                        <th>Start Time</th>
+                                        <th>Duration</th>
+                                        <th>Room NO</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data will be populated here dynamically by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save Exam</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Subject Form Modal -->
+<!-- Modal Structure -->
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+       console.log("asdasdasdasd");
+var examTable = $('#examTable').DataTable({
+    
+    "ajax": {
+        "url": "/Admin/Examinations/ExamList",  // URL to fetch data from the server
+        "type": "GET",
+        "dataSrc": "data"  // Make sure this is correctly set
+    },
+    "columns": [
+        { "data": "examName" },
+        { "data": "description" },
+        { "data": "className" },
+        { "data": "sectionName" },
+        { "data": "termName" },
+        { "data": "gradeName" },
+        { "data": "session" },
+        { "data": "isPublished" },
+        { "data": "addExamDate" },
+        {
+            "data": null,
+            "render": function (data, type, row) {
+                return `
+                    <div class="container">
+                        <button class="btn btn-primary btn-sm edit-btn" data-id="${data.id}">
+                            <i style="font-size:15px" class="fa">&#xf044;</i>
+                        </button>
+                        <button class="btn btn-danger btn-sm delete-btn" data-id="${data.id}">
+                            <i style="font-size:15px" class="fa fa-trash"></i>
+                        </button>
+                        <button class="btn btn-secondary btn-sm subject-btn"
+                            data-id="${data.id}"
+                            data-exam-name="${data.examName}"
+                            data-class-name="${data.className}"
+                            data-section-name="${data.sectionName}"
+                            data-bs-toggle="modal" data-bs-target="#subjectFormModal">
+                            <i style="font-size:15px" class="fa fa-book"></i>
+                        </button>
+                    </div>`;
+            },
+            "orderable": false
+        }
+    ]
+});
+});  $(document).ready(function () {
+
+            // Open modal for adding a new exam
+            $('#filterButton').on('click', function () {
+                $('#examFormModalLabel').text('Add New Exam');
+                $('#examForm')[0].reset();
+                $('#examId').val('');
+                $('#examFormModal').modal('show');
+            });
+
+            // Open modal for editing an exam
+            $('#examTable').on('click', '.edit-btn', function () {
+                const id = $(this).data('id');
+                $.ajax({
+                    url: `/Admin/Examinations/GetExamById`,
+                    type: 'GET',
+                    data: { id: id },
+                    success: function (data) {
+                        $('#examId').val(data.id);
+                        $('#examName').val(data.examName);
+                        $('#examDescription').val(data.description);
+                        $('#class-dropdown').val(data.classId).change();
+                        $('#SectionId').val(data.sectionId);
+                        $('#termId').val(data.termId);
+                        $('#gradeId').val(data.gradeId);
+                        $('#team').val(data.session);
+                        $('#AddExamDate').val(data.examDate);
+                        $('#isPublished').val(data.isPublished);
+                        $('#examFormModalLabel').text('Edit Exam');
+                        $('#examFormModal').modal('show');
+                    },
+                    error: function () {
+                        toastr.error('Failed to fetch exam details.');
+                    }
+                });
+            });
+
+
+
+            // Fetch and populate sections based on selected class
+            $('#class-dropdown').on('change', function () {
+                var classId = $(this).val();
+                if (!classId) {
+                    return; // No class selected, do nothing
+                }
+                $.ajax({
+                    type: "GET",
+                    url: "/Admin/Examinations/GetTheRelatedSection",
+                    data: { classId: classId },
+                    success: function (data) {
+                        var sectionDropdown = $('#SectionId');
+                        sectionDropdown.empty();  // Clear existing options
+                        sectionDropdown.append('<option value="">Select Section</option>');
+                        if (data && data.data && data.data.length > 0) {
+                            $.each(data.data, function (index, item) {
+                                sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                            });
+                        } else {
+                            console.error("No data or incorrect data format received.");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error fetching section data:", status, error);
+                    }
+                });
+            });
+
+            // Delete exam
+            $('#examTable').on('click', '.delete-btn', function () {
+                const id = $(this).data('id');
+                if (confirm('Are you sure you want to delete this exam?')) {
+                    $.ajax({
+                        url: `/Admin/Examinations/DeleteExam`,
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (response) {
+                            if (response.isSuccess) {
+                                toastr.success('Exam deleted successfully.');
+                                examTable.ajax.reload();
+                            } else {
+                                toastr.error('Failed to delete exam.');
+                            }
+                        },
+                        error: function () {
+                            toastr.error('Error deleting exam.');
+                        }
+                    });
+                }
+            });
+            // Handle subject button click to load and display exam schedules
+            $(document).on("click", ".subject-btn", function () {
+                examId = $(this).data("id"); // Get the exam ID
+                fetchExamSchedules(examId); // Fetch and display exam schedules
+            });
+
+            // Function to fetch exam schedules
+            function fetchExamSchedules(examId) {
+                $.ajax({
+                    url: '/Admin/Examinations/GetExamSchedules',
+                    type: 'GET',
+                    data: { examId: examId },
+                    success: function (response) {
+                        var schedules = response.data;
+                        var tableBody = $("#subjectFormModal table tbody");
+                        tableBody.empty(); // Clear existing rows
+
+                        schedules.forEach(function (schedule, index) {
+                            var row = `<tr>
+                                            <td><input type="hidden" name="examSchedules[${index}].Id" value="${schedule.id}">
+                                                <input type="hidden" name="examSchedules[${index}].ExamId" value="${examId}">
+                                                ${schedule.subjectName}
+                                                <input type="hidden" name="examSchedules[${index}].SubjectId" value="${schedule.subjectId}">
+                                            </td>
+                                            <td><input type="date" class="form-control" name="examSchedules[${index}].Date" value="${schedule.date.split('T')[0]}"></td>
+                                            <td><input type="time" class="form-control" name="examSchedules[${index}].StartTime" value="${schedule.startTime}"></td>
+                                                    <td><input type="text" class="form-control" name="examSchedules[${index}].Duration" value="${schedule.duration}"></td>
+                                            <td><input type="text" class="form-control" name="examSchedules[${index}].Roomno" value="${schedule.roomno}"></td>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm delete-btn" data-id="${schedule.id}">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>`;
+                            tableBody.append(row);
+                        });
+                        $('[data-toggle="tooltip"]').tooltip(); // Initialize tooltips
+                    },
+                    error: function () {
+                        alert('Failed to fetch exam schedules.');
+                    }
+                });
+            }
+
+
+
+            $(".add-new").click(function () {
+                var dropdownOptions = '';
+                var subjects = @Html.Raw(Json.Serialize(ViewBag.Subject));
+                subjects.forEach(function (subject) {
+                    dropdownOptions += `<option value="${subject.id}">${subject.subjectName}</option>`;
+                });
+
+                var rowCount = $("#subjectFormModal table tbody tr").length;
+
+                // Here, we're using an empty string for existingSchedule because we're creating a new row.
+                var row = `<tr>
+                        <td>
+                            <select class="form-control" name="examSchedules[${rowCount}].SubjectId">${dropdownOptions}</select>
+                        </td>
+                        <td><input type="date" class="form-control" name="examSchedules[${rowCount}].Date"></td>
+                        <td><input type="time" class="form-control" name="examSchedules[${rowCount}].StartTime"></td>
+                        <td><input type="text" class="form-control" name="examSchedules[${rowCount}].Duration"></td>
+                        <td><input type="text" class="form-control" name="examSchedules[${rowCount}].Roomno"></td>
+                        <td style="display: none;">
+                            <input type="hidden" class="form-control" name="examSchedules[${rowCount}].ExamId" value="${examId}">
+                            <input type="hidden" class="form-control" name="examSchedules[${rowCount}].Id" value=""> <!-- Hidden Id for new row -->
+                            <input type="hidden" class="form-control" name="examSchedules[${rowCount}].SubjectId" value=""> <!-- Hidden SubjectId for new row -->
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-sm delete-btn">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>`;
+
+                $("#subjectFormModal table tbody").append(row);
+                $('[data-toggle="tooltip"]').tooltip(); // Initialize tooltips if you're using them
+            });
+
+
+            // Ensure form data is correctly passed on form submit
+            $("#examScheduleForm").on("submit", function () {
+                $("#subjectFormModal table tbody tr").each(function (index) {
+                    $(this).find('select, input').each(function () {
+                        var name = $(this).attr('name');
+                        if (name) {
+                            var newName = name.replace(/\[\d+\]/, `[${index}]`);
+                            $(this).attr('name', newName);
+                        }
+                    });
+                });
+            });
+        });
+
+        $('#examForm').on('submit', function (e) {
+            e.preventDefault();
+
+            const formData = $(this).serialize(); // Serialize form data
+
+            // Determine URL based on whether it's an edit or new exam
+            const url = $('#examId').val() ? '/Admin/Examinations/UpdateExam' : '/Admin/Examinations/CreateExam';
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.isSuccess) {
+                        toastr.success(response.message);
+                        $('#examTable').DataTable().ajax.reload(); // Reload DataTables
+                        $('#examFormModal').modal('hide');
+                    } else {
+                        toastr.error(response.message);
+                    }
+                },
+                error: function () {
+                    toastr.error('Failed to save exam.');
+                }
+            });
+        });
+
+
+
+    </script>
+    <script>
+        function SelectClass() {
+            var classId = $('#class-dropdown').val();
+
+            if (!classId) {
+                return; // No class selected, do nothing
+            }
+
+            $.ajax({
+                type: "GET",
+                url: "/Admin/Examinations/GetTheRelatedSection",
+                data: { classId: classId },
+                success: function (data) {
+                    var sectionDropdown = $('#SectionId');
+                    sectionDropdown.empty();  // Clear existing options
+
+                    sectionDropdown.append('<option value="">Select Section</option>');
+
+                    if (data && data.data && data.data.length > 0) {
+                        $.each(data.data, function (index, item) {
+                            sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                        });
+                    } else {
+                        console.error("No data or incorrect data format received.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error fetching section data:", status, error);
+                }
+            });
+        }
+    </script>
+    <script>
+        // Open modal for subject and dynamically set exam, class, and section
+        $('#examTable').on('click', '.subject-btn', function () {
+            const examName = $(this).data('exam-name');
+            const className = $(this).data('class-name');
+            const sectionName = $(this).data('section-name');
+
+            // Set the values in the modal's <h5> tags
+            $('#modalExamName').text(`Exam Name: ${examName}`);
+            $('#modalClassName').text(`Class: ${className}`);
+            $('#modalSectionName').text(`Section: ${sectionName}`);
+        });
+        $(document).ready(function () {
+            // Open modal when Add Subject button is clicked
+            $('#addSubjectButton').on('click', function () {
+                $('#subjectFormModal').modal('show');
+            });
+
+            // Handle form submission
+            $('#subjectForm').on('submit', function (e) {
+                e.preventDefault();
+                const formData = $(this).serialize();
+
+                $.ajax({
+                    url: '/Admin/Subjects/AddSubject', // Update this URL to your actual endpoint
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        if (response.isSuccess) {
+                            toastr.success(response.message);
+                            $('#subjectForm')[0].reset(); // Reset form fields
+                            $('#subjectFormModal').modal('hide');
+                        } else {
+                            toastr.error(response.message);
+                        }
+                    },
+                    error: function () {
+                        toastr.error('Failed to add subject.');
+                    }
+                });
+            });
+        });
+
+
+
+
+
+    </script>
+    <script>
+        document.querySelectorAll('.subject-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const dataId = this.getAttribute('data-id');
+
+                // Example of setting dynamic content
+                document.getElementById('modalExamName').innerText = `Exam Name for ID: ${dataId}`;
+                document.getElementById('modalClassName').innerText = `Class Name for ID: ${dataId}`;
+
+                // You can add more dynamic content updates here as needed
+            });
+        });
+
+        // Function to dynamically set modal content
+        function setModalContent(examName, className, sectionName) {
+            document.getElementById('modalExamName').textContent = `Exam Name: ${examName}`;
+            document.getElementById('modalClassName').textContent = `Class: ${className}`;
+            document.getElementById('modalSectionName').textContent = `Section: ${sectionName}`;
+        }
+
+        // Example of how you might trigger this
+        $(document).ready(function () {
+            // Existing code...
+
+            // Open modal for adding subject and dynamically set exam, class, and section
+            $('#examTable').on('click', '.subject-btn', function () {
+                const examName = $(this).data('exam-name');
+                const className = $(this).data('class-name');
+                const sectionName = $(this).data('section-name');
+
+                // Set the values in the modal's <h1> tags
+                $('#modalExamName').text(`Exam Name: ${examName}`);
+                $('#modalClassName').text(`Class: ${className}`);
+                $('#modalSectionName').text(`Section: ${sectionName}`);
+            });
+
+            // Existing code...
+        });
+
+
+
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            // Existing code...
+
+            // Submit form using AJAX
+            $("#examSchedulerForm").on("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                var form = $(this);
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: form.serialize(), // Serialize form data
+                    success: function (data) {
+                        if (data) {
+                            // Update the table with the saved data
+                            var tbody = $("#subjectFormModal table tbody");
+                            tbody.empty(); // Clear existing table data
+
+                            data.forEach(function (schedule) {
+                                var row = '<tr>' +
+                                    '    <td>' + schedule.subjectName + '</td>' +
+                                    '    <td>' + new Date(schedule.date).toLocaleDateString() + '</td>' +
+                                    '    <td>' + schedule.startTime + '</td>' +
+                                    '    <td>' + schedule.duration + '</td>' +
+                                    '    <td>' + schedule.roomNo + '</td>' +
+                                    '    <td>' + actions + '</td>' +
+                                    '</tr>';
+
+                                tbody.append(row); // Append the new row
+                            });
+
+                            // Close the modal
+                            $('#subjectFormModal').modal('hide');
+                        }
+                    },
+                    error: function () {
+                        alert("An error occurred while saving the exam schedule.");
+                    }
+                });
+            });
+
+            // Existing code...
+        });
+
+    </script>
+
+}

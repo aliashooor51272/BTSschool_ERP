@@ -1,0 +1,335 @@
+﻿@model IEnumerable<ByteTechSchoolERP.Models.SubAdmin.SubAdminn>
+
+@{
+    ViewData["Title"] = "SubAdmin List";
+}
+
+<h2>@ViewData["Title"]</h2>
+<head>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+</head>
+
+<div class="page-wrapper"
+
+
+
+   <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <div class="row p-2">
+             <div class="table-responsive">
+                  <div  class="d-flex justify-content-end p-2">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSubAdminModal">Add New</button>
+                  </div>
+                                      <div class="card">
+       <div class="card-header">
+           <h5>Search Filters</h5>
+       </div>
+       <div class="card-body">
+           <form id="filterForm">
+               <div class="row">
+                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label for="firstNameFilter">ID</label>
+                           <input type="text" class="form-control" id="firstNameFilter" placeholder="Id" />
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label for="firstNameFilter">User Name</label>
+                           <input type="text" class="form-control" id="lastNameFilter" placeholder="User Name" />
+                       </div>
+                   </div>
+                                                                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label for="emailFilter">Email</label>
+                           <input type="text" class="form-control" id="emailFilter" placeholder="Email" />
+                       </div>
+                   </div>
+                  
+                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label for="phoneFilter">Phone Number</label>
+                           <input type="text" class="form-control" id="phoneFilter" placeholder="Phone Number" />
+                       </div>
+                   </div>
+             
+                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label for="campusFilter">Campus Name</label>
+                           <input type="text" class="form-control" id="campusFilter" placeholder="Campus Name" />
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label for="cnicFilter">CNIC Number</label>
+                           <input type="text" class="form-control" id="cnicFilter" placeholder="CNIC Number" />
+                       </div>
+                   </div>
+             
+              
+                   <div class="col-md-4">
+                       <div class="form-group">
+                           <label for="sourceFilter">Status</label>
+                           <input type="text" class="form-control" id="sourceFilter" placeholder="Status" />
+                       </div>
+                   </div>
+
+               </div>
+           </form>
+       </div>
+   </div>
+                    <!-- Table to display existing SubAdmin records -->
+                    <table id="subAdminTable" class="display table mt-2" style="width:100%;">
+                        <thead style="background-color:rgb(94, 114, 228);">
+                            <tr style="color: white;">
+                                <th>Id</th> <!-- Auto-increment ID column -->
+                                <th>UserName</th>
+                                <th>Email</th>
+                                <th>PhoneNumber</th>
+                                <th>CNICNumber</th>
+                                <th>CampusName</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var subAdmin in Model)
+                            {
+                                <tr>
+                                    <td>@subAdmin.Id</td> <!-- Placeholder for auto-increment ID -->
+                                    <td>@subAdmin.UserName</td>
+                                    <td>@subAdmin.Email</td>
+                                    <td>@subAdmin.PhoneNumber</td>
+                                    <td>@subAdmin.CNICNumber</td>
+                                    <td>@subAdmin.CampusName</td>
+                                    <td>@(subAdmin.Status ? "Active" : "Inactive")</td>
+                                    <td>
+                                            <a href="#" class="btn btn-primary edit-btn"
+       data-bs-toggle="modal"
+       data-bs-target="#editSubAdminModal"
+       data-id="@subAdmin.Id"
+       data-username="@subAdmin.UserName"
+       data-email="@subAdmin.Email"
+       data-phonenumber="@subAdmin.PhoneNumber"
+       data-cnicnumber="@subAdmin.CNICNumber"
+       data-campusname="@subAdmin.CampusName"
+       data-status="@subAdmin.Status">
+        <i class="fas fa-edit"></i> <!-- Use the appropriate icon class -->
+    </a>
+
+                                     </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div
+                <div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal for adding new SubAdmin -->
+<div class="modal fade" id="addSubAdminModal" tabindex="-1" aria-labelledby="addSubAdminModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addSubAdminModalLabel">Add New SubAdmin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="RegisterSubAdmin" asp-controller="SubAdminRegister" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label Name="UserName" class="control-label">User Name</label>
+                        <input Name="UserName" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label Name="Email" class="control-label" >Email</label>
+                        <input Name="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label Name="PhoneNumber" class="control-label">Phone Number</label>
+                        <input Name="PhoneNumber" class="form-control"  required  title="Please enter a valid phone number"/>
+                    </div>
+                    <div class="form-group">
+                        <label Name="CNICNumber" class="control-label">CNIC Number</label>
+                        <input Name="CNICNumber" class="form-control"   minlength="15"  required/>
+                    </div>
+                        <div class="form-group">
+                            <label for="CampusName" class="control-label">Campus Name</label>
+                            <select id="CampusName" name="CampusName" class="form-control" required>
+                                <option value="">Select Campus</option>
+                                @if (ViewBag.Campuses != null)
+                                {
+                                    foreach (var campus in (IEnumerable<SelectListItem>)ViewBag.Campuses)
+                                    {
+                                        <option value="@campus.Value">@campus.Text</option>
+                                    }
+                                }
+                            </select>
+
+                        </div>
+
+                    <div class="form-group">
+                        <label Name="Password" class="control-label">Password</label>
+                        <input Name="Password" type="password" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label Name="ConfirmPassword" class="control-label">Confirm Password</label>
+                        <input Name="ConfirmPassword" type="password" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>   
+    </div>   
+    </div>   
+    </div>
+<!-- Modal for editing SubAdmin -->
+<div class="modal fade" id="editSubAdminModal" tabindex="-1" aria-labelledby="editSubAdminModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editSubAdminModalLabel">Edit SubAdmin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Edit" asp-controller="SubAdminRegister" asp-area="Admin" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="SubAdminId" name="Id" />
+
+                    <div class="form-group">
+                        <label for="UserName" class="control-label">User Name</label>
+                        <input id="UserName" name="UserName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="control-label">Email</label>
+                        <input id="Email" name="Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="PhoneNumber" class="control-label">Phone Number</label>
+                        <input id="PhoneNumber" name="PhoneNumber" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="CNICNumber" class="control-label">CNIC Number</label>
+                        <input id="CNICNumber" name="CNICNumber" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="CampusName" class="control-label">Campus Name</label>
+                        <select id="CampusName" name="CampusName" class="form-control" required>
+                            <option value="">Select Campus</option>
+                            @if (ViewBag.Campuses != null)
+                            {
+                                foreach (var campus in (IEnumerable<SelectListItem>)ViewBag.Campuses)
+                                {
+                                    <option value="@campus.Value">@campus.Text</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Status" class="control-label">Status</label>
+                        <select id="Status" name="Status" class="form-control">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Bootstrap JavaScript and CSS links here -->
+<!-- Initialize DataTable -->
+<script>
+    $(document).ready(function () {
+      var table =   $('#subAdminTable').DataTable({
+            "columnDefs": [
+                {
+                    "targets": 0,
+                    "render": function (data, type, row, meta) {
+                        return meta.row + 1; // Auto-increment ID
+                    }
+                }
+            ]
+        });
+           // Handle edit button click
+$(document).ready(function () {
+    $('.edit-btn').click(function () {
+        var id = $(this).data('id');
+        var username = $(this).data('username');
+        var email = $(this).data('email');
+        var phoneNumber = $(this).data('phonenumber');
+        var cnicNumber = $(this).data('cnicnumber');
+        var campusName = $(this).data('campusname');
+        var status = $(this).data('status');
+
+        // Populate the edit modal with the current data
+        $('#editSubAdminModal #SubAdminId').val(id);
+        $('#editSubAdminModal #UserName').val(username);
+        $('#editSubAdminModal #Email').val(email);
+        $('#editSubAdminModal #PhoneNumber').val(phoneNumber);
+        $('#editSubAdminModal #CNICNumber').val(cnicNumber);
+        $('#editSubAdminModal #CampusName').val(campusName);
+        $('#editSubAdminModal #Status').val(status ? "true" : "false");
+    });
+});
+    // Filter by First Name
+    $('#firstNameFilter').on('keyup', function () {
+        table.column(0).search(this.value).draw();
+    });
+    $('#lastNameFilter').on('change', function () {
+        table.column(1).search(this.value).draw();
+    });
+
+    // Filter by Email
+    $('#emailFilter').on('keyup', function () {
+        table.column(2).search(this.value).draw();
+    });
+
+    // Filter by Phone Number
+    $('#phoneFilter').on('keyup', function () {
+        table.column(3).search(this.value).draw();
+    });
+        // Filter by Source
+    $('#campusFilter').on('keyup', function () {
+        table.column(4).search(this.value).draw();
+    });
+    // Filter by Source
+    $('#cnicFilter').on('keyup', function () {
+        table.column(5).search(this.value).draw();
+    });
+
+    // Filter by Source
+    $('#sourceFilter').on('keyup', function () {
+        table.column(6).search(this.value).draw();
+    });
+
+    // Filter by Date Range (Exact or Partial Match)
+    $('#dateRangeFilter').on('keyup', function () {
+        table.column(7).search(this.value).draw();
+    });
+
+   
+    });
+</script>

@@ -1,0 +1,284 @@
+﻿
+<style>
+
+
+    .containerr {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .card {
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+    }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .name {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .username {
+        font-size: 18px;
+        color: #777;
+        margin: 10px 0;
+    }
+
+    .tagline,
+    .description {
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+</style>
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-sub-header">
+                        <h3 class="page-title">Welcome Parent!</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Parent</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5" style="margin-top: 0rem !important;">
+
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card flex-fill fb sm-box">
+                    <div class="social-likes">
+                        <p>Student Attendance</p>
+                        <h6>400</h6>
+                    </div>
+                    <div class="social-boxs">
+                        <img src="~/assets/img/icons/dash-icon-01.svg" alt="Social Icon">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card flex-fill twitter sm-box">
+                    <div class="social-likes">
+                        <p>Absent Student  </p>
+                        <h6>70+</h6>
+                    </div>
+                    <div class="social-boxs">
+                        <img src="~/assets/img/icons/employee.png" width="65px" alt="Social Icon">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card flex-fill insta sm-box">
+                    <div class="social-likes">
+                        <p>Leave Student </p>
+                        <h6>5</h6>
+                    </div>
+                    <div class="social-boxs">
+                        <img src="~/assets/img/icons/icons8-revenue-64.png" width="50px" alt="Social Icon">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card flex-fill linkedin sm-box">
+                    <div class="social-likes">
+                        <p>Fee Detail </p>
+                        <h6>50+</h6>
+                    </div>
+                    <div class="social-boxs">
+                        <img src="~/assets/img/icons/dash-icon-04.svg" alt="Social Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <div class="containerr">
+
+                            <div class="profile-picture">
+                                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAKcAsQMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAAAQUGAgQHAwj/xAA+EAABAwMCAwUGBAQEBwEAAAABAAIDBAUREiEGMUEHEyJRYRQycYGRoUJSscEjYtHwFSQzwhZDgqKy4fEI/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECBAMF/8QAJREAAwACAgICAQUBAAAAAAAAAAECAxEhMQQSEyKhMmFxgcFB/9oADAMBAAIRAxEAPwDuKSwY/JwV6IAQhCASRWSSEGBQd+X3WS0auWRkrWRyaARk7D+hVgbPXGfkktSGrYyhdUVk7WtaSHSPcGgYVeuPaNwvQDe4d+7logY55+uMfdSC2IVMpu0/hWcsDq58OrrLC8AfEgEK10lXT1tOypo5454JBlkkTw5rh6EbID2QhCECSJAQXYXnueaAzBymkBhZIBITQhIklkhAYoTQgNvAzlCaFQkEJIQDSTWKAF5TMic0ulYzYblzQcBeqrHaTcXWzgm61EbiJHRCJhHPLzp/dSQcR7QeNajiS5vZTSOitULsQQMGA7GfG71O/wBlVBPg5Bx8Fqy5bjB5fdeROOqsSSbagvy04LfMj91YOFuL7lwlV5osS0j3Zlpn+6/4flPr16qp0xI8JO3ktmZsmkYJOfsgPqLhq+0fEdohuNC7DX7OjJy6N3Vp9f6hShK+buAOJajhq9RzB5NHI5rauLO2gn3viOfyPmvpFpDgDnORkEImRrR5gE81mAAshshCBIQmgEhNCASE0IBJLJCA2kIQqFgSOyaR3QADnkhYtaG8srJAJUjtgYHcCVbnEjupYngDqdYG/wBc/JXcqtdoojdwdcI5Q1zZAxuHerwm9chLbSPlmc+LCVNTyVVU2CNp1O5LfmtwNxjgY/Ux52d5qyw0TLTCJaeJ4xzkDclVrJpHaMTbCzcHyygNlcQD6KbZwG17TmU4avOlulf7I2rgdVNY2QsLJWA7jG+wG2/MZU3eL3VUVopqhs2kznBc2MOI3A67Kns+jR6LXRQeKLa201zKaBhOse9j3s9PqvpG0RSQWmihnOZo6aNrz/MGjK5VbrfNfb9ZBO6SQU1b3kvfsDXABhcBt0JDV2IbLrHRkyrVCwgpoVzkYoTKSAHHDcpNOUEZGEAYQDQmEIBIQhAbSEs+SaoWEmhCAEihCASiuJbb/i9lqqFpw+VvgJ5agcj9FKlY58+ia2E9PZ86OtDoK4xVUbmywO1AEYc08iCpy2TxtqO5fpMbjgtK6B2gU1GKFlZI1jZmu7vWTglp2+xwuWwvaytY53u6t8LNctM3YrV8lmvNVbKCmZFFExr5CAdtmj1Xpa6u3VVrIe4PbE48tsDqVXrjDIK8aagPp5PwuA8Pw25fHCm46IxxtpaWSIRPjcZniMA46D3vuiW+Ts1wXThempm1BdTNaGiMkO67kdfl9lZFC8JW40VpZqy50nLPPHT+/VTWFpx/pPOzPdPQ0JEgZLvdCxEjHe69rjvsDlXOQyUIQgGhJCAfJASTQAhLJQgPZgI5r0QhULAhJNAJCF5yzMijdJK9rGNbqc5xwAPVCGZlecoJbkBUG/8AatZqBzorYHXCUbam5bGD8cb/AC+qqM3a1XVMvdVVJHHTk4d7OSHY+ZOr4bLtOG6KPIke/HzH3HiGolLS2SIdzE4fk2+xIyqJUzVlulMdSxxbzDlfobjTXClZM+VssRedFRy0g7tDvLqPiMc1WL+H1E9TVVsckVLTONPSQD3qqUjn8OR29FzmfkTi1q1+f3O036cp8M3LDfLbVxthuLC7G7SRuPRdI4XtNJWRiphic2kPRx3eRtj0AK5ZXUh4doPa6qnDJizIj54d5ZVu4M4pqeGuGLcLnQTTwzd7LUSxkF8JMhOdPVu4zg7LPKatQ0acmT67lnV8DAHQch5JqNs1+td8g7211sU45loOHN+LTuFI5yDjAx5lada7MWzzqQXQyMb7xZstSlgkZNE4xlrQCCTjK3wMIcSRglAGUkIQAhCEA0JIQDQkhAbSEIVCwJJrEnCAa5x2pvluLobQZ5YKEDvaoRe9Mfwsz0GBk/Eequl4usdqt01XL4iwANYOb3Hk0fNcorqyorKj2iWRz3yt1k56laMGP3fJyutEPW8J22tow22xMp6uIeDBIa888Oz+qoeOeQdubT5/1XWqMFr2hu2Dkjoua8WU3sHEdfCRpY6TvYx6P3/cj5L0NJGdrZscH1rGXb/Dqwa6KuBjkY7lk/3j6K6WqgZFfzFdJGST25gNAwM0gxYHjHQkEbjz36jHLYpnQStnYfHGQ8Z8wcrtMVNDcKWhrZAXuY3XE8ndrSOS5OE/5ReK1wU/tEuVZVVlNa6eEezvBdrI/wBR/kPh98qzWaKeWy2SV8j3vZD3czDu7S7Az8nBvyznPXW4jsklxgb3DtE0Uglif+Ujn9QpiGg7xlI6OWSOamOYiz8YIAcHD1z9cHovIyeR7+ViiuKVcr+n+DdOPWOmuVr/AHoqfEVjqrPP/i9hkkpzH4pWwktMf8zcfh8x8/PHQuznjY8RUncV+ltbDjWRsJB0ck9ofs4Ajy2XPH03/C3G9L7PhtHWPDWDJ2DiAR8jg/ML2bxTZgVOTvmdspKN4eqzV0AL3aixxG/MjoVJLz6n1bRpT2gQhBKqASLsJF6xwTzQHoN0LEJoBoQhAbSEIVCwig7pJqSDmvapXSCto6JvuMhdKR/M52kfbV9VWGDRIGu5BjQPkFZO1CLN0glB39mx9C7H6qvVLAarQOgGfot/j/pM+Ts9qPV4nHryVT7U6bTW26tBH8aJ0LvQtOQf+4q20UjZakRs5N5qt9qhjdbKDGctqC0enh3/AEC0W9SVlcnP3uxG4+i7lZWOitdJEfwwNGPl1XIuHLQLs973vLYYgHYA3cfL+wuj2uvjbUt7+rawPAGDybjyzzWK/LjHWjTj8arWzZu11noamONkTiHgkPafdx1Kl+FuIaGorRFM5sRlw3U44a4/XHmtGupn17JKcUvtBexxhnp5Blrt8bfLluqbbqSo9qEEcUolyWOZ5uyQvP8AIrHmyzl1zPRpnHWKHO+zvApoeegfDPJRt0sVrrIiamkim7sEs7xodpPmFocO3CWsmkhqZAXMzGGfzMOD+/0UtL/pytyfdK1xW+jLcepC2qu9i8ZHg/GB+VXJrg4Nc3kVziWQup2RxnxP8O33/qr1aKgT0bBnePwn5LR5Ma5OeN/8N5YSEjkssowsh1PMNzv0XoNkDZCAaSSaAaSMoQGBuHiLe6OztOc9VuFansLcn+I7BdqxtzzlbRKqSNa1dWQUFHNV1cjY4IWF8jj0aAvfPI+a4R20cYS11zfYqCYiipcd9pJ/iy9QfMN2+efIIDVpeKjxLeLjNUEtlme4xRE7RwjSGjP1+ak5ZcSyvAz4juqjwdaZJYPaGBrHTnSx7jsGj+p/8VcayKsjmL4qVh1ZOXSDH0Xo+OtTyZ8nYWqF7ZG1QyWk4UH2k05qzSwxuDQZXyEnoA3J25kgdOZU1Rsujnl3eUwaz/lkbf8AoepXjeqiCVtMypbIe7Li6AjBa4Y07/hIIJyBvt0Vs1JS9sY5bfBD8LtpbbTRShokje4SNcXf6wOBqH5SDnbyU7TU0kdVIylpKcs1ENeXNGofEZKrL5Y5Xy6I2MaXag1owAfRT1qDquMxd89kjd9jjIXjZGrvg9TF9Y5NziFlXDY5K2jj9nromamvp3a8kEbFuP2U7wPqdIyoqGETPpwXOkbvq2z8+aovE1wfSXCGjjm9nYW5dgZ1YI2Kk+HHzGo1w17JYm+8xzNLv1OV0yS8TSZSfXMtlpoNVNe7kA0hjakuY782fEf1IVpLw9ssv4SzLfp1UFBK1+eW636apjFO+KR2DpcR8PJMVr2K54bRWLdKwsZJM4MGnbVttzVpsdUGVA8QMcoxseR/v9VSYrnbZntbQudWuI9yNhwPqpiGJru7e0vp5OowcZ+K9nIlaPOX1OiYPXzTWnbJnVFFC92NQy12PMLbyvLa09GlPaGhJCgAhCEAYQhJAbWSkjKMqCTlPat2gz2yeWw2c6J+7PtNQObNQ2a31wQSfXbC4VM8kYJypri6pfUcT3WWRxJdWzbnns4hQLzlSDpfDEsEnDlMamsjpYoo9GpxA8QPQnqdj81qVccMtQ2SOZ5a3k92Tq9fFlQVleai2tpjuyGd0rmg9S1ob/uUgXOxjomXyLS9UdcOFP7MmGXaph0mOcgtGkHA5KNmnfM4uedRO+Tzz8V4eJ3Ne8Ue2XHYc1kdXk43s0JTC2Z01M6Rw0g6j09Vb7ZbPZCJM63kfIKr11quLWxzUUgfGG5IZ5rbs3Ek9PI2G4tdjkXHovU8bxVC3fZiz5nXEmlxxFJFdKOqY1uH5aS7oVt8KkMq3sfFHG4tyCx3h/v5Ka4itsV5thMR1D3muB5FaNh4YmqDhs4jmZFkOxz5c/quXm4vsqRfxsqU6ZYxMWHwclssrA73j9VFTWG7wxZa8O/v4qKFTVQTdzWNLH9PIrC5aNSuWWKSnp3SOkp/4TnHLu721LzqDXRNJparxjkyVmpjvj1+hUfFUuAG++M816+1ENx1VfnyJ9k/HD7Rd+B6mrqrMZqyiFJIZXNDASQ7GAXD0JVgyo7h3W6yUjn89BOD8ThSK2KnXLMLWnwPKyCxKWfJCDLKMrFCAyyhYoQGxlNYoQHyx2h0TrdxneqZ4I/zT5G+rX+IY+TlWjs/x+7np5LpHbrTmPjYS6cCakjcD5kFzf2XNnbuwfPKFiapbmyO4Mc7vBC9ndvLuY3yDzJ6qwFrQGnUNJ656KkStGBjbHULKkc+SWKB8pETngEFx0gLlWP2OkZPUumWtGo8lJwRNbGNbQWSD3x0WNAKWrg0a43D8zTkLcpon0Lu5qRrp3HLXAbBejg8WI57M+XPV8CttcaObuZDqiPIqXqbVSXGEvDQHO6qKr7WHR64HOx5L34eqS4uglkOobb+a2ozm1aIprdOaeQ6oXDA1dFuNpbnTSyvt9zMLX50kxNcWgkHHLlsVjNR1DJNXeBzPULZhbK4aOSrcTXYTa6KzceIuLaC4T0k16jkcIe+h/ykeJG756cwR+idLJdr5JbZ6ruKiCaSPvA2INPvDI2Wn2hRS07qOs0jMRdk46EHKs/ZtLGIKGCQA5LXxn/q/wDiy5MMafB0m3tE/X8DvbITbJmCEnIZKcFnpnqnQcFziVrq2ojEfVseXE/DZXXJxjJwjmMHBHwXn/HJq+WhRsbGxrGDDWjDQOgWSSFYoIpR7c00zupIBCSaAEIQgPbKMoQgOO//AKCoCWWi4jAA107/ADyfE39HLjDhvlCEJQ5N25Xg0bAJoQkmKGopWt1RSyU7uRLPt6dT0Vutt/kjhbHMPaWDk8bH7oQu2KqT4KUkyXoL5Q1IEbC4OO+ktKwqtMcntVO4gnmCEIW6LbODRKW+/ah3crAV71PElupZGRzvLHPOG4YT1QhT7MqkRPHErKugMQb4QHOyfp/uP0Xt2dPAu1sp3biKAMx65z+wQhccz5LydiygkIQsB22IHKaEKCQQhCkgEFCEAZQhCEn/2Q==" alt="Profile Picture">
+                            </div>
+                            <h2 class="name">Student Profile</h2>
+                            <h3 class="username">fastroware</h3>
+                            <p class="tagline">Keep going.</p>
+                            <p class="description">Masih belajar CSS dan HTML.</p>
+                            <a href="#" class="button">Visit Profile</a>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12 col-lg-6">
+
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <h5 class="card-title">Analytics and Reporting</h5>
+                            </div>
+                            <div class="col-6">
+                                <ul class="chart-list-out">
+                                    <li><span class="circle-blue"></span>  Income</li>
+                                    <li><span class="circle-green"></span>Expense</li>
+                                    <li class="star-menus">
+                                        <a href="javascript:;">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="apexcharts-area"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body">
+        </div>
+
+
+        <div class="row">
+            <div class="col-xl-6 d-flex">
+
+                <div class="card flex-fill comman-shadow">
+                    <div class="card-header d-flex align-items-center">
+                        <h5 class="card-title ">
+                            Behavioral and Social Development
+                        </h5>
+                        <ul class="chart-list-out student-ellips">
+                            <li class="star-menus">
+                                <a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div id="school-area"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12 col-lg-6">
+
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <h5 class="card-title">Attendance & Participation</h5>
+                            </div>
+                            <div class="col-6">
+                                <ul class="chart-list-out">
+                                    <li><span class="circle-blue"></span>Girls</li>
+                                    <li><span class="circle-green"></span>Boys</li>
+                                    <li class="star-menus">
+                                        <a href="javascript:;">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="bar"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-6 d-flex">
+                <div class="card flex-fill student-space comman-shadow">
+                    <div class="card-header d-flex align-items-center">
+                        <h5 class="card-title">Student Attendance Overview</h5>
+                        <ul class="chart-list-out student-ellips">
+                            <li class="star-menus">
+                                <a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card text-white bg-success mt-5" style="height: 200px;">
+                                    <div class="card-body text-center">
+                                        <h6 class="card-title" style="color: white; margin-top: 30px;">Total Present</h6>
+                                        <p class="display-4"> </p>
+                                        <i class="fas fa-check-circle fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card text-white bg-danger mt-5" style="height: 200px;">
+                                    <div class="card-body text-center">
+                                        <h6 class="card-title" style="color: white; margin-top: 30px;">Total Absent</h6>
+                                        <p class="display-4"> </p>
+                                        <i class="fas fa-times-circle fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Link to Font Awesome for icons -->
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <footer>
+        <p>Copyright © 2024 ByteTech School ERP</p>
+    </footer>
+</div>

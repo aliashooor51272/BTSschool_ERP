@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ByteTechSchoolERP.Models.ViewModels.StudentViewModel>
+
+<div class="page-wrapper">
+
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%;margin:0px;">
+                <strong>View</strong> |
+                <i class="fas fa-home home-icon"></i> -  Student
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-12 mt-4" id="classFormContainer">
+            <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                <div class="table-responsive">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h5 class="formTitle">Student Lest</h5>
+                    </div>
+
+                    <table id="studentsTable" class="display mt-2" style="width:100%">
+                        <thead style="background-color: rgb(94, 114, 228); color: white;">
+                            <tr>
+                        <th>Full Name</th>
+                        <th>Surname</th>
+                        <th>Gender</th>
+                        <th>Admission Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>@student.FullName</td>
+                            <td>@student.Surname</td>
+                            <td>@student.Gender</td>
+                            <td>@student.AdmissionDate?.ToString("yyyy-MM-dd")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+           </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#studentsTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "info": true,
+            "lengthChange": false
+        });
+    });
+</script>

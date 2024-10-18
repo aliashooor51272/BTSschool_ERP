@@ -1,0 +1,380 @@
+﻿
+<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width: 97%;">
+                <strong>Parent Management  </strong> |
+                <i class="fas fa-home home-icon"></i> -  Parent Account
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <div class="row ">
+                    <div class="col-sm-12">
+
+                        <form class="row">
+                            <!-- First Column -->
+
+
+                            <div class="student-submit" style="float: right; text-align: right;">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    Create Account
+                                </button>
+                            </div>
+
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <div class="row">
+                    <h5>
+                        Manage Parents Account</h4>
+                        <div class="col-md-5 mt-2">
+                            <button type="button" class="btn btn-primary">
+                                <i class="fas fa-file-csv"></i> CSV
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </button>
+                            <button type="button" class="btn btn-success">
+                                <i class="fas fa-print"></i> Print
+                            </button>
+                            <button type="button" class="btn btn-info">
+                                <i class="fas fa-file-excel"></i> Excel
+                            </button>
+                        </div>
+                </div><br />
+                <div class="table-responsive">
+                <table id="example" class="display mt-2" style="width:100%">
+                    <thead style="background-color:rgb(94, 114, 228);">
+                        <tr style="color: white;">
+
+                            <th>  Name</th>
+                            <th>Email  </th>
+
+                            <th>CNIC</th>
+                            <th>Profission</th>
+                            <th>Child</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger  </td>
+                            <td>John@gmail.com</td>
+                            <td>121112324</td>
+                            <td>Teacher</td>
+                            <td>
+                                <button class="btn btn-primary" id="openModalBtn" style="width: 131px;">
+                                    <i class="fas fa-user-circle"></i> Profile View
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn  btn-primary" id="mypass">
+                                    <i class="fas fa-sync"></i>  Change Password
+
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Profile Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <!-- Profile Picture -->
+                            <img src="https://static.vecteezy.com/system/resources/previews/007/469/004/non_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg" class="img-fluid rounded-circle" alt="Profile Picture" style="width: 150px; height: 150px;">
+                            <!-- Name and Class -->
+                            <h5> John Doe</h5>
+                            <p>Class: 10th</p>
+                            <!-- Add more profile information as needed -->
+                        </div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#basicInfo">Basic Info.</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#parentInfo">Parent Info.</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#examMarks">Exam Marks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#testProgress">Test Progress</a>
+                            </li>
+                            <li class="nav-item ml-auto">
+                                <!-- Adjusted class to align "Payments" tab to the right -->
+                                <a class="nav-link" data-toggle="tab" href="#payments">Payments</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane container active" id="basicInfo">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <!-- Image -->
+                                        <img src="path_to_your_image" class="img-fluid" alt="Profile Image">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <!-- Personal Information -->
+                                        <h5>Name: John Doe</h5>
+                                        <p>Father's Name: Mr. Smith</p>
+                                        <p>Class: 10th</p>
+                                        <p>Section: A</p>
+                                        <p>Gender: Male</p>
+                                        <p>Phone: 123-456-7890</p>
+                                        <!-- Add more personal information as needed -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container fade" id="parentInfo">
+                                <div class="row">
+
+                                    <div class="col-md-8">
+                                        <!-- Personal Information -->
+                                        <h5>Parent Name: John Doel</h5>
+                                        <p>Parent CNIC: 123-456-7890</p>
+                                        <p>Parent Occupation: Bussinesman</p>
+                                        <p>Parent phone: 034567893</p>
+                                        <p>WhatsApp: 0343r3563</p>
+
+
+                                        <!-- Add more personal information as needed -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container fade" id="examMarks">
+                                <!-- Print Button -->
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <!-- Exam Marks Table -->
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject</th>
+                                            <th>Obtained Marks</th>
+                                            <th>Total Marks</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mathematics</td>
+                                            <td>80</td>
+                                            <td>100</td>
+                                            <td>Pass</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Science</td>
+                                            <td>75</td>
+                                            <td>100</td>
+                                            <td>Pass</td>
+                                        </tr>
+                                        <!-- Add more rows for other subjects as needed -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane container fade" id="testProgress">
+                                <!-- Test Progress Content -->
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h5>Test 1</h5>
+                                        <p>Score: 85%</p>
+                                        <p>Status: Passed</p>
+                                        <!-- Add more details for Test 1 as needed -->
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>Test 2</h5>
+                                        <p>Score: 90%</p>
+                                        <p>Status: Passed</p>
+                                        <!-- Add more details for Test 2 as needed -->
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>Test 3</h5>
+                                        <p>Score: 75%</p>
+                                        <p>Status: Passed</p>
+                                        <!-- Add more details for Test 3 as needed -->
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>Test 4</h5>
+                                        <p>Score: 80%</p>
+                                        <p>Status: Passed</p>
+                                        <!-- Add more details for Test 4 as needed -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane container fade" id="payments">
+                                <!-- Payment Information -->
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h5>Payment </h5>
+                                        <p>Amount Paid: $100</p>
+                                        <p>Payment Method: Cash</p>
+                                        <!-- Add more details as needed -->
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>Payment</h5>
+                                        <p>Amount Paid: $150</p>
+                                        <p>Payment Method: Credit Card</p>
+                                        <!-- Add more details as needed -->
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>Payment</h5>
+                                        <p>Amount Paid: $100</p>
+                                        <p>Payment Method: Cash</p>
+                                        <!-- Add more details as needed -->
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>Payment</h5>
+                                        <p>Amount Paid: $150</p>
+                                        <p>Payment Method: Credit Card</p>
+                                        <!-- Add more details as needed -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="close" data-dismiss="modal" style="background-color: red;color: #fff;">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="pass">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">  Change Password  </h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+
+                        <form class="row">
+                            <!-- First Column -->
+                            <!-- Second Column -->
+                            <div class="col-md-6">
+                                <div class="form-group local-forms" style="position: relative;">
+                                    <label class="lable1 requiredLabel" style="background: #3d5ee1; color: white;"> Password    </label>
+                                    <input type="text" placeholder="Password  " name="classname" required class="form-control" />
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group local-forms" style="position: relative;">
+                                    <label class="lable1 requiredLabel" style="background: #3d5ee1; color: white;"> Confirm Password </label>
+                                    <input type="text" placeholder="  Password" name="classname" required class="form-control" />
+
+                                </div>
+
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="button" class="btn btn-primary">Change Password</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="close btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+    <footer>
+        <p>Copyright © 2024 ByteTech Solution.</p>
+    </footer>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            // When the button is clicked, show the modal
+            $('#openModalBtn').click(function () {
+                $('#myModal').modal('show');
+            });
+            $('.modal').on('click', '.close', function () {
+                // Close the modal
+                $('#myModal').modal('hide');
+            });
+        });
+
+
+        $(document).ready(function () {
+            // When the button is clicked, show the modal
+            $('#mypass').click(function () {
+                $('#pass').modal('show');
+            });
+            $('.modal').on('click', '.close', function () {
+                // Close the modal
+                $('#pass').modal('hide');
+            });
+        });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+}

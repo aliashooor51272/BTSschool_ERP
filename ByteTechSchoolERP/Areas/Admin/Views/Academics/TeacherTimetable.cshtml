@@ -1,0 +1,122 @@
+﻿    @model ByteTechSchoolERP.Models.TimeTable.TimetableEntries
+
+<div class="page-wrapper">
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <strong>Academics </strong> |
+                <i class="fas fa-home home-icon"></i> - Teacher Timetable
+            </div>
+        </div>
+    </div>
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form id="timetableForm" class="row" method="post">
+                            <div class="col-md-6 local-forms label" style="justify-content: center;">
+                                <div style="position: relative;">
+                                    <label id="label-color">Teachers<span class="login-danger">*</span></label>
+                                    <select required asp-for="StaffTempId" id="StaffTempId" class="form1-input form-select teachervalue" asp-items="@ViewBag.StaffTempId">
+                                        <option value="">Select teacher</option>
+                                    </select>
+                                </div>
+                                <br />
+                            </div>
+                            <div class="col-md-4 local-forms label">
+                                <div class="student-submit">
+                                    <button type="button" class="btn btn-primary" id="searchBtnnew">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container container-fluid" id="scheduleCard">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 97%;" id="scheduleCardContent" style="margin-left: 28px;">
+                <button type="submit" class="btn btn-success print-button" data-class-id="2" data-section-id="1">
+                    Print Schedule
+                </button>
+                <!-- Additional Headers Row -->
+                <div class="row">
+                    <div class="col-md-12" style="overflow-x: auto;">
+                        <table id="TimetableInfoId" class="display mt-2" style="width:100%">
+                            <thead style="background-color:rgb(94, 114, 228); height:40px !important;">
+                                <tr style="color: white;">
+                                    <th>Class</th>
+                                    <th>Subject</th>
+                                    <th>Section</th>
+
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Room No</th>
+                                    <th>Day</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+      
+
+        var table = $('#TimetableInfoId').DataTable({
+            columns: [
+                { data: 'className', title: 'Class Name' },  // Display Class Name
+                { data: 'subjectName', title: 'Subject Name' },  // Display Subject Name
+                { data: 'sectionName', title: 'Section' },  // Display Section Name
+                { data: 'timeFrom', title: 'Time From' },  // Display Time From
+                { data: 'timeTo', title: 'Time To' },  // Display Time To
+                { data: 'roomNo', title: 'Room No' },  // Display Room Number
+                { data: 'dayOfWeek', title: 'Day' }  // Display Day of Week
+            ]
+        });
+
+
+
+        // Function to filter data
+        function filterData() {
+            var teacherId = $('#StaffTempId').val();
+
+            $.ajax({
+                url: '@Url.Action("GetTimetable", "Academics")',
+                type: 'GET',
+                data: { staffTempId: teacherId },
+                success: function (response) {
+                    table.clear().rows.add(response.data).draw();
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        }
+
+        // Attach filterData function to button click
+        $('#searchBtnnew').on('click', filterData);
+
+        // Handle edit button click
+        // $('#StdInfoId tbody').on('click', '.edit-btn', function () {
+        //     var dataId = $(this).data('id');
+        //     // Add your edit functionality here, e.g., open a modal with the student data
+        //     console.log('Edit button clicked for ID:', dataId);
+        // });
+    });
+</script>

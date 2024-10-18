@@ -1,0 +1,1629 @@
+﻿<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .style-0 {
+            width: 90%;
+            margin: 30px auto;
+            padding: 0px;
+            max-width: 100%;
+            transform: matrix(1, 0, 0, 1, 0, 0);
+            opacity: 1;
+            transition: 0.1s;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .style-1 {
+            box-shadow: rgba(0, 0, 0, 0.125) 0px 2px 3px 0px;
+            padding: 0px;
+            margin: 10px;
+            border-radius: 2px;
+            border: 0px none rgb(51, 51, 51);
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            -webkit-background-clip: padding-box;
+            outline: rgb(51, 51, 51) none 0px;
+            box-sizing: border-box;
+            -webkit-background-clip: padding-box;
+        }
+
+        .style-2 {
+            padding: 10px 15px;
+            margin: 0px;
+            border-bottom-color: rgb(221, 221, 221);
+            border-radius: 2px 2px 0px 0px;
+            min-height: 16.43px;
+            border-bottom: 1px solid rgb(221, 221, 221);
+            box-sizing: border-box;
+        }
+
+        .style-3 {
+            padding: 0px;
+            margin: 0px;
+            color: rgb(241, 241, 241);
+            text-shadow: rgba(255, 255, 255, 0.055) 0px 0.0555533px 0px;
+            right: 0px;
+            top: -33px;
+            position: absolute;
+            font-size: 29.5px;
+            transition: 0.3s linear;
+            margin-top: 0px;
+            opacity: 1;
+            appearance: none;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+            border: 0px none rgb(241, 241, 241);
+            float: none;
+            font-weight: 700;
+            line-height: 29.5px;
+            font-family: Roboto, sans-serif;
+            box-sizing: border-box;
+            text-transform: none;
+            overflow: visible;
+        }
+
+        .style-4 {
+            padding: 0px;
+            margin: 0px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            font-family: Roboto-Medium;
+            line-height: 25.7143px;
+            font-size: 18px;
+            font-weight: 500;
+            color: rgb(51, 51, 51);
+            box-sizing: border-box;
+        }
+
+        .style-5 {
+            padding: 15px;
+            margin: 0px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .style-6 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-7 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-8 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-9 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-10 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-11 {
+            background: rgba(0, 0, 0, 0) none repeat scroll 50% 0% / 100% 100% padding-box border-box;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            z-index: 0;
+            padding: 0px;
+            margin: 0px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: 0px none rgb(51, 51, 51);
+        }
+
+        .style-12 {
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 10px 5px 5px;
+            position: relative;
+            margin: 0 auto;
+            border: 1px solid rgb(0, 0, 0);
+            padding: 10px 5px 5px;
+            box-sizing: border-box;
+        }
+
+        .style-13 {
+            padding: 0px;
+            margin: 0px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: 0px none rgb(51, 51, 51);
+        }
+
+        .style-14 {
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-15 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-16 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-17 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-18 {
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-19 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-20 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-21 {
+            padding-left: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-22 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-23 {
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-24 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-25 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-26 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-27 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-28 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-29 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-30 {
+            text-align: center;
+            font-weight: boldfont-weight:700;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-31 {
+            padding-right: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-32 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-33 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-34 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-35 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-36 {
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-37 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-38 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-39 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-40 {
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-41 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-42 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-43 {
+            text-align: center;
+            text-transform: uppercase;
+            text-transform: uppercase;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            border-top: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-44 {
+            text-align: center;
+            text-transform: uppercase;
+            border-right: 1px solid #999text-transform:uppercase;
+            border-right: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            border-top: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-45 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-46 {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-47 {
+            text-transform: uppercase;
+            text-align: center;
+            border-right: 1px solid #999padding:10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-48 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-49 {
+            text-align: center;
+            text-transform: uppercase;
+            border: 0text-transform:uppercase;
+            border: 0px none rgb(68, 68, 68);
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 0px none rgb(68, 68, 68);
+            border-collapse: collapse;
+            border-left: 0px none rgb(68, 68, 68);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-50 {
+            padding-left: 5px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-51 {
+            padding: 0px;
+            margin: 0px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: 0px none rgb(68, 68, 68);
+        }
+
+        .style-52 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-53 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-54 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-55 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-56 {
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-57 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-58 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-59 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            padding-bottom: 15px;
+            padding: 0px 0px 15px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-60 {
+            padding-left: 30px;
+            font-weight: bold;
+            font-weight: 700;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-61 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-62 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            padding-bottom: 15px;
+            padding: 0px 0px 15px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-63 {
+            padding-left: 30px;
+            font-weight: bold;
+            font-weight: 700;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-64 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-65 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            padding-bottom: 15px;
+            padding: 0px 0px 15px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-66 {
+            padding-left: 30px;
+            font-weight: bold;
+            font-weight: 700;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-67 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-68 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            padding-bottom: 15px;
+            padding: 0px 0px 15px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-69 {
+            padding-left: 30px;
+            font-weight: bold;
+            font-weight: 700;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-70 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-71 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            padding-bottom: 15px;
+            padding: 0px 0px 15px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-72 {
+            padding-left: 30px;
+            font-weight: bold;
+            font-weight: 700;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-73 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-74 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            padding-bottom: 15px;
+            padding: 0px 0px 15px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-75 {
+            padding-left: 30px;
+            font-weight: bold;
+            font-weight: 700;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-76 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-77 {
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            padding-bottom: 15px;
+            padding: 0px 0px 15px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-78 {
+            text-transform: uppercase;
+            padding-top: 15px;
+            font-weight: bold;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-top: 15px;
+            font-weight: 700;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding: 15px 0px 20px 30px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-79 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-80 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-81 {
+            text-align: center;
+            text-transform: uppercase;
+            text-transform: uppercase;
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-82 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-83 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-84 {
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            border-top: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .style-85 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            border-top: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-86 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            border-top: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-87 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            border-top: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-88 {
+            border-right: 1px solid #999;
+            text-align: center;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            border-top: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-89 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-90 {
+            text-align: left;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-91 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-92 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-93 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-94 {
+            text-align: center;
+            border-right: 1px solid #999;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-95 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-96 {
+            text-align: left;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-97 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-98 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-99 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-100 {
+            text-align: center;
+            border-right: 1px solid #999padding:10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-101 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-102 {
+            text-align: left;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-103 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-104 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-105 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-106 {
+            text-align: center;
+            border-right: 1px solid #999padding:10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-107 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-108 {
+            text-align: left;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-109 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-110 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-111 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-112 {
+            text-align: center;
+            border-right: 1px solid #999padding:10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-113 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-114 {
+            text-align: left;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-115 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-116 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-117 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-118 {
+            text-align: center;
+            border-right: 1px solid #999padding:10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-119 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-120 {
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-121 {
+            border-left: 0padding:10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            padding: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-122 {
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-123 {
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-124 {
+            text-align: center;
+            border-right: 1px solid #999padding:10px;
+            font-weight: 700;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-125 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-126 {
+            font-weight: normal;
+            text-align: left;
+            border-right: 1px solid #999;
+            text-align: left;
+            border-right: 1px solid rgb(153, 153, 153);
+            padding: 10px;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-127 {
+            text-align: left;
+            font-weight: bold;
+            padding-left: 30px;
+            padding-left: 30px;
+            padding: 0px 0px 0px 30px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-128 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-129 {
+            font-weight: normal;
+            text-align: left;
+            border-top: 0;
+            border-right: 1px solid #999;
+            text-align: left;
+            border-top: 0px none rgb(68, 68, 68);
+            padding: 10px;
+            border-bottom: 1px solid rgb(153, 153, 153);
+            border-collapse: collapse;
+            border-left: 1px solid rgb(153, 153, 153);
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-130 {
+            text-align: left;
+            font-weight: bold;
+            padding-left: 30px;
+            padding-left: 30px;
+            padding: 0px 0px 0px 30px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-131 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-132 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-133 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-134 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-135 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-136 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-137 {
+            padding: 0px;
+            margin: 0px;
+            empty-cells: hide;
+            color: rgb(68, 68, 68);
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            border-spacing: 0px 0px;
+            border-collapse: collapse;
+        }
+
+        .style-138 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-139 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-140 {
+            font-size: 12px;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-141 {
+            text-transform: uppercase;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-142 {
+            padding: 0px;
+            margin: 0px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: 0px none rgb(68, 68, 68);
+        }
+
+        .style-143 {
+            text-transform: uppercase;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-144 {
+            padding: 0px;
+            margin: 0px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: 0px none rgb(68, 68, 68);
+        }
+
+        .style-145 {
+            text-transform: uppercase;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-146 {
+            padding: 0px;
+            margin: 0px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: 0px none rgb(68, 68, 68);
+        }
+
+        .style-147 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .style-148 {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<div class="page-wrapper">
+    <div class="tab-container container-fluid">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 98%; margin-left: 5px;">
+                <strong>Classes</strong> | <i class="fas fa-home home-icon"></i> - Add New Class
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 20px; margin-top:20px !important;">
+
+        <div class="row">
+            <!-- Form Section -->
+            <div class="col-md-4">
+                <form method="post" enctype="multipart/form-data" asp-action="CreateExam" asp-controller="Examinations" asp-area="Admin">
+                    <div class="form-group">
+                        <label for="templateName">Template Name</label>
+                        <input type="text" class="form-control" id="templateName" name="TemplateName">
+                    </div>
+                    <div class="form-group">
+                        <label for="examName">Heading</label>
+                        <input type="text" class="form-control" id="examName" name="ExamName">
+                    </div>
+                    <div class="form-group">
+                        <label for="schoolName">Title</label>
+                        <input type="text" class="form-control" id="schoolName" name="SchoolName">
+                    </div>
+                    <div class="form-group">
+                        <label for="examCenter">Exam Center</label>
+                        <input type="text" class="form-control" id="examCenter" name="ExamCenter">
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="footerText">Footer Text</label>
+                        <textarea class="form-control" id="footerText" name="FooterText"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="printingDate">Printing Date</label>
+                        <input type="date" class="form-control" id="printingDate" name="PrintingDate">
+                    </div>
+                    <!-- File Uploads -->
+                  
+                    <div class="form-group">
+                        <label for="leftLogo">Left Logo Image</label>
+                        <input type="file" class="form-control-file" id="leftLogo" name="LeftLogo">
+                    </div>
+                    <div class="form-group">
+                        <label for="rightLogo">Right Logo Image</label>
+                        <input type="file" class="form-control-file" id="rightLogo" name="RightLogo">
+                    </div>
+                   
+                   
+                    <div class="form-group">
+                        <label for="rightSign"> Sign</label>
+                        <input type="file" class="form-control-file" id="rightSign" name="RightSign">
+                    </div>
+                    <div class="form-group">
+                        <label for="backgroundImage">Background Image</label>
+                        <input type="file" class="form-control-file" id="backgroundImage" name="BackgroundImage">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- DataTable Section -->
+            <div class="col-md-8">
+                <table id="myTable" class="display">
+                    <thead>
+                        <tr>
+                            <th>Template Name</th>
+                            <th>Exam Name</th>
+                            <th>School Name</th>
+                            <th>Exam Center</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="clickable-row"
+                                data-headerimage="@item.HeaderImageUrl"
+                                data-leftlogo="@item.LeftLogoUrl"
+                                data-rightlogo="@item.RightLogoUrl"
+                                data-leftsign="@item.LeftSignUrl"
+                                data-middlesign="@item.MiddleSignUrl"
+                                data-rightsign="@item.RightSignUrl"
+                                data-backgroundimage="@item.BackgroundImageUrl"
+                                data-templatename="@item.TemplateName"
+                                data-examname="@item.ExamName"
+                                data-schoolname="@item.SchoolName"
+                                data-examcenter="@item.ExamCenter"
+                                data-bodytext="@item.BodyText"
+                                data-footertext="@item.FooterText"
+                                data-printingdate="@item.PrintingDate">
+
+                                <td>@item.TemplateName</td>
+                                <td>@item.ExamName</td>
+                                <td>@item.SchoolName</td>
+                                <td>@item.ExamCenter</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="width:1200px!important">
+
+            <div class="modal-body">
+              <div style="width: 90%;margin: 30px auto;padding:0px;max-width:100%;transform:matrix(1, 0, 0, 1, 0, 0);opacity:1;transition:0.1s;position:relative;box-sizing:border-box;">
+    <div style="box-shadow:rgba(0, 0, 0, 0.125) 0px 2px 3px 0px;padding:0px;margin:10px;border-radius:2px;border:0px none rgb(51, 51, 51);position:relative;background-color:rgb(255, 255, 255);-webkit-background-clip:padding-box;outline:rgb(51, 51, 51) none 0px;box-sizing:border-box;-webkit-background-clip:padding-box;">
+        <div style="padding:10px 15px;margin:0px;border-bottom-color:rgb(221, 221, 221);border-radius:2px 2px 0px 0px;min-height:16.43px;border-bottom:1px solid rgb(221, 221, 221);box-sizing:border-box;">
+            <button type="button" data-dismiss="modal" style="padding:0px;margin:0px;color:rgb(255, 255, 255);text-shadow:none;right:0px;top:-33px;position:absolute;font-size:30px;transition:0.3s linear;margin-top:0px;opacity:1;appearance:none;cursor:pointer;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;border:0px none rgb(255, 255, 255);float:none;font-weight:700;line-height:30px;font-family:Roboto, sans-serif;box-sizing:border-box;text-transform:none;overflow:visible;">×</button>
+            <h4 style="padding:0px;margin:0px;margin-bottom:0px;margin-top:0px;font-family:Roboto-Medium;line-height:25.7143px;font-size:18px;font-weight:500;color:rgb(51, 51, 51);box-sizing:border-box;">View Admit Card</h4>
+        </div>
+        <div style="padding:15px;margin:0px;position:relative;box-sizing:border-box;">
+
+
+            <meta charset="utf-8" style="padding:0px;margin:0px;box-sizing:border-box;" />
+            <link rel="icon" type="image/png" href="assets/img/s-favican.png" style="padding:0px;margin:0px;box-sizing:border-box;" />
+            <meta http-equiv="X-UA-Compatible" content="" style="padding:0px;margin:0px;box-sizing:border-box;" />
+            <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" style="padding:0px;margin:0px;box-sizing:border-box;" />
+            <meta name="theme-color" content="" style="padding:0px;margin:0px;box-sizing:border-box;" /> <img src="https://demo.smart-school.in/uploads/admit_card/782a71f53ea6bca213012d49e9d46d98.jpg?1724068672" width="100%" height="100%" style="background:rgba(0, 0, 0, 0) none repeat scroll 50% 0% / 100% 100% padding-box border-box;position:absolute;top:0px;left:0px;bottom:0px;z-index:1;padding:0px;margin:0px;vertical-align:middle;box-sizing:border-box;border:0px none rgb(51, 51, 51);" />
+            <div style="width: 1000px;position:relative;z-index:2;margin: 0px auto;padding:20px 30px;box-sizing:border-box;">
+                <table cellpadding="0" cellspacing="0" width="100%" style="padding:0px;margin:0px;empty-cells:hide;color:rgb(68, 68, 68);background-color:rgba(0, 0, 0, 0);box-sizing:border-box;border-spacing:0px 0px;border-collapse:collapse;">
+                    <tbody style="padding:0px;margin:0px;box-sizing:border-box;">
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                <table cellpadding="0" cellspacing="0" width="100%" style="padding:0px;margin:0px;empty-cells:hide;color:rgb(68, 68, 68);background-color:rgba(0, 0, 0, 0);box-sizing:border-box;border-spacing:0px 0px;border-collapse:collapse;">
+                                    <tbody style="padding:0px;margin:0px;box-sizing:border-box;">
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <td valign="top" align="center" width="100" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                <img src="https://demo.smart-school.in/uploads/admit_card/ab12c4b65f53ee621dcf84370a7c5be4.png?1724068672" width="100" height="100" style="padding:0px;margin:0px;vertical-align:middle;box-sizing:border-box;border:0px none rgb(68, 68, 68);" />
+                                            </td>
+                                            <td valign="top" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                <table cellpadding="0" cellspacing="0" width="100%" style="padding:0px;margin:0px;empty-cells:hide;color:rgb(68, 68, 68);background-color:rgba(0, 0, 0, 0);box-sizing:border-box;border-spacing:0px 0px;border-collapse:collapse;">
+                                                    <tbody style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                            <td valign="top" style="font-size: 26px; font-weight: bold; text-align: center; text-transform: uppercase; padding-top: 10px;font-weight:700;text-align:center;text-transform:uppercase;padding-top:10px;padding:10px 0px 0px;margin:0px;box-sizing:border-box;">BOARD OF SECONDARY EDUCATION, MADHYA PRADESH, BHOPAL</td>
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                            <td valign="top" height="5" style="padding:0px;margin:0px;box-sizing:border-box;"></td>
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                            <td valign="top" style="font-size: 20px;text-align: center; text-transform: uppercase; text-decoration: underline;text-transform:uppercase;text-decoration:underline solid rgb(68, 68, 68);padding:0px;margin:0px;box-sizing:border-box;">
+                                                                HIGHER SECONDARY SCHOOL CERTIFICATE EXAMINATION (10+2) 2014</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td width="100" valign="top" align="center" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                <img src="https://demo.smart-school.in/uploads/admit_card/0910482bf79df5fd103e8383d61b387a.png?1724068672" width="100" height="100" style="padding:0px;margin:0px;vertical-align:middle;box-sizing:border-box;border:0px none rgb(68, 68, 68);" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" style="text-align: center; text-transform: capitalize; text-decoration: underline; font-weight: bold; padding-top: 5px;text-transform:capitalize;text-decoration:underline solid rgb(68, 68, 68);font-weight:700;padding-top:5px;padding:5px 0px 0px;margin:0px;box-sizing:border-box;">May-June 2024 Examinations </td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" height="10" style="padding:0px;margin:0px;box-sizing:border-box;"></td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                <table cellpadding="0" cellspacing="0" width="100%" style="text-transform: uppercase;padding:0px;margin:0px;empty-cells:hide;color:rgb(68, 68, 68);background-color:rgba(0, 0, 0, 0);box-sizing:border-box;border-spacing:0px 0px;border-collapse:collapse;">
+                                    <tbody style="padding:0px;margin:0px;box-sizing:border-box;">
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <td valign="top" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                <table cellpadding="0" cellspacing="0" width="100%" style="padding:0px;margin:0px;empty-cells:hide;color:rgb(68, 68, 68);background-color:rgba(0, 0, 0, 0);box-sizing:border-box;border-spacing:0px 0px;border-collapse:collapse;">
+                                                    <tbody style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                            <td valign="top" style="padding-bottom: 10px;margin:0px;box-sizing:border-box;">School Name</td>
+                                                            <td valign="top" colspan="3" style="text-transform: uppercase; font-weight: bold;padding-bottom: 10px;font-weight:700;padding:0px 0px 10px;margin:0px;box-sizing:border-box;">Mount Carmel School</td>
+                                                        </tr>
+                                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                            <td valign="top" style="padding-bottom: 10px;margin:0px;box-sizing:border-box;">Exam Center</td>
+                                                            <td valign="top" colspan="3" style="text-transform: uppercase; font-weight: bold;padding-bottom: 10px;font-weight:700;padding:0px 0px 10px;margin:0px;box-sizing:border-box;"> test dmit card2</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" height="10" style="padding:0px;margin:0px;box-sizing:border-box;"></td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                <table cellpadding="0" cellspacing="0" width="100%" style="border:1px solid rgb(153, 153, 153);border-collapse:collapse;padding:0px;margin:0px;empty-cells:hide;color:rgb(68, 68, 68);background-color:rgba(0, 0, 0, 0);box-sizing:border-box;border-spacing:0px 0px;">
+                                    <tbody style="padding:0px;margin:0px;box-sizing:border-box;">
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <th valign="top" style="text-align: center; text-transform: uppercase;text-transform:uppercase;padding:10px;font-weight:400;border-collapse:collapse;border-right:1px solid rgb(153, 153, 153);border-bottom:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">Theory Exam Date &amp; Time</th>
+                                            <th valign="top" style="text-align: center; text-transform: uppercase;text-transform:uppercase;padding:10px;font-weight:400;border-collapse:collapse;border-right:1px solid rgb(153, 153, 153);border-bottom:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">Paper Code</th>
+                                            <th valign="top" style="text-align: center; text-transform: uppercase;text-transform:uppercase;padding:10px;font-weight:400;border-collapse:collapse;border-right:1px solid rgb(153, 153, 153);border-bottom:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">Subject</th>
+                                            <th valign="top" style="text-align: center; text-transform: uppercase;text-transform:uppercase;padding:10px;font-weight:400;border-collapse:collapse;border-right:1px solid rgb(153, 153, 153);border-bottom:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">Obtained By Student</th>
+                                        </tr>
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <td valign="top" style="text-align: center;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">03-Jun-2024 2 P.M. - 5 P.M.</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">7713</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">Mathematics</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">TH</td>
+                                        </tr>
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <td valign="top" style="text-align: center;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">03-Jun-2024 2 P.M. - 5 P.M.</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">7714</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">Sceince</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">TH</td>
+                                        </tr>
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <td valign="top" style="text-align: center;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">03-Jun-2024 2 P.M. - 5 P.M.</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">7715</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">English</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">TH</td>
+                                        </tr>
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <td valign="top" style="text-align: center;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">03-Jun-2024 2 P.M. - 5 P.M.</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">7716</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">Social Science</td>
+                                            <td style="text-align: center;text-transform: uppercase;padding:10px;font-weight:700;border-collapse:collapse;border-left:1px solid rgb(153, 153, 153);margin:0px;box-sizing:border-box;">TH</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" height="5" style="padding:0px;margin:0px;box-sizing:border-box;"></td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td valign="top" height="20px" style="padding:0px;margin:0px;box-sizing:border-box;"></td>
+                        </tr>
+                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                            <td align="right" valign="top" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                <table cellpadding="0" cellspacing="0" width="100%" style="text-align: center;padding:0px;margin:0px;empty-cells:hide;color:rgb(68, 68, 68);background-color:rgba(0, 0, 0, 0);box-sizing:border-box;border-spacing:0px 0px;border-collapse:collapse;">
+                                    <tbody style="padding:0px;margin:0px;box-sizing:border-box;">
+                                        <tr style="padding:0px;margin:0px;box-sizing:border-box;">
+                                            <td valign="top" style="padding:0px;margin:0px;box-sizing:border-box;">
+                                                <img src="https://demo.smart-school.in/uploads/admit_card/aa9c7087e68c5af1d2c04946de1d3bd3.png?1724068672" width="100" height="38" style="padding:0px;margin:0px;vertical-align:middle;box-sizing:border-box;border:0px none rgb(68, 68, 68);" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        // Initialize DataTable
+        $('#myTable').DataTable();
+
+        // Add click event listener to table rows
+        $('#myTable tbody').on('click', 'tr', function () {
+            // Get the data attributes from the clicked row
+            var $row = $(this);
+            var headerImage = $row.data('headerimage');
+            var leftLogo = $row.data('leftlogo');
+            var rightLogo = $row.data('rightlogo');
+            var leftSign = $row.data('leftsign');
+            var middleSign = $row.data('middlesign');
+            var rightSign = $row.data('rightsign');
+            var backgroundImage = $row.data('backgroundimage');
+
+            // Update the modal images
+            $('#exampleModal .leftsign img').attr('src', leftSign || '');
+            $('#exampleModal .middlesign img').attr('src', middleSign || '');
+            $('#exampleModal .rightsign img').attr('src', rightSign || '');
+            // Update the exam title in the modal
+            $('#exampleModal #examtitle').text(examName || ''); // Set the exam name as the title
+
+            // Optional: Update other modal content if needed
+            // Example: Update text or other content based on the clicked row
+
+
+            // Show the modal
+            $('#exampleModal').modal('show');
+        });
+    });
+</script>

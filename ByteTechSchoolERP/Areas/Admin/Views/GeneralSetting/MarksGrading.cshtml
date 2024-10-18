@@ -1,0 +1,201 @@
+﻿<div class="page-wrapper">
+    <div class="style-0" style="max-width:97%;">
+        <strong class="style-1">Settings</strong> <i class="fas fa-home home-icon"></i> -Exam
+        Grading
+
+
+    </div>
+    <br />
+
+
+    <div class="style-0" style="max-width:97%;">
+        <div class="btn-group" role="group" aria-label="Button group">
+            <button type="button" class="btn btn-primary" onclick="showMarksGrading()">Marks Grading</button>
+            <button type="button" class="btn btn-secondary" onclick="showFailCriteria()">Fail Criteria</button>
+        </div>
+        <div id="marks-grading-section">
+            <form id="grading-form" action="grading.php" method="post">
+                <!-- <h3
+                    style="line-height:20px;border-bottom:2px solid #fff;text-align:center;margin-top:20px;padding-bottom:10px;font-weight:600;width: 100% !important;font-size:28px;margin-bottom:8px;font-family:Poppins, sans-serif;color:rgb(34, 34, 34);box-sizing:border-box;">
+                    Customize Grading
+                    <br style="box-sizing:border-box;" />
+                    <div
+                        style="width:20px;height:7px;border-radius:10px;display:inline-block;background:rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(94, 114, 228) 0px, rgb(130, 94, 228) 100%) repeat scroll 0% 0% / auto padding-box border-box;box-sizing:border-box;">
+                    </div> <span
+                        style="display:inline-block;font-weight:100;font-size:12px;color:rgb(77, 76, 172);box-sizing:border-box;">Editable</span>
+                    <div
+                        style="width:20px;height:7px;border-radius:10px;display:inline-block;margin-left:10px;background:rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(136, 152, 170) 0px, rgb(136, 138, 170) 100%) repeat scroll 0% 0% / auto padding-box border-box;box-sizing:border-box;">
+                    </div> <span
+                        style="display:inline-block;font-weight:100;font-size:12px;box-sizing:border-box;">Fixed</span>
+                </h3> -->
+                <table id="grading-table" class="table">
+                    <tbody>
+                        <!-- Your initial rows here -->
+                        <tr>
+                            <td>
+                                <div class="form-group local-forms">
+                                    <label for="gn1" id="label-color">Grade*</label>
+                                    <input type="text" class="form-control" id="gn1" name="gn1" value="A+"
+                                           required="">
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="form-group local-forms">
+                                    <label for="pf1" id="label-color">% From*</label>
+                                    <input type="number" class="form-control" id="pf1" name="pf1" min="0"
+                                           max="100" value="80" required="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group local-forms">
+                                    <label for="pu1" id="label-color">% Upto*</label>
+                                    <input type="number" class="form-control" id="pu1" name="pu1" min="0"
+                                           max="100" value="100" required="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group local-forms">
+                                    <label for="st1" id="label-color">Status*</label>
+                                    <input type="text" class="form-control" id="st1" name="st1" value="PASS"
+                                           required="">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                    </br>
+                    <div>
+                        <button id="add-option-btn" class="btn btn-info" type="button">
+                            <span>
+                                <i></i> Add more
+                            </span>
+                        </button>
+                        <button id="remove-option-btn" class="btn btn-warning" type="button">
+                            <span>
+                                <i></i>
+                                Remove
+                            </span>
+                        </button>
+
+                    </div>
+                    </br>
+                    <div>
+                        <button class="btn btn-primary" type="submit"><i></i> Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="style-148" id="fail-criteria-section" style="display: none;">
+            <div class="style-149" id="fail-criteria-form">
+
+                <form action="grading.php" method="post" class="container">
+                    <div class="row">
+                        <div class="col-md-6" style="border: 1px solid #5957df; padding: 10px;">
+                            <p style="line-height:18px !important;color:#666;font-size:14px;margin-top:0px;margin-bottom:16px;box-sizing:border-box;">
+                                <strong style="color:rgb(43, 61, 81);font-weight:700;box-sizing:border-box;">Student</strong>
+                                will be marked as <strong style="color:rgb(255, 83, 112);font-weight:700;box-sizing:border-box;">FAILED</strong>
+                                in the exams if he or she obtains an <strong style="color:rgb(43, 61, 81);font-weight:700;box-sizing:border-box;">
+                                    overall
+                                    percentage
+                                </strong> score equal to or below
+                            </p>
+                            <div class="form-group local-forms">
+
+                                <label id="label-color">Overall %<span class="login-danger">*</span></label>
+                                <input type="text" class="form-control" value="Example 40">
+                            </div>
+                            </br>
+                        </div>
+                        <div class="col-md-6" style="border: 1px solid #00b34e; padding: 10px;">
+                            <p style="line-height:18px !important;color:#666;font-size:14px;margin-top:32px;margin-bottom:20px;box-sizing:border-box;">
+                                at least <strong style="color:rgb(0, 188, 212);font-weight:700;box-sizing:border-box;">in</strong>
+                                <strong style="color:rgb(43, 61, 81);font-weight:700;box-sizing:border-box;">Subjects</strong>
+                            </p>
+                            <div class="form-group local-forms">
+                                <label id="label-color">Subject %<span class="login-danger">*</span></label>
+                                <input type="text" class="form-control" value="Example 33">
+                            </div>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="row">
+                        <div class="col-md-6" style="border: 1px solid #df219e; padding: 10px;">
+                            <p style="line-height:18px !important;color:#666;font-size:14px;margin-top:0px;margin-bottom:16px;box-sizing:border-box;">
+                                <strong style="color:rgb(241, 196, 15);font-weight:700;box-sizing:border-box;">OR</strong>
+                                he or she obtains a <strong style="color:rgb(43, 61, 81);font-weight:700;box-sizing:border-box;">
+                                    Subject
+                                    percentage
+                                </strong> score equal to or below
+                            </p>
+                            <div class="form-group local-forms">
+                                <label id="label-color">
+                                    No. of Subjects<span class="login-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" value="Example 1">
+                            </div>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <button class="btn btn-primary" name="passingCriteria" style="width: 175px;">
+                                <i></i>
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+@section Scripts{
+            <script>
+                function showMarksGrading() {
+                    var marksGradingSection = document.getElementById("marks-grading-section");
+                    var failCriteriaSection = document.getElementById("fail-criteria-section");
+
+                    marksGradingSection.style.display = "block";
+                    failCriteriaSection.style.display = "none";
+                }
+
+                function showFailCriteria() {
+                    var marksGradingSection = document.getElementById("marks-grading-section");
+                    var failCriteriaSection = document.getElementById("fail-criteria-section");
+
+                    marksGradingSection.style.display = "none";
+                    failCriteriaSection.style.display = "block";
+                }
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Get reference to buttons and table
+                    var addOptionBtn = document.getElementById("add-option-btn");
+                    var removeOptionBtn = document.getElementById("remove-option-btn");
+                    var gradingTable = document.getElementById("grading-table").getElementsByTagName('tbody')[0];
+
+                    // Add event listener for adding option
+                    addOptionBtn.addEventListener("click", function () {
+                        // Clone the first row
+                        var newRow = gradingTable.rows[0].cloneNode(true);
+                        // Append the new row to the table
+                        gradingTable.appendChild(newRow);
+                    });
+
+                    // Add event listener for removing option
+                    removeOptionBtn.addEventListener("click", function () {
+                        // Ensure there's at least one row before removing
+                        if (gradingTable.rows.length > 1) {
+                            // Remove the last row
+                            gradingTable.removeChild(gradingTable.lastChild);
+                        }
+                    });
+                });
+
+            </script>
+
+
+}

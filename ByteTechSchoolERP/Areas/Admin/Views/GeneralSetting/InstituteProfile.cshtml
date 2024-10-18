@@ -1,0 +1,246 @@
+﻿@model ByteTechSchoolERP.Models.ViewModels.Instituite_VM
+
+<div class="page-wrapper">
+    <div class="tab-contanire container-fluid " >
+        <div class="style-0" style="margin-bottom: 20px; max-width: 97%;">
+        <strong class="style-1">Settings</strong>
+        <i class="fas fa-home home-icon"></i>
+        Institute Profile
+        </div>
+    </div>
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-8 mt-3">
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <form class="row" id="instituteForm" action="/Admin/GeneralSetting/AddInstitute" method="post" enctype="multipart/form-data">
+                    <!-- First Column -->
+                    <div class="col-md-6 local-forms label">
+                        <div class="local-forms label">
+                            <label id="label-color">Institute Logo*</label>
+                            <br />
+                            <img src="~/assets/img/logo-small.png" class="style-19" id="logo-preview" />
+                            <input type="file" class="form-control" name="ImageFileVM" required />
+                        </div>
+                        <br />
+                        <div class="local-forms label">
+                            <label id="label-color">Institute Name <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="Name" pattern="[A-Za-z\s]+" title="Please enter only alphabetic characters." placeholder="Name" style="margin-top: 40px;" required>
+                        </div>
+                        <br />
+                        <div class="local-forms label">
+                            <label style="background-color: #7664e4;">Phone Number <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="PhoneNumber" pattern="[0-9]+" title="Please enter only numbers." placeholder="03436281816" required>
+                        </div>
+                    </div>
+
+                    <!-- Second Column -->
+                    <div class="col-md-6">
+                        
+                        <div class="local-forms label">
+                            <label style="background-color: #7664e4;">Website Url <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="WebsiteUrl" pattern="https?://.+(\.[a-z]{2,})+" title="Please enter a valid URL starting with http:// or https://" placeholder="https://url" required>
+                        </div>
+                        <br />
+                        <div class="local-forms label">
+                            <label style="background-color: #7664e4;">Address<span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="Address" pattern="[A-Za-z\s]+" title="Please enter only alphabetic characters." placeholder="Address" required>
+                        </div>
+                        <br />
+                        <div class="local-forms label" style="position: relative;">
+                            <label style="background-color: #7664e4;">Country <span class="login-danger">*</span></label>
+                            <select class="form-control" name="Country" required>
+                                <option>Select Country</option>
+                                <option>Pakistan</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>UK</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="local-forms label" style="position: relative;">
+                            <label style="background-color: #7664e4;">City <span class="login-danger">*</span></label>
+                            <select class="form-control" name="City" required>
+                                <option>Select City</option>
+                                <option>Islamabad</option>
+                                <option>Lahore</option>
+                                <option>Karachi</option>
+                                <option>Rawalpindi</option>
+                                <option>Skardu</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="student-submit">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 mt-3" id="classFormContainers">
+            <div class="style-0" id="classFormData" style="max-width:100%; margin:0px;">
+                   <div id="instituteProfileDisplay">
+                    <img src="assets/img/no-logo.png" id="profile-logo" style="margin-left: 60px; width: 136px;" />
+                    <br />
+                    <h4  id="profile-name" style="margin-top:12px;">Institute Name</h4>
+                    <hr style="width: 100%;" />
+                    <div style="margin-left: 20px;">
+                        <div>
+                            <span>Phone No :</span> <strong id="profile-phone"></strong>
+                        </div>
+                        <div>
+                            <span>Website :</span> <strong id="profile-website"></strong>
+                        </div>
+                        <div>
+                            <span>Address :</span> <strong id="profile-address"></strong>
+                        </div>
+                        <div>
+                            <span>Country :</span> <strong id="profile-country"></strong>
+                        </div>
+                        <div>
+                            <span>City :</span> <strong id="profile-city"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                <button type="button" class="btn btn-primary" id="editButton" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>                <br />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<footer class="mt-4">
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Institute</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row" id="editInstituteForm" action="/Admin/GeneralSetting/AddInstitute" method="post" enctype="multipart/form-data">
+                    <!-- First Column -->
+                    <div class="col-md-6 local-forms label">
+                        <div class="local-forms label">
+                            <label id="label-color">Institute Logo*</label>
+                            <br />
+                            <img src="" class="style-19" id="edit-logo-preview" />
+                            <input type="file" class="form-control" name="ImageFileVM" required />
+                        </div>
+                        <br />
+                        <div class="local-forms label">
+                            <label id="label-color">Institute Name <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="Name" style="margin-top: 40px;" required>
+                        </div>
+                        <br />
+                         
+                    </div>
+
+                    <!-- Second Column -->
+                    <div class="col-md-6">
+                        <div class="local-forms label">
+                            <label style="background-color: #7664e4;">Phone Number <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="PhoneNumber" required>
+                        </div>
+                        <br />
+                        <div class="local-forms label">
+                            <label style="background-color: #7664e4;">Website Url <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="WebsiteUrl">
+                        </div>
+                        <br />
+                        <div class="local-forms label">
+                            <label style="background-color: #7664e4;">Address<span class="login-danger" >*</span></label>
+                            <input type="text" class="form-control" name="Address" required>
+                        </div>
+                        <br />
+                        <div class="local-forms label" style="position: relative;">
+                            <label style="background-color: #7664e4;">Country <span class="login-danger">*</span></label>
+                            <select class="form-control" name="Country">
+                                <option>Select Country</option>
+                                <option>Pakistan</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>UK</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="local-forms label" style="position: relative;">
+                            <label style="background-color: #7664e4;">City <span class="login-danger">*</span></label>
+                            <select class="form-control" name="City">
+                                <option value="" selected disable>Select City</option>
+                                <option>Islamabad</option>
+                                <option>Lahore</option>
+                                <option>Karachi</option>
+                                <option>Rawalpindi</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="student-submit">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Handle image file selection and preview
+            $('input[name="ImageFileVM"]').on('change', function () {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#logo-preview').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Display the saved data
+            var instituteData = '@Html.Raw(TempData["InstituteData"] ?? string.Empty)';
+            if (instituteData) {
+                var data = JSON.parse(instituteData);
+
+                $('#profile-name').text(data.Name);
+                $('#profile-phone').text(data.PhoneNumber);
+                $('#profile-website').text(data.WebsiteUrl);
+                $('#profile-address').text(data.Address);
+                $('#profile-country').text(data.Country);
+                $('#profile-city').text(data.City);
+
+                if (data.ImagePath) {
+                    $('#profile-logo').attr('src', data.ImagePath);
+                } else {
+                    $('#profile-logo').attr('src', 'assets/img/no-logo.png');
+                }
+
+                toastr.success('Institute added successfully.');
+            }
+
+            // Populate the modal with data on edit button click
+            $('#editButton').on('click', function () {
+                $('#edit-logo-preview').attr('src', $('#profile-logo').attr('src'));
+                $('input[name="Name"]').val($('#profile-name').text());
+                $('input[name="PhoneNumber"]').val($('#profile-phone').text());
+                $('input[name="WebsiteUrl"]').val($('#profile-website').text());
+                $('input[name="Address"]').val($('#profile-address').text());
+                $('select[name="Country"]').val($('#profile-country').text());
+                $('select[name="City"]').val($('#profile-city').text());
+            });
+        });
+    </script>
+}

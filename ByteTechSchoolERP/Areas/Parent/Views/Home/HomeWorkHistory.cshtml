@@ -1,0 +1,154 @@
+﻿@model IEnumerable<ByteTechSchoolERP.Models.ViewModels.HomeWorkViewModel>
+
+@{
+    ViewData["Title"] = "Daily Diary";
+}
+
+<style>
+    .table-container {
+        margin: 20px auto;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .page-wrapper {
+        padding: 20px;
+    }
+</style>
+
+<div class="page-wrapper">
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%; margin:0px;">
+                <strong>Student</strong> |
+                <i class="fas fa-home home-icon"></i> - Homework History
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-12 mt-4" id="classFormContainer">
+            <div class="style-0 table-container">
+                <div class="table-responsive">
+                    <table class="table" id="tbale">
+                        <thead>
+                            <tr>
+                                <th>Subject Name</th>
+                                <th>Submission Date</th>
+                                <th>Created On</th>
+                                
+                                <th>Student Name</th>
+                                <th>Class</th>
+                                <th>Section</th>
+                                <th>File </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.SubjectName</td>
+                                    <td>@item.SubmissioDate.ToShortDateString()</td>
+                                    <td>@item.Createdon.ToShortDateString()</td>
+                                   
+                                    <td>@item.StudentName</td>
+                                    <td>@item.ClassName</td>
+                                    <td>@item.SectionName</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(item.FileUrl))
+                                        {
+                                            <a href="@item.FileUrl" target="_blank">View File</a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+                $('#tbale').DataTable({
+                    "paging": true,
+                    "searching": true,
+                    "ordering": true,
+                    "info": true,
+                    "lengthChange": true,
+                    "autoWidth": false
+                });
+
+                $('#diaryModal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget); // Button that triggered the modal
+                    var classId = button.data('classid');
+                    var sectionId = button.data('sectionid');
+                    var subjectId = button.data('subjectid');
+                    var diaryId = button.data('diaryid');
+                    var submissionDate = button.data('submissiondate');
+
+                    var modal = $(this);
+                    modal.find('#modalClassId').val(classId);
+                    modal.find('#modalSectionId').val(sectionId);
+                    modal.find('#modalSubjectId').val(subjectId);
+                    modal.find('#modalDiaryId').val(diaryId);
+                    modal.find('#modalSubmissionDate').val(submissionDate);
+                });
+
+                $('#homeworkForm').submit(function (event) {
+                    event.preventDefault();
+
+                    var formData = new FormData(this);
+                    $.ajax({
+                        url: "/Parent/Home/SubmitHomework",
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            if (response.success) {
+                                alert('Homework submitted successfully!');
+                                location.reload();
+                            } else {
+                                alert('Failed to submit homework.');
+                            }
+                        },
+                        error: function () {
+                            alert('An error occurred.');
+                        }
+                    });
+                });
+            });
+    </script>
+}

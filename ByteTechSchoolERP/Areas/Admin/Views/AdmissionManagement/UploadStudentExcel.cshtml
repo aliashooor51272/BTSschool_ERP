@@ -1,0 +1,414 @@
+﻿@model ByteTechSchoolERP.Models.Students.Student
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        .style-0 {
+            border-radius: 10px;
+            background: #fff;
+            vertical-align: middle;
+            font-size: 16px;
+            padding: 20px;
+            flex: 0 0 100%;
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 10px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            box-shadow: rgb(128, 128, 128) 0px 0px 1px 0px;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+
+        .page-wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .page-wrapper .content {
+                flex: 1;
+            }
+
+        .card {
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @@media (max-width: 768px) {
+            .form1-column {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        .card {
+            margin-left: -179px;
+            width: 90%;
+            margin-top: -31px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper" style="background:#f7f7fa;">
+        <div class="tab-container container-fluid mt-4 ">
+            <div class="col-md-12 col-lg-12 col-xl-12 m-auto">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <strong class="style-1">Admission Management</strong>
+                    <i class="fas fa-home home-icon"></i>
+                    Admit Bulk Student
+                </div>
+            </div>
+        </div>
+        <main id="main" class="main">
+            <section class="section">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <form asp-action="UploadStudentExcel" method="post" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="ClassId">Class<span class="text-danger">*</span></label>
+                                                <select id="classDropdown" class="form-control" name="ClassId" asp-items="ViewBag.Classes" required>
+                                                    <option value="">Select Class</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group mt-3">
+                                                <label for="SectionId">Section<span class="text-danger">*</span></label>
+                                                <select id="sectionDropdown" class="form-control" name="SectionId" required>
+                                                    <option value="">Select Section</option>
+                                                </select>
+                                            </div>
+
+                                            <input type="hidden" id="ClassId" name="ClassId" />
+                                            <input type="hidden" id="SectionId" name="SectionId" />
+
+                                            <div class="form-group">
+                                                <label for="file">Upload Student Excel File</label>
+                                                <input type="file" name="file" class="form-control" id="fileInput" required />
+                                            </div>
+                                            <button type="button" id="uploadButton" class="btn btn-primary">Upload</button>
+
+                                            <div class="col-md-6" id="columnMappingSection" style="display: none;margin-top: 29px;">
+                                                <div class="local-forms label">
+                                                    <label id="label-color">File Columns</label>
+                                                    <select id="fileColumns" class="form-control"></select>
+                                                </div>
+                                                <br />
+                                                <div class="local-forms label">
+                                                    <label id="label-color">Database Columns</label>
+                                                    <select id="databaseColumns" class="form-control">
+                                                        <option value="FullName">Full Name</option>
+                                                        <option value="Surname">Surname</option>
+                                                        <option value="Gender">Gender</option>
+                                                        <option value="StudentProfileUrl">Student Profile URL</option>
+                                                        <option value="Cast">Cast</option>
+                                                        <option value="RelationWithParent">Relation With Parent</option>
+                                                        <option value="RelationWithGuardian">Relation With Guardian</option>
+                                                       
+                                                        <option value="DateOfBirth">Date Of Birth</option>
+                                                        <option value="PlaceOfBirth">Place Of Birth</option>
+                                                        <option value="ParentName">Parent Name</option>
+                                                        <option value="ParentCNIC">Parent CNIC</option>
+                                                        <option value="ParentEmail">Parent Email</option>
+                                                        <option value="ParentContactNo">Parent Contact No</option>
+                                                        <option value="ParentOtherNo">Parent Other No</option>
+                                                        <option value="ParentOccupation">Parent Occupation</option>
+                                                        <option value="ParentIncome">Parent Income</option>
+                                                        <option value="AdmissionDate">Admission Date</option>
+                                                        <option value="Religion">Religion</option>
+                                                        <option value="PreviousSchoolName">Previous School Name</option>
+                                                        <option value="PreviousObtainedMarks">Previous Obtained Marks</option>
+                                                        <option value="PreviousTotalMarks">Previous Total Marks</option>
+                                                        <option value="PreviousClass">Previous Class</option>
+                                                        <option value="PreviousRemarks">Previous Remarks</option>
+                                                        <option value="Address">Address</option>
+                                                        <option value="ClassId">Class Id</option>
+                                                        <option value="ParentId">Parent Id</option>
+                                                        <option value="SectionId">Section Id</option>
+                                                        <option value="Shift">Shift</option>
+                                                        <option value="GuardianName">Guardian Name</option>
+                                                        <option value="GuardianContactNo">Guardian Contact No</option>
+                                                        <option value="GuardianOtherNo">Guardian Other No</option>
+                                                        <option value="GuardianOccupation">Guardian Occupation</option>
+                                                        <option value="GuardianIncome">Guardian Income</option>
+                                                        <option value="GuardianCNIC">Guardian CNIC</option>
+                                                        <option value="GuardianEmail">Guardian Email</option>
+                                           
+                                                        <option value="GuardianProfileUrl">Guardian Profile URL</option>
+                                                        <option value="SchoolLeavingCertificateUrl">School Leaving Certificate URL</option>
+                                                        <option value="StudentFormBUrl">Student Form B URL</option>
+                                                        <option value="GuardianCNICFrontUrl">Guardian CNIC Front URL</option>
+                                                        <option value="GuardianCNICBackUrl">Guardian CNIC Back URL</option>
+                                                        <option value="OtherDocumentsUrl1">Other Documents URL 1</option>
+                                                        <option value="OtherDocumentsTitle1">Other Documents Title 1</option>
+                                                        <option value="OtherDocumentsUrl2">Other Documents URL 2</option>
+                                                        <option value="OtherDocumentsTitle2">Other Documents Title 2</option>
+                                                    </select>
+                                                </div>
+                                                <br />
+                                                <div class="student-submit" style="text-align: center;">
+                                                    <button type="button" id="mapButton" class="btn btn-primary">Map</button>
+                                                    <button type="button" id="saveButton" class="btn btn-success">Save</button>
+                                                </div>
+                                            </div>
+
+                                            <div id="mappedDataSection" class="mt-4" style="display: none;">
+                                                <h5>Mapped Columns</h5>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>File Column</th>
+                                                            <th>Database Column</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="mappedColumnsTableBody">
+                                                        <!-- Mapped data will be displayed here -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <input type="hidden" id="mappedColumns" name="mappedColumns" />
+                                            <input type="hidden" id="fileData" name="fileData" />
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<script>
+    document.getElementById('classDropdown').addEventListener('change', function () {
+        var classId = this.value;
+
+        if (classId) {
+            fetch(`/Admin/AdmissionManagement/GetSectionsByClass?classId=${classId}`)
+                .then(response => response.json())
+                .then(data => {
+                    var sectionDropdown = document.getElementById('sectionDropdown');
+                    sectionDropdown.innerHTML = '<option value="">Select Section</option>'; // Clear previous options
+
+                    data.forEach(function (item) {
+                        var option = document.createElement('option');
+                        option.text = item.text;
+                        option.value = item.value;
+                        sectionDropdown.add(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching sections:', error);
+                });
+        } else {
+            document.getElementById('sectionDropdown').innerHTML = '<option value="">Select Section</option>';
+        }
+    });
+
+    document.getElementById('saveButton').addEventListener('click', function () {
+        // Set ClassId and SectionId hidden input values
+        var classId = document.getElementById('classDropdown').value;
+        var sectionId = document.getElementById('sectionDropdown').value;
+
+        document.getElementById('ClassId').value = classId;
+        document.getElementById('SectionId').value = sectionId;
+
+        var mappedColumns = [];
+        var tableRows = document.querySelectorAll('#mappedColumnsTableBody tr');
+
+        tableRows.forEach(function (row) {
+            var cells = row.querySelectorAll('td');
+            mappedColumns.push({
+                fileColumn: cells[0].textContent,
+                databaseColumn: cells[1].textContent
+            });
+        });
+
+        document.getElementById('mappedColumns').value = JSON.stringify(mappedColumns);
+
+        var fileInput = document.getElementById('fileInput');
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, { type: 'array' });
+
+            var firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+            var json = XLSX.utils.sheet_to_json(firstSheet);
+
+            document.getElementById('fileData').value = JSON.stringify(json);
+
+            // Log the values to the console before submission
+            console.log('ClassId:', classId);
+            console.log('SectionId:', sectionId);
+            console.log('Mapped Columns:', mappedColumns);
+            console.log('File Data:', json);
+
+            var form = document.createElement('form');
+            form.method = 'post';
+            form.action = '/Admin/AdmissionManagement/UploadStudentExcel'; // Update with your action URL
+
+            // Append hidden inputs
+            form.appendChild(createHiddenInput('mappedColumns', document.getElementById('mappedColumns').value));
+            form.appendChild(createHiddenInput('fileData', document.getElementById('fileData').value));
+            form.appendChild(createHiddenInput('ClassId', document.getElementById('ClassId').value));
+            form.appendChild(createHiddenInput('SectionId', document.getElementById('SectionId').value));
+
+            document.body.appendChild(form);
+            form.submit();
+        };
+
+        reader.readAsArrayBuffer(file);
+    });
+
+    function createHiddenInput(name, value) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = value;
+        return input;
+    }
+
+    document.getElementById('uploadButton').addEventListener('click', function () {
+        var fileInput = document.getElementById('fileInput');
+        if (fileInput.files.length === 0) {
+            alert('Please select a file.');
+            return;
+        }
+
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, { type: 'array' });
+
+            // Get the first worksheet
+            var firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+
+            // Get the column headers
+            var headers = XLSX.utils.sheet_to_json(firstSheet, { header: 1 })[0];
+
+            // Populate the fileColumns dropdown with headers
+            var fileColumns = document.getElementById('fileColumns');
+            fileColumns.innerHTML = ''; // Clear previous options
+
+            headers.forEach(function (header) {
+                var option = document.createElement('option');
+                option.text = header;
+                option.value = header;
+                fileColumns.add(option);
+            });
+
+            // Show the column mapping section
+            document.getElementById('columnMappingSection').style.display = 'block';
+        };
+
+        reader.readAsArrayBuffer(file);
+    });
+
+    document.getElementById('mapButton').addEventListener('click', function () {
+        var fileColumn = document.getElementById('fileColumns').value;
+        var databaseColumn = document.getElementById('databaseColumns').value;
+
+        if (!fileColumn || !databaseColumn) {
+            alert('Please select both file and database columns.');
+            return;
+        }
+
+        // Display the mapped data in a table
+        var tableBody = document.getElementById('mappedColumnsTableBody');
+        var row = document.createElement('tr');
+
+        var fileColumnCell = document.createElement('td');
+        fileColumnCell.textContent = fileColumn;
+
+        var databaseColumnCell = document.createElement('td');
+        databaseColumnCell.textContent = databaseColumn;
+
+        row.appendChild(fileColumnCell);
+        row.appendChild(databaseColumnCell);
+
+        tableBody.appendChild(row);
+
+        // Show the mapped data section
+        document.getElementById('mappedDataSection').style.display = 'block';
+    });
+    document.getElementById('saveButton').addEventListener('click', function () {
+        var mappedColumns = [];
+        var rows = document.getElementById('mappedColumnsTableBody').getElementsByTagName('tr');
+
+        for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName('td');
+            var fileColumn = cells[0].textContent;
+            var databaseColumn = cells[1].textContent;
+
+            mappedColumns.push({ fileColumn: fileColumn, databaseColumn: databaseColumn });
+        }
+
+        var fileInput = document.getElementById('fileInput');
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var data = new Uint8Array(e.target.result);
+            var workbook = XLSX.read(data, { type: 'array' });
+            var firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+            var jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+
+            // Send data to server
+            fetch('/Admin/AdmissionManagement/UploadStudentExcel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                },
+                body: JSON.stringify({
+                    mappings: mappedColumns,
+                    data: jsonData.slice(1) // exclude headers
+                })
+            }).then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        alert('Data saved successfully!');
+                    } else {
+                        alert('Error saving data.');
+                    }
+                });
+        };
+
+        reader.readAsArrayBuffer(file);
+    });
+
+</script>

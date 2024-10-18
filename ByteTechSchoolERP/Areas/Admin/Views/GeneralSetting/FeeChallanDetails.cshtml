@@ -1,0 +1,271 @@
+﻿<head>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
+
+</head>
+<style>
+
+
+    .style-0 {
+        border-radius: 10px;
+        background: #fff;
+        vertical-align: middle;
+        font-size: 16px;
+        padding: 20px;
+        flex: 0 0 100%;
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+
+
+
+
+    .formTitle {
+        line-height: 16px;
+        text-align: center;
+        margin-top: 10px;
+        margin: 10px 0px 0px;
+        font-weight: 600;
+        width: 100% !important;
+        font-size: 20px;
+        margin-bottom: 0px;
+        font-family: Poppins, sans-serif;
+        color: rgb(34, 34, 34);
+        box-sizing: border-box;
+    }
+
+    .formLabel {
+        background: rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(94, 114, 228) 0px, rgb(130, 94, 228) 100%);
+        padding-left: 3px;
+        padding-right: 3px;
+        font-size: 12px;
+        color: rgb(255, 255, 255);
+        display: block;
+        margin-bottom: 8px;
+        touch-action: manipulation;
+        box-sizing: border-box;
+        border: 0.666667px solid rgb(153, 153, 153);
+        border-radius: 12px;
+    }
+
+    .requiredLabel {
+        margin-top: -10px;
+        position: absolute;
+        margin-left: 8px;
+    }
+
+    .formInput {
+        font-size: 14px;
+        border-radius: 25px;
+        border: 0px none rgb(73, 80, 87);
+        display: block;
+        width: 100%;
+        padding: 8px 12px;
+        line-height: 17.5px;
+        color: rgb(73, 80, 87);
+        background-color: rgb(255, 255, 255);
+        background-image: none;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        overflow: visible;
+        margin: 0px;
+        font-family: Poppins, sans-serif;
+        touch-action: manipulation;
+        box-sizing: border-box;
+    }
+
+    .inputContainer {
+        border: 0.666667px solid rgb(150, 152, 214);
+        border-radius: 25px;
+        margin-top: 15px;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .formSelect {
+        font-size: 14px;
+        border-radius: 25px;
+        border: 0px none rgb(73, 80, 87);
+        height: 38px;
+        width: 100%;
+        padding: 8px 12px;
+        line-height: normal;
+        color: rgb(73, 80, 87);
+        background-color: rgb(255, 255, 255);
+        background-image: none;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        text-transform: none;
+        margin: 0px;
+        font-family: Poppins, sans-serif;
+        touch-action: manipulation;
+        box-sizing: border-box;
+    }
+
+    .selectDropdown {
+        padding: 0px;
+        height: auto;
+        border: 0px none rgb(73, 80, 87);
+        background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+        box-shadow: none;
+        border-radius: 25px;
+        position: relative;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        line-height: 17.5px;
+        color: rgb(73, 80, 87);
+        background-color: rgba(0, 0, 0, 0);
+        background-image: none;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        box-sizing: border-box;
+    }
+
+    .buttonContainer {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        box-sizing: border-box;
+    }
+
+    .formButton {
+        border-radius: 25px;
+        text-transform: capitalize;
+        font-size: 15px;
+        padding: 10px 19px;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0) linear-gradient(45deg, rgb(255, 182, 77), rgb(255, 203, 128)) repeat scroll 0% 0% / auto padding-box border-box;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        line-height: 18.75px;
+        transition: all 0.15s ease-in-out 0s;
+        appearance: button;
+        overflow: visible;
+        margin: 0px;
+        font-family: Poppins, sans-serif;
+        touch-action: manipulation;
+        box-sizing: border-box;
+    }
+
+    .local-forms label{
+        padding:5px 5px !important ;
+    }
+</style>
+<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width: 100%;margin-left: 5px;">
+                <strong>General Settings</strong> |
+                <i class="fas fa-home home-icon"></i> - Fee Challan Details
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-4 mt-4">
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <div class=" local-forms label">
+                    <form   method="post" enctype="multipart/form-data" class="style-7">
+                    <div class="local-forms label">
+                        <label id="label-color">Institute Logo*</label>
+                        <br />
+                        <img src="~/assets/img/logo-small.png" class="style-19" id="logo-preview" />
+                        <input type="file" class="form-control" name="ImageFileVM"  required/>
+                    </div> 
+                    <div class="local-forms label">
+                        <label id="label-color">Bank Name <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="Name" style="margin-top: 40px;" placeholder="Bank Name" required>
+                    </div>
+                    <div class="local-forms label">
+                        <label id="label-color"> Bank/Brach Address <span class="login-danger">*</span></label>
+                            <input type="text" class="form-control" name="Name" style="margin-top: 40px;" placeholder="Bank/Brach Address" required>
+                    </div>
+                    <div class="local-forms label">
+                        <label id="label-color">Account No. <span class="login-danger">*</span></label>
+                            <input class="form-control" name="Name" style="margin-top: 40px;"  placeholder="Account No." required>
+                    </div>
+                    <div class="local-forms label">
+                        <label id="label-color">Instruction <span class="login-danger">*</span></label>
+                        <textarea class="form-control" name="Name" style="margin-top: 40px;"required></textarea>
+                    </div>
+                    <br />
+                        <div class="student-submit">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                 </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mt-4">
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <table id="bankTable" class="table table-striped table-bordered dt-responsive nowrap mt-2" style="width:100%;">
+                    <thead style="background-color:rgb(94, 114, 228); height: 38px;">
+                        <tr style="color: white;">
+                             
+                            <th>Institute Logo</th>
+                            <th>Bank Name</th>
+                            <th>Bank/Brach Address</th>
+                            <th>Account No.</th>
+                            <th>Instruction</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by DataTables -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Include jQuery, Bootstrap, and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
+
+    <!-- Initialize DataTable -->
+    <script>
+        $(document).ready(function () {
+            $('#bankTable').DataTable({
+                responsive: true,
+                "pageLength": 10,  // Number of rows per page
+                "lengthChange": false,  // Hide the "Show X entries" dropdown
+                "autoWidth": false,  // Disable auto width calculation
+                "columnDefs": [
+                    { "orderable": false, "targets": 5 }  // Disable sorting on the "Actions" column
+                ]
+            });
+        });
+    </script>
+
+
+
+</div>
+
+        
+
+<footer class="mt-4">
+    <p>Copyright © 2022 Dreamguys.</p>
+</footer>

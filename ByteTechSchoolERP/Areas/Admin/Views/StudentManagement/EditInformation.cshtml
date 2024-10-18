@@ -1,0 +1,602 @@
+﻿@model ByteTechSchoolERP.Models.ViewModels.StudentViewModel
+<div class="page-wrapper">
+    <div id="editContainer">
+        <div class="container mt-3" id="editContainer">
+            <form asp-action="EditInformation" asp-controller="StudentManagement" asp-area="Admin" method="post" enctype="multipart/form-data">
+
+                <!-- Student Information Card -->
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white" style="background-color: #3d5ee1 !important;">
+
+                        <div class="d-inline-block bg-white text-primary p-1 rounded-circle mr-2">1</div>
+                        Student Information
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Student Name*</label>
+                                    <input type="text" placeholder="Name of Student" asp-for="FullName" required class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Surname</label>
+                                    <input type="text" placeholder="Surname" asp-for="Surname" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Date of Birth*</label>
+                                    <input type="date" asp-for="DateOfBirth" required class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Select Gender*</label>
+                                    <select name="gender" asp-for="Gender" required class="form-control form-select rounded">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Caste*</label>
+                                    <input type="text" asp-for="Cast" class="form-control rounded" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Place of Birth*</label>
+                                    <input type="text" placeholder="Place of Birth" asp-for="PlaceOfBirth" required class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent Information Card -->
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white" style="background-color: #3d5ee1 !important;">
+                        <div class="d-inline-block bg-white text-primary p-1 rounded-circle mr-2">2</div>
+                        Parents Information
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Parent Name</label>
+                                    <input type="text" id="parentName" placeholder="Father Name" asp-for="ParentName" class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Parent National ID</label>
+                                    <input type="text" placeholder="Father National ID" asp-for="ParentCNIC" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Parent Contact Number*</label>
+                                    <input type="text" asp-for="ParentContactNo" class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Other Number</label>
+                                    <input type="text" asp-for="ParentOtherNo" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Income</label>
+                                    <input type="text" placeholder="Income" asp-for="ParentIncome" class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Email</label>
+                                    <input type="email" asp-for="ParentEmail" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Parent Occupation</label>
+                                    <input type="text" placeholder="Occupation" asp-for="ParentOccupation" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guardian Information Card -->
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white" style="background-color: #3d5ee1 !important;">
+                        <div class="d-inline-block bg-white text-primary p-1 rounded-circle mr-2">3</div>
+                        Guardian Information
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Guardian Name</label>
+                                    <input type="text" id="guardianName" placeholder="Guardian Name" asp-for="GuardianName" class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Guardian National ID</label>
+                                    <input type="text" placeholder="Guardian National ID" asp-for="GuardianCNIC" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Guardian Contact Number</label>
+                                    <input type="text" asp-for="GuardianContactNo" class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Other Number</label>
+                                    <input type="text" asp-for="GuardianOtherNo" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Income</label>
+                                    <input type="text" placeholder="Income" asp-for="GuardianIncome" class="form-control rounded" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Email</label>
+                                    <input type="email" asp-for="GuardianEmail" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Guardian Occupation</label>
+                                    <input type="text" placeholder="Occupation" asp-for="GuardianOccupation" class="form-control rounded" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Previous Academic Information Card -->
+
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-white" style="background-color: #3d5ee1 !important;">
+
+                            <div class="d-inline-block bg-white text-primary p-1 rounded-circle mr-2">4</div>
+                            Previous Academic Imformation
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Previous School Name</label>
+                                        <input type="text" placeholder=" " asp-for="PreviousSchoolName" class="form-control rounded" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Class</label>
+                                        <select name="gender" asp-for="PreviousClass" class="form-control form-select rounded">
+                                            <option value="">Select Class</option>
+                                            <option value="Nursery">Nursery</option>
+                                            <option value="Prep">Prep</option>
+                                            <option value="KG1">KG1</option>
+                                            <option value="KG2">KG2</option>
+                                            <option value="One">One</option>
+                                            <option value="Two">Two</option>
+                                            <option value="Three">Three</option>
+                                            <option value="Four">Four</option>
+                                            <option value="Five">Five</option>
+                                            <option value="Six">Six</option>
+                                            <option value="Seven">Seven</option>
+                                            <option value="Eight">Eight</option>
+                                            <option value="Nine">Nine</option>
+                                            <option value="Ten">Ten</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Obtain Marks</label>
+                                        <input type="number" placeholder=" " asp-for="PreviousObtainedMarks" class="form-control rounded" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Total Marks</label>
+                                        <input type="number" placeholder=" " asp-for="PreviousTotalMarks" class="form-control rounded" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Remarks</label>
+                                        <input type="text" placeholder=" " asp-for="PreviousRemarks" class="form-control rounded" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Information Card -->
+
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-white" style="background-color: #3d5ee1 !important;">
+
+                            <div class="d-inline-block bg-white text-primary p-1 rounded-circle mr-2">5</div>
+                            Acedemic Information
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Class*</label>
+                                        <select asp-for="ClassId" required asp-items="@ViewBag.Classess" class="form-control form-select rounded">
+                                            <option value="">Select Class</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Section*</label>
+                                        <select id="SectionId" asp-for="SectionId" required asp-items="@ViewBag.Sections" class="form-control form-select rounded">
+                                            <option value="">Select Section</option> <!-- Corrected placeholder from "Select Class" to "Select Section" -->
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Shift*</label>
+                                        <select asp-for="Shift" required class="form-control form-select rounded">
+                                            <option value="">Select Shift</option>
+                                            <option value="Moring">Moring</option>
+                                            <option value="Evening">Evening</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Other Information Card -->
+
+                            <div class="card mb-3">
+                                <div class="card-header bg-primary text-white" style="background-color: #3d5ee1 !important;">
+
+                                    <div class="d-inline-block bg-white text-primary p-1 rounded-circle mr-2">6</div>
+                                    Other Information
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold">Admission Date*</label>
+                                            <input type="date" asp-for="AdmitionDate" required class="form-control rounded" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold">Religion</label>
+                                            <select name="religion" asp-for="Religion" required class="form-control form-select rounded">
+                                                <option value="">Select Religion</option>
+                                                <option value="Islam">Islam</option>
+                                                <option value="Christianity">Christianity</option>
+                                                <option value="Hinduism">Hinduism</option>
+                                                <option value="Buddhism">Buddhism</option>
+                                                <option value="Sikhism">Sikhism</option>
+                                                <option value="Judaism">Judaism</option>
+                                                <option value="Bahá'í Faith">Bahá'í Faith</option>
+                                                <option value="Confucianism">Confucianism</option>
+                                                <option value="Jainism">Jainism</option>
+                                                <option value="Shinto">Shinto</option>
+                                                <option value="Others">Others</option> <!-- Optional: For any other religions not listed -->
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold">Address  </label>
+                                            <textarea asp-for="Address" class="form-control   rounded"></textarea>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <!-- Attachments Information Card -->
+
+
+                                <div class="card mb-3">
+                                    <div class="card-header bg-primary text-white" style="background-color: #3d5ee1 !important;">
+                                        <div class="d-inline-block bg-white text-primary p-1 rounded-circle mr-2">7</div>
+                                        Attachments
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Student Picture</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.StudentProfileUrl)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="StudentProfileUrlPathMV" asp-for="StudentProfileUrlPathMV" class="form-control-file" />
+                                                </div>
+                                                <small class="form-text text-muted">Choose a new image to upload. The current image will be replaced.</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Guardian Picture</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.GuardianProfileUrl)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="GuardianProfileUrlPathMV" asp-for="GuardianProfileUrlPathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">School Leaving Certificate</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.SchoolLeavingCertificateUrl)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="SchoolLeavingCertificateUrlPathMV" asp-for="SchoolLeavingCertificateUrlPathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Form-B</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.StudentFormBUrl)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="StudentFormBUrlPathMV" asp-for="StudentFormBUrlPathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Guardian CNIC Front*</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.GuardianCNICFrontUrl)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="GuardianCNICFrontUrlPathMV" asp-for="GuardianCNICFrontUrlPathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Guardian CNIC Back*</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.GuardianCNICBackUrl)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="GuardianCNICBackUrlPathMV" asp-for="GuardianCNICBackUrlPathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Other Documents 1</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.OtherDocumentsUrl1)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="OtherDocumentsUrl1PathMV" asp-for="OtherDocumentsUrl1PathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Other Documents Title 1</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.OtherDocumentsTitle1)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="OtherDocumentsTitle1" asp-for="OtherDocumentsTitle1" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Other Documents 2</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.OtherDocumentsUrl2)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="OtherDocumentsUrl2PathMV" asp-for="OtherDocumentsUrl2PathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Other Documents Title 2</label>
+                                                <div class="mb-2">
+                                                    <!-- Display Current Image -->
+                                                    <!-- Display Current Image -->
+                                                    @if (!string.IsNullOrEmpty(Model.StudentProfileUrl))
+                                                    {
+                                                        <img src="@Url.Content("~/StudentImage/" + Model.OtherDocumentsTitle2)" class="style-19" style="max-height: 150px;" id="edit-logo-preview" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="text-muted">No image available</span>
+                                                    }
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <!-- File Input for New Image -->
+                                                    <input type="file" id="OtherDocumentsUrl2PathMV" asp-for="OtherDocumentsUrl2PathMV" class="form-control-file" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-shadow rounded-pill px-4 py-2">
+                                            <i class="fa fa-save mr-2"></i> Save
+                                        </button>
+                                    </div>
+                                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+
+<script>
+    function updateFileName(inputId, displayId) {
+        var fileInput = document.getElementById(inputId);
+        var fileNameDisplay = document.getElementById(displayId);
+
+        if (fileInput.files.length > 0) {
+            fileNameDisplay.value = fileInput.files[0].name;
+        }
+    }
+
+</script>

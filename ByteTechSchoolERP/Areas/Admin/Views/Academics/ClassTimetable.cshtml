@@ -1,0 +1,354 @@
+﻿@using Newtonsoft.Json
+@model ByteTechSchoolERP.Models.ViewModels.ClassTimetableViewModel
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .relative label.text-danger {
+            position: absolute;
+            left: 5px;
+            bottom: 0;
+        }
+
+        .tablewidthRS {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper" style="background-color: #f7f7fa;">
+        <div class="tab-container container-fluid">
+            <div class="col-md-12">
+                <div class="style-0" style="max-width: 100%; margin-left:4px;">
+                    <strong class="style-1">Academics</strong> <i class="fas fa-home home-icon"></i> Class Timetable
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-container container-fluid d-md-flex">
+            <div class="col-md-12 mt-4">
+                <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Heading: Select Criteria with buttons -->
+                            <div class="box-header">
+                                <h3 class="box-title"><i class="fa fa-search"></i> Select Criteria</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Class<small class="req"> *</small></label>
+                                            <select asp-for="ClassId" required class="form1-input form-select" asp-items="@ViewBag.Clasess" id="class-dropdown" onchange="SelectClass()">
+                                                <option value="">Select Class</option>
+
+                                            </select>                                          
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Section<small class="req"> *</small></label>
+                                           
+                                            <select id="SectionId" class="form1-input form-select" required asp-for="SectionId">
+                                                <!-- Options will be added here dynamically -->
+                                                <option>Select Section</option>
+                                            </select>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-tabs" id="myTabs">
+                                <li class="nav-item me-3"><a class="nav-link active" href="#tab_1" data-toggle="tab">Monday</a></li>
+                                <li class="nav-item me-3"><a class="nav-link" href="#tab_2" data-toggle="tab">Tuesday</a></li>
+                                <li class="nav-item me-3"><a class="nav-link" href="#tab_3" data-toggle="tab">Wednesday</a></li>
+                                <li class="nav-item me-3"><a class="nav-link" href="#tab_4" data-toggle="tab">Thursday</a></li>
+                                <li class="nav-item me-3"><a class="nav-link" href="#tab_5" data-toggle="tab">Friday</a></li>
+                                <li class="nav-item me-3"><a class="nav-link" href="#tab_6" data-toggle="tab">Saturday</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#tab_7" data-toggle="tab">Sunday</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab_1">
+                                    <div class="row clearfix">
+                                        <div class="col-md-12 column">
+                                            <a id="add_row" class="addrow addbtnright btn btn-primary btn-sm" style="float: right; margin-bottom: 10px;">
+                                                <i class="fa fa-plus"></i> Add New
+                                            </a>
+                                            <form method="POST" asp-controller="Academics" asp-action="SaveTimetable" id="form_Monday" class="commentForm autoscroll" novalidate="novalidate">
+                                                <input type="hidden" name="Day" value="Monday">
+                                                <input type="hidden" name="ClassId" id="class_id" value="2">
+                                                <input type="hidden" name="SectionId" id="section_id" value="1">
+
+                                                <div>
+                                                    <table class="table table-bordered table-hover order-list tablewidthRS" id="tab_logic">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Subject</th>
+                                                                <th>Teacher</th>
+                                                                <th>Time From<small class="astrike"> *</small></th>
+                                                                <th>Time To<small class="astrike"> *</small></th>
+                                                                <th>Room No.</th>
+                                                                <th class="text-right">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr id="addr0">
+                                                                <td>
+                                                                    <select name="TimetableEntries[0].SubjectId" required class="form-select subjectvalue" asp-items="@ViewBag.subject">
+                                                                        <option value="">Select subject</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="TimetableEntries[0].StaffTempId" required class="form1-input form-select teachervalue" asp-items="@ViewBag.StaffTempId">
+                                                                        <option value="">Select teacher</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="input-group">
+                                                                        <input type="text" name="TimetableEntries[0].TimeFrom" class="form-control time_from time" value="9:30 AM">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-clock-o"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="input-group">
+                                                                        <input type="text" name="TimetableEntries[0].TimeTo" class="form-control time_to time" value="10:10 AM">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-clock-o"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" name="TimetableEntries[0].RoomNo" value="125G" placeholder="Room no" class="form-control room_no">
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <button class="ibtnDel btn btn-danger btn-sm">
+                                                                        <i class="fa fa-trash"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- More rows added dynamically will follow this pattern -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="d-flex justify-content-end mt-2">
+                                                    <button class="btn btn-primary btn-sm" type="submit">
+                                                        <i class="fa fa-save"></i> Save
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Include Bootstrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            function SelectClass() {
+                var classDropdown = document.getElementById('class-dropdown');
+                var selectedOption = classDropdown.options[classDropdown.selectedIndex];
+
+                var classId = selectedOption.value;
+                var sectionId = selectedOption.getAttribute('data-section-id');
+
+                document.getElementById('class_id').value = classId;
+                document.getElementById('section_id').value = sectionId;
+            }
+        </script>
+        <script>
+            var subjects = @Html.Raw(JsonConvert.SerializeObject(ViewBag.subject));
+            var teacher = @Html.Raw(JsonConvert.SerializeObject(ViewBag.StaffTempId));
+
+            $(document).ready(function () {
+                var counter = 0;
+
+                // Add new row
+                $(document).ready(function () {
+                    var counter = 0;
+
+                    // Add new row
+                    $("#add_row").on("click", function () {
+                        counter++;
+
+                        var subjectOptions = '<option value="">Select subject</option>';
+                        subjects.forEach(function (subject) {
+                            subjectOptions += `<option value="${subject.Value}">${subject.Text}</option>`;
+                        });
+
+                        var teacherOptions = '<option value="">Select Teacher</option>';
+                        teacher.forEach(function (teacher) {
+                            teacherOptions += `<option value="${teacher.Value}">${teacher.Text}</option>`;
+                        });
+
+                        var newRow = `
+                        <tr id="addr${counter}">
+                            <td>
+                                <select name="TimetableEntries[${counter}].SubjectId" required class="form1-input form-select">
+                                    ${subjectOptions}
+                                </select>
+                            </td>
+                            <td>
+                                <select name="TimetableEntries[${counter}].StaffTempId" required class="form1-input form-select">
+                                    ${teacherOptions}
+                                </select>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="text" name="TimetableEntries[${counter}].TimeFrom" class="form-control time_from time">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="text" name="TimetableEntries[${counter}].TimeTo" class="form-control time_to time">
+                                    <div class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" name="TimetableEntries[${counter}].RoomNo" placeholder="Room no" class="form-control room_no">
+                            </td>
+                            <td class="text-right">
+                                <button class="ibtnDel btn btn-danger btn-sm" type="button">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                        $("#tab_logic tbody").append(newRow);
+                    });
+
+                    // Remove row
+                    $("#tab_logic").on("click", ".ibtnDel", function () {
+                        $(this).closest("tr").remove();
+                    });
+                });
+
+                // Remove row
+                $("#tab_logic").on("click", ".ibtnDel", function () {
+                    $(this).closest("tr").remove();
+                });
+            });
+
+            // Fetch related sections based on selected class
+            function SelectClass() {
+                var classId = $('#class-dropdown').val();
+
+                if (!classId) {
+                    return; // No class selected, do nothing
+                }
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Admin/AdmissionManagement/GetTheRelatedSection",
+                    data: { classId: classId },
+                    success: function (data) {
+                        var sectionDropdown = $('#SectionId');
+                        sectionDropdown.empty();  // Clear existing options
+
+                        // Add default option
+                        sectionDropdown.append('<option value="">Select Section</option>');
+
+                        // Check if data.data is defined and has length
+                        if (data && data.data && data.data.length > 0) {
+                            // Iterate through data.data and add options
+                            $.each(data.data, function (index, item) {
+                                sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                            });
+                        } else {
+                            console.error("No data or incorrect data format received.");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error fetching section data:", status, error);
+                    }
+                });
+            }
+
+            $('button[type="submit"]').on('click', function (event) {
+                debugger
+                event.preventDefault(); // Prevent default form submission
+
+                // Get class and section IDs
+                var classId = $('#class-dropdown').val();
+                var sectionId = $('#SectionId').val();
+                debugger
+                // Get selected day
+                var day = $('#myTabs .nav-link.active').text();
+
+                // Get form values
+                var timetableData = [];
+                $('#tab_logic tbody tr').each(function () {
+                    var subject = $(this).find('.subjectvalue').val(); // Use class selector
+                    var teacher = $(this).find('.teachervalue').val(); // Use class selector
+                    var timeFrom = $(this).find('.time_from').val(); // Use class selector
+                    var timeTo = $(this).find('.time_to').val(); // Use class selector
+                    var roomNo = $(this).find('.room_no').val(); // Use class selector
+
+                    timetableData.push({
+                        SubjectId: subject,
+                        StaffTempId: teacher,
+                        timeFrom: timeFrom,
+                        timeTo: timeTo,
+                        roomNo: roomNo
+                    });
+                });
+
+
+                // Send data via AJAX
+                $.ajax({
+                    url: '/Admin/Academics/SaveTimetable',
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    headers: {
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    data: JSON.stringify({
+                        ClassId: classId,
+                        SectionId: sectionId,
+                        Day: day,
+                        TimetableEntries: timetableData
+                    }),
+                    success: function (response) {
+                        if (response.isSuccess) {
+                            // Set success message in TempData (if applicable) or handle as needed
+                            alert("Timetable saved successfully!");
+                            // Optionally redirect or refresh the page
+                            window.location.href = '@Url.Action("ClassTimetable", "Academics")';
+                        } else {
+                            alert("Failed to save timetable: " + response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error saving timetable:", error);
+                        alert("An error occurred while saving the timetable.");
+                    }
+                });
+            });
+
+                             
+                            </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,736 @@
+﻿@model ByteTechSchoolERP.Models.ClassAndSection.Section
+
+<style>
+    .id-card-template {
+        display: flex;
+        justify-content: center;
+    }
+
+    .id-card {
+        width: 100%;
+        max-width: 600px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+
+    .id-card-header {
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 10px;
+    }
+
+    .id-card-photo-container {
+        flex: 0 0 120px;
+        text-align: center;
+    }
+
+    .id-card-photo {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .id-card-info {
+        flex: 1;
+    }
+
+    .id-card-footer {
+        border-top: 1px solid #dee2e6;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .nav-tabs .nav-link {
+        border-radius: 0.375rem 0.375rem 0 0;
+        border-color: #dee2e6;
+        background-color: #f8f9fa;
+        color: #495057;
+        font-weight: 500;
+    }
+
+        .nav-tabs .nav-link.active {
+            color: #0d6efd;
+            background-color: #ffffff;
+            border-color: #dee2e6 #dee2e6 #ffffff;
+            border-bottom: 2px solid #0d6efd;
+        }
+
+    .tab-content {
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+</style>
+<div class="page-wrapper">
+
+    <div class="tab-container container-fluid mt-3 ">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width: 100%; margin:0px;">
+                <strong>Student Management  </strong> 
+                <i class="fas fa-home home-icon"></i> -  Student Information
+            </div>
+        </div>
+
+
+    </div>
+    <div class="tab-container container-fluid mt-3 ">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%; margin:0px;">
+                <div class="row ">
+                    <div class="col-sm-12">
+                        <form class="row" id="filterForm">
+                            <!-- First Column -->
+                            @*   <div class="col-md-3 local-forms label">
+                            <div class="" style="position: relative;">
+                            <label id="label-color">Campus<span class="login-danger">*</span></label>
+                            <select class="form-contro"
+                            style="padding-right: 30px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'black\' width=\'18px\' height=\'18px\'><path d=\'M7 10l5 5 5-5z\'/><path d=\'M0 0h24v24H0z\' fill=\'none\'/></svg>'); background-repeat: no-repeat; background-position: right center;">
+                            <option value="">Main Campus</option>
+                            <option value="">Sub Campus1</option>
+                            <option value="">Sub Campus2</option>
+
+                            </select>
+                            </div>
+                            </div> *@
+
+                            <!-- Second Column -->
+                            <div class="col-md-3 local-forms label">
+                                <div style="position: relative;">
+                                    <label id="label-color"> Class<span class="login-danger">*</span></label>
+                                    <select class="form-control" asp-for="ClassId" id="ClassId" required onchange="SelectClasss()" asp-items="@ViewBag.Classess" style="padding-right: 30px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'black\' width=\'18px\' height=\'18px\'><path d=\'M7 10l5 5 5-5z\'/><path d=\'M0 0h24v24H0z\' fill=\'none\'/></svg>'); background-repeat: no-repeat; background-position: right center;">
+                                        <option value="">Select any one please</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 local-forms label">
+                                <div style="position: relative;">
+                                    <label id="label-color"> Section<span class="login-danger">*</span></label>
+                                    <select class="form-control" id="sectionId" asp-for="Id" required style="padding-right: 30px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'black\' width=\'18px\' height=\'18px\'><path d=\'M7 10l5 5 5-5z\'/><path d=\'M0 0h24v24H0z\' fill=\'none\'/></svg>'); background-repeat: no-repeat; background-position: right center;">
+                                        <option value="">Select any one please</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 local-forms label">
+                                @*  <div style="position: relative;">
+                                <label id="label-color">Type <span class="login-danger">*</span></label>
+                                <select class="form-control"
+                                style="padding-right: 30px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'black\' width=\'18px\' height=\'18px\'><path d=\'M7 10l5 5 5-5z\'/><path d=\'M0 0h24v24H0z\' fill=\'none\'/></svg>'); background-repeat: no-repeat; background-position: right center;">
+                                <option value="">Active Students</option>
+                                <option value="">Deactive Students</option>
+                                </select>
+                                </div> *@
+                                </br>
+                                <div class="student-submit" style="text-align: center;">
+                                    <button type="button" class="btn btn-primary" id="filterButton">
+                                        <i class="fas fa-search"></i> Filter Data
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-container container-fluid mt-3">
+            <div>
+                <div class="style-0" style="max-width: 100%; margin:0px;">
+                    <div>
+                        <div class="col-md8">
+                            <!-- Buttons Row -->
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i>Edit All
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>Delete All
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fas fa-file-csv"></i> CSV
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <button type="button" class="btn btn-info">
+                                    <i class="fas fa-file-excel"></i> Excel
+                                </button>
+                            </div>
+
+                        </div>
+                        <!-- Additional Headers Row -->
+                        <div class="row">
+                            <div class="col-md-12" style="overflow-x: auto;">
+                                <table id="StdInfoId" class="display mt-2" style="width:100%">
+                                    <thead style="background-color:rgb(94, 114, 228); height:40px !important;">
+                                        <tr style="color: white;">
+                                            <th>Roll Id</th>
+
+                                            <th>Name</th>
+
+                                            <th>Parent Name</th>
+                                            <th>ID Card</th>
+                                            <th>Certificate&Reports</th>
+                                            <th>Profile</th>
+                                            <th>Action</th>
+
+                                            @*     <th>ID Card</th>
+                                            <th>Reports</th>
+                                            <th>Profile</th>
+                                            <th>Action</th> *@
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <!-- Add more rows as needed -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-3 shadow-lg">
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-white " style="background-color: #007bffc2 !important;">
+                    <h5 class="modal-title" id="myModalLabel" style="color:#fff;">Profile Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <!-- Profile Picture -->
+                        <img src="https://static.vecteezy.com/system/resources/previews/007/469/004/non_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg" class="img-fluid rounded-circle border border-secondary shadow-sm" alt="Profile Picture" style="width: 150px; height: 150px;">
+                        <!-- Name and Class -->
+                        <h4 class="mt-3 mb-1" id="  ">   </h4>
+                        <p class="text-muted mb-4" id=" ">  </p>
+                    </div>
+                    <!-- Nav Tabs -->
+                    <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="basicInfo-tab" data-bs-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="parentInfo-tab" data-bs-toggle="tab" href="#parentInfo" role="tab" aria-controls="parentInfo" aria-selected="false">Parent Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="examMarks-tab" data-bs-toggle="tab" href="#examMarks" role="tab" aria-controls="examMarks" aria-selected="false">Exam Marks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="testProgress-tab" data-bs-toggle="tab" href="#testProgress" role="tab" aria-controls="testProgress" aria-selected="false">Test Progress</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link" id="payments-tab" data-bs-toggle="tab" href="#payments" role="tab" aria-controls="payments" aria-selected="false">Payments</a>
+                        </li>
+                    </ul>
+                    <!-- Tab Panes -->
+                    <div class="tab-content" id="profileTabsContent">
+                        <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Personal Information</h5>
+                                    <dl class="row">
+                                        <dt class="col-sm-4">Name:</dt>
+                                        <dd class="col-sm-8" id="FullName"></dd>
+                                        <dt class="col-sm-4">ID:</dt>
+                                        <dd class="col-sm-8" id="id"></dd>
+                                        <dt class="col-sm-4">Class:</dt>
+                                        <dd class="col-sm-8" id="classid"></dd>
+                                        <dt class="col-sm-4">Section:</dt>
+                                        <dd class="col-sm-8" id="sectionid"></dd>
+                                      </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="parentInfo"  role="tabpanel" aria-labelledby="parentInfo-tab">
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Parent Information</h5>
+                                    <dl class="row">
+                                        <dt class="col-sm-4">Parent Name:</dt>
+                                        <dd class="col-sm-8" id="ParentName"></dd>
+                                        <dt class="col-sm-4">Parent CNIC:</dt>
+                                        <dd class="col-sm-8" id="ParentCNIC"></dd>
+                                        <dt class="col-sm-4">Occupation:</dt>
+                                        <dd class="col-sm-8" id="ParentOccupation"></dd>
+                                        <dt class="col-sm-4">Phone:</dt>
+                                        <dd class="col-sm-8" id="ParentContactNo"></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="examMarks" role="tabpanel" aria-labelledby="examMarks-tab">
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-success mb-3">
+                                        <i class="fas fa-print"></i> Print
+                                    </button>
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th>Subject</th>
+                                                <th>Obtained Marks</th>
+                                                <th>Total Marks</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mathematics</td>
+                                                <td>80</td>
+                                                <td>100</td>
+                                                <td>Pass</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Science</td>
+                                                <td>75</td>
+                                                <td>100</td>
+                                                <td>Pass</td>
+                                            </tr>
+                                            <!-- Add more rows as needed -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="testProgress" role="tabpanel" aria-labelledby="testProgress-tab">
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-success mb-3">
+                                        <i class="fas fa-print"></i> Print
+                                    </button>
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Test 1</h6>
+                                                <p>Score: 85%</p>
+                                                <p>Status: Passed</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Test 2</h6>
+                                                <p>Score: 90%</p>
+                                                <p>Status: Passed</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Test 3</h6>
+                                                <p>Score: 75%</p>
+                                                <p>Status: Passed</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Test 4</h6>
+                                                <p>Score: 80%</p>
+                                                <p>Status: Passed</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="payments" role="tabpanel" aria-labelledby="payments-tab">
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Payment History</h5>
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Payment</h6>
+                                                <p>Amount Paid: $100</p>
+                                                <p>Payment Method: Cash</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Payment</h6>
+                                                <p>Amount Paid: $150</p>
+                                                <p>Payment Method: Credit Card</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Payment</h6>
+                                                <p>Amount Paid: $100</p>
+                                                <p>Payment Method: Cash</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <div class="card p-2 shadow-sm">
+                                                <h6 class="card-title">Payment</h6>
+                                                <p>Amount Paid: $150</p>
+                                                <p>Payment Method: Credit Card</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <!-- Modal -->
+    <div class="modal fade" id="studentIdCardModal" tabindex="-1" aria-labelledby="studentIdCardModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="studentIdCardModalLabel">Student ID Card</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="id-card-template">
+                        <div class="id-card">
+                            <div class="id-card-header d-flex justify-content-between align-items-center">
+                                <h3 class="mb-0">School Name</h3>
+                                <p class="mb-0">Student ID Card</p>
+                            </div>
+                            <div class="id-card-body d-flex" style="margin-top:34px;">
+                                <div class="id-card-photo-container">
+                                    <img src="" alt="Student Photo" id="StudentProfileUrlPathMV" class="id-card-photo rounded-circle" style="display:none;"> <!-- Initially hidden -->
+                                </div>
+                                <div class="id-card-info ms-3">
+                                    <p><strong>Name:</strong> <span id="FullName1"></span></p>
+                                    <p><strong>ID:</strong> <span id="studentId"></span></p>
+                                    <p><strong>Class:</strong> <span id="classId"></span></p>
+                                    <p><strong>DOB:</strong> <span id="studentDOB"></span></p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="window.print();">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+<footer class="mt-4">
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+
+    @section Scripts {
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var myModal = document.getElementById('myModal');
+            myModal.addEventListener('hidden.bs.modal', function (event) {
+                location.reload(); // Reload the page
+            });
+        });
+
+ 
+            $(document).ready(function () {
+                // Initialize DataTable
+                $('#example').DataTable({
+                    responsive: true
+                });
+            });
+            document.getElementById("dropdownBtn").addEventListener("click", function () {
+                var dropdownContent = document.getElementById("myDropdown");
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    // Clear previous dropdown items
+                    dropdownContent.innerHTML = "";
+
+                    // Add new dropdown items dynamically
+                    var data = ["DOF Certificate", "Character Certificate", "School leaving Certificate", "Point Fee Voucher", "Attendance Report"]; // Your data
+                    data.forEach(function (item) {
+                        var listItem = document.createElement("a");
+                        listItem.textContent = "• " + item;
+                        listItem.href = "#"; // You can set the href attribute to a valid link if needed
+                        dropdownContent.appendChild(listItem);
+                        dropdownContent.appendChild(document.createElement("br")); // Add line break after each item
+                    });
+
+                    dropdownContent.style.display = "block";
+                }
+            });
+
+            // Close the dropdown if the user clicks outside of it
+            window.addEventListener("click", function (event) {
+                if (!event.target.matches("#dropdownBtn")) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    for (var i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.style.display === "block") {
+                            openDropdown.style.display = "none";
+                        }
+                    }
+                }
+            });
+
+
+        </script>
+
+        <script>
+            function SelectClasss() {
+                debugger
+                var classId = $('#ClassId').val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/Admin/StudentManagement/GetSectiondata",
+                    data: { classId: classId },
+                    success: function (data) {
+                        debugger
+                        var sectionIds = $('#sectionId');
+                        sectionIds.empty();
+                        sectionIds.append('<option value="">Select any section</option>');
+                        // Check if data.data is defined and has length
+                        if (data && data.data && data.data.length > 0) {
+                            // Iterate through data.data and add options
+                            $.each(data.data, function (index, item) {
+                                sectionIds.append('<option value="' + item.id + '">' + item.name + '</option>');
+                            });
+                        } else {
+                            console.error("No data or incorrect data format received.");
+                        }
+                    }, error: function (xhr, status, error) {
+                        console.error("Error fetching section data:", status, error);
+                    }
+
+                });
+            }
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+                // Initialize DataTable
+                var table = $('#StdInfoId').DataTable({
+                    columns: [
+                        { data: 'id', title: 'Roll Id' },
+                        { data: 'fullName', title: 'Name' },
+                    { data: 'parentName', title: 'Parent Name' },
+
+                   // { data: 'dateOfBirth', title: '', visible: false },
+                        {
+                            data: null,
+                            render: function (data, type, row) {
+                            return '<div class="container">' +
+                                '<button class="btn btn-warning" style="width: 131px;" id="openModalBtn" ' +
+                                'data-id="' + data.id + '" ' +
+                                'data-fullname="' + data.fullName + '" ' +
+                                'data-classid="' + data.className + '" ' +
+                                'data-dob="' + data.dateOfBirth + '" ' +
+                                'data-studentprofileurl="' + data.studentProfileUrl + '">' +  // Added this line for the profile URL
+                                '<i style="font-size:15px" class="fas fa-user-circle"> Generate ID</i>' +
+                                '</button>' +
+                                '</div>';
+                            }
+                        },
+                        {
+                            data: null,
+                            render: function (data, type, row) {
+                                return '<div class="container"><button class= "btn btn-success" id = "dropdownBtn"  data-id="' + data.id + '"><i style="font-size:15px" class="fas fa-user-circle">Certificate&Reports</i></button></div>';
+                            }
+                        },
+                        {
+
+                        data: null,
+                        render: function (data, type, row) {
+                            console.log("Data object:", data); // Log the data object to verify its contents
+
+                            return '<div class="container">' +
+                                '<button class="btn btn-primary openModalBtn1" data-toggle="modal" data-target="#myModal" ' +
+                                'data-id="' + data.id + '" ' +
+                                'data-fullname="' + data.fullName + '" ' +
+                                'data-classid="' + data.className + '" ' +
+                                'data-sectionid="' + data.sectionName + '" ' +
+                                'data-parentname="' + (data.parentName || '') + '" ' +
+                                'data-parentcnic="' + (data.parentCNIC || '') + '" ' +
+                                'data-parentoccupation="' + (data.parentOccupation || '') + '" ' +
+                                'data-parentcontactno="' + (data.parentContactNo || '') + '">' +
+                                '<i style="font-size:15px" class="fa">Profile View</i>' +
+                                '</button>' +
+                                '</div>';
+                        }
+
+
+
+                        }, {
+                            data: null,
+                            render: function (data, type, row) {
+                                return  `
+                                            <div class="container">
+                                                                            <button class="btn btn-primary btn-sm edit-btn" data-id="${data.id}">
+                <i style="font-size:15px" class="fa">&#xf044;</i>
+            </button>
+
+                                                        
+                                        `;
+                        }
+                        }
+
+                        
+
+                    ]
+                });
+
+                // Function to filter data
+                function filterData() {
+                    var classId = $('#ClassId').val();
+                    var sectionId = $('#sectionId').val();
+
+                    $.ajax({
+                        url: "/Admin/StudentManagement/GetFilteredStudentData",
+                        type: "GET",
+                        data: {
+                            classId: classId,
+                            sectionId: sectionId
+                        },
+                        success: function (response) {
+                            table.clear().rows.add(response.data).draw();
+                        },
+                        error: function (error) {
+                            console.error(error);
+                        }
+                    });
+                }
+
+                // Attach filterData function to button click
+                $('#filterButton').on('click', filterData);
+
+                // Handle edit button click
+                // $('#StdInfoId tbody').on('click', '.edit-btn', function () {
+                //     var dataId = $(this).data('id');
+                //     // Add your edit functionality here, e.g., open a modal with the student data
+                //     console.log('Edit button clicked for ID:', dataId);
+                // });
+            });
+        </script>
+     
+
+        <script>
+            $(document).ready(function () {
+                // Handle click event on the edit buttons
+                $(document).on('click', '.edit-btn', function () {
+                    var id = $(this).data('id');
+                    console.log("Button clicked with ID:", id); // Debugging log
+
+                    // Perform the AJAX request to load the edit form
+                    window.location.href = '/Admin/StudentManagement/EditInformation/' + id;
+                });
+            });
+        </script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '#openModalBtn', function () {
+                debugger
+                // Retrieve data attributes
+                var fullName = $(this).data('fullname');
+                var studentId = $(this).data('id');
+                var studentClass = $(this).data('classid');
+                var studentDOB = $(this).data('dob');
+                var studentProfileUrl = $(this).data('studentprofileurl');
+
+                // Log the profile URL for debugging
+                console.log('Student Profile URL:', studentProfileUrl);
+
+                // Populate the modal with data
+                $('#FullName1').text(fullName);
+                $('#studentId').text(studentId);
+                $('#classId').text(studentClass);
+                $('#studentDOB').text(studentDOB);
+
+                // Set the image source
+                var fullPath = studentProfileUrl.startsWith('/') ? studentProfileUrl : `/studentimage/${studentProfileUrl}`;
+                $('#StudentProfileUrlPathMV').attr('src', fullPath).show();
+
+                // Show the modal
+                $('#studentIdCardModal').modal('show');
+            });
+        });
+    </script>
+    
+
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '.openModalBtn1', function () {
+                var $button = $(this);
+                debugger
+                var studentId = $button.data('id');
+                var fullName = $button.data('fullname');
+                var className = $button.data('classid');
+                var sectionName = $button.data('sectionid');
+                var studentName = $(this).data('fullname');
+                 
+                var parentName = $button.data('parentname');
+                var parentCNIC = $button.data('parentcnic');
+                var parentOccupation = $button.data('parentoccupation');
+                var parentContactNo = $button.data('parentcontactno');
+
+                // Log to check if data is being passed correctly
+                console.log("Parent Name:", parentName);
+                console.log("Parent CNIC:", parentCNIC);
+                console.log("Parent Occupation:", parentOccupation);
+                console.log("Parent Contact No:", parentContactNo);
+
+                // Populate the modal with data
+
+                // Populate the modal with data
+                $('#FullName').text(fullName);
+                $('#id').text(studentId);
+                $('#classid').text(className);
+                $('#sectionid').text(sectionName);
+                $('#ParentName').text(parentName || 'N/A');
+                $('#ParentCNIC').text(parentCNIC || 'N/A');
+                $('#ParentOccupation').text(parentOccupation || 'N/A');
+                $('#ParentContactNo').text(parentContactNo || 'N/A');
+
+                // Show the modal
+                $('#myModal').modal('show');
+            });
+        });
+    </script>
+
+    }

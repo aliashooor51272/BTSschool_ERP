@@ -1,0 +1,722 @@
+﻿@model ByteTechSchoolERP.Models.ViewModels.StudentViewModel
+@{
+    var classes = ViewBag.Classes as List<ByteTechSchoolERP.Models.ClassAndSection.Class>;
+    var sections = ViewBag.Sections as List<ByteTechSchoolERP.Models.ClassAndSection.Section>;
+
+}
+
+<head>
+    <link rel="stylesheet" href="~/assets/css/other.css">
+
+</head>
+<div class="page-wrapper">
+    <div class="tab-container container-fluid mt-3">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="student-info">
+                <i class="fas fa-user"></i> Personal Details
+            </button>
+            <button class="tab-button" data-tab="parent-info">
+                <i class="fas fa-user-friends"></i> Guardian Details
+            </button>
+            <button class="tab-button" data-tab="other-info">
+                <i class="fas fa-info-circle"></i> Academic Information
+            </button>
+            <button class="tab-button" data-tab="academic-info">
+                <i class="fas fa-graduation-cap"></i> Other Information
+            </button>
+            <button class="tab-button" data-tab="attechments-info">
+                <i class="fas fa-paperclip"></i> Attachments
+            </button>
+        </div>
+        <form asp-action="AdmitStudents" asp-controller="AdmissionManagement" asp-area="Admin" method="post" enctype="multipart/form-data">
+
+            <div class="tab-content active" id="student-info">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <strong> Students</strong> |
+                    <i class="fas fa-home home-icon"></i> - Admission Form
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form1-container firstSection" id="form1">
+
+
+                            <h6 class="form1-section-header">
+                                <div class="form1-section-number">1</div> Student Information <span></span>
+                            </h6>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Student Name*</label>
+                                    <input type="text" placeholder="Name of Student" asp-for="FullName" required class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Caste*</label>
+                                    <input type="text" asp-for="Cast" class="form1-input" placeholder="Caste" required />
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Surname  </label>
+                                    <input type="text" placeholder="Surname" asp-for="Surname" class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Date of Birth*</label>
+                                    <input type="date" asp-for="DateOfBirth" required class="form1-input" />
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Select Gender*</label>
+                                    <select name="gender" asp-for="Gender" required class="form1-input form-select">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Place of Birth *</label>
+                                    <input type="text" placeholder="Place of Birth" asp-for="PlaceOfBirth" required class="form1-input" />
+                                </div>
+                                <button type="button" class="btn mt-2 btn-primary next-tab" style="float: right;">Next</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="parent-info">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <strong> Students</strong> |
+                    <i class="fas fa-home home-icon"></i> - Guardian Information
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form1-container" id="parentFields">
+                            <h6 class="form1-section-header">
+                                <div class="form1-section-number">2</div> Parents Information
+                                <span></span>
+                            </h6>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Parent Name  </label>
+                                    <input type="text" id="parentName" placeholder="Father Name" asp-for="ParentName" class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Parent Contact Number*</label>
+                                    <input type="text" asp-for="ParentContactNo" placeholder="Parent Contact Number" class="form1-input" />
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Parent National ID  </label>
+                                    <input type="text" placeholder="Father National ID" asp-for="ParentCNIC"   class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label"> Other Number</label>
+                                    <input type="text" asp-for="ParentOtherNo" placeholder="Other Number" class="form1-input" />
+                                </div>
+                            </div>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Relation with Student</label>
+                                    <select class="form1-input form-select" asp-for="RelationWithParent">
+                                        <option value="Father">Father</option>
+                                        <option value="Mother">Mother</option>
+
+                                    </select>
+
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Income</label>
+                                    <input type="text" placeholder="Income" asp-for="ParentIncome"   class="form1-input" />
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Email</label>
+                                    <input type="email" asp-for="ParentEmail"  placeholder="Email" class="form1-input" />
+                                </div>
+
+
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Parent Occupation</label>
+                                    <input type="text" placeholder="Occupation" asp-for="ParentOccupation"   class="form1-input" />
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form1-container" id="guardianFields">
+                            <h6 class="form1-section-header">
+                                <div class="form1-section-number">3</div>  Guardian Information
+                                <span></span>
+                            </h6>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Guardian Name </label>
+                                    <input type="text" id="guardianName" placeholder="Guardian Name" asp-for="GuardianName" class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Guardian Contact Number</label>
+                                    <input type="text" asp-for="GuardianContactNo" placeholder="Guardian Contact Number" class="form1-input" />
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Guardian National ID  </label>
+                                    <input type="text" placeholder="Guardian National ID" asp-for="GuardianCNIC" class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label"> Other Number</label>
+                                    <input type="text" asp-for="GuardianOtherNo" placeholder="Other Number" class="form1-input" />
+                                </div>
+                            </div>
+
+                            <div class="form1-column">
+
+                                <div class="form1-group">
+                                    <label class="form1-label">Reletion with Student</label>
+                                    <select class="form1-input form-select" asp-for="RelationWithGuardian">
+                                        <option value="Father">Father</option>
+                                        <option value="Mother">Mother</option>
+                                        <option value="Brother">Brother</option>
+                                        <option value="Sister">Sister</option>
+                                        <option value="Uncle">Uncle</option>
+                                        <option value="Aunt">Aunt</option>
+                                        <option value="Grandfather">Grandfather</option>
+                                        <option value="Grandmother">Grandmother</option>
+                                    </select>
+
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Income</label>
+                                    <input type="text" placeholder="Income" asp-for="GuardianIncome" class="form1-input" />
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Email</label>
+                                    <input type="email" asp-for="GuardianEmail" placeholder="Email" class="form1-input" />
+                                </div>
+
+
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Guardian Occupation</label>
+                                    <input type="text" placeholder="Occupation" asp-for="GuardianOccupation" class="form1-input" />
+                                </div>
+
+                            </div>
+                            <div class="form1-column" style="margin-top: 60px;">
+                                <button type="button" id="grdn" class="btn mt-2 btn-primary next-tab" style="float: right;" onclick="validateFields()">Next</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="other-info">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <strong> Students</strong> |
+                    <i class="fas fa-home home-icon"></i> - Academic Information
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form1-container" id="form3">
+                            <h6 class="form1-section-header">
+                                <div class="form1-section-number">4</div>Previous Academic Information
+                                <span></span>
+                            </h6>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Previous School Name  </label>
+                                    <input type="text" placeholder="Previous School Name" asp-for="PreviousSchoolName" class="form1-input" />
+                                </div>
+
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Class</label>
+                                    <select class="form1-input form-select" asp-for="PreviousClass">
+                                        <option value="">Select Class</option>
+                                        <option value="Nursery">Nursery</option>
+                                        <option value="Prep">Prep</option>
+                                        <option value="KG1">KG1</option>
+                                        <option value="KG2">KG2</option>
+                                        <option value="One">One</option>
+                                        <option value="Two">Two</option>
+                                        <option value="Three">Three</option>
+                                        <option value="Four">Four</option>
+                                        <option value="Five">Five</option>
+                                        <option value="Six">Six</option>
+                                        <option value="Seven">Seven</option>
+                                        <option value="Eight">Eight</option>
+                                        <option value="Nine">Nine</option>
+                                        <option value="Ten">Ten</option>
+                                    </select>
+
+
+
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Obtain Marks</label>
+                                    <input type="number" asp-for="PreviousObtainedMarks" placeholder="Obtain Marks" class="form1-input" />
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Total Marks</label>
+                                    <input type="number" asp-for="PreviousTotalMarks" placeholder="Total Marks" class="form1-input" />
+                                </div>
+                            </div>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Remarks  </label>
+                                    <input type="text" asp-for="PreviousRemarks" placeholder="Remarks" class="form1-input" />
+                                </div>
+                            </div>
+                            @*   <div class="form1-column">
+                            <div class="form1-group">
+                            <label class="form1-label">Documents*</label>
+                            <input type="file" asp-for="DocumnetFileVM" class="form1-input" />
+                            </div>
+                            <button type="button" class="btn mt-2 btn-primary next-tab" style="float: right;">Next</button>
+                            </div> *@
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form1-container" id="form3">
+                            <h6 class="form1-section-header">
+                                <div class="form1-section-number">5</div> Academic Information
+                                <span></span>
+                            </h6>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Class*</label>
+                                    <select asp-for="ClassId" required class="form1-input form-select" asp-items="@ViewBag.Clasess" id="class-dropdown" onchange="SelectClass()">
+                                        <option value="">Select Class</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Section*  </label>
+                                    <select id="SectionId" class="form1-input form-select" required asp-for="SectionId">
+                                        <!-- Options will be added here dynamically -->
+                                        <option>Select Section</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Campus*</label>
+                                    <select asp-for="CampusId" required class="form1-input form-select" asp-items="@ViewBag.Campus" id="class-dropdown" onchange="SelectClass()">
+                                        <option value="">Select Campus</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label"> Shift*  </label>
+
+                                    <select class="form1-input form-select" asp-for="Shift" required>
+                                        <option value="">Select Shift</option>
+                                        <option value="Moring">Moring</option>
+                                        <option value="Evening">Evening</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group" style="display: none;">
+
+                                </div>
+                            </div>
+                            <div class="form1-column" style="margin-top: 60px;">
+                                <button type="button"  class="btn mt-2 btn-primary next-tab" style="float: right;" >Next</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="academic-info">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <strong> Students</strong> |
+                    <i class="fas fa-home home-icon"></i> - Other Information
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form1-container" id="form4">
+                            <h6 class="form1-section-header">
+                                <div class="form1-section-number">6</div> Other Information
+                                <span></span>
+                            </h6>
+
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Admission Date*</label>
+                                    <input type="date" asp-for="AdmitionDate" required class="form1-input" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                                </div>
+
+                            </div>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Religion*</label>
+                                    <select name="religion" asp-for="Religion" required class="form1-input form-select">
+                                        <option value="">Select Religion</option>
+                                        <option value="Islam">Islam</option>
+                                        <option value="Christianity">Christianity</option>
+                                        <option value="Hinduism">Hinduism</option>
+                                        <option value="Buddhism">Buddhism</option>
+                                        <option value="Sikhism">Sikhism</option>
+                                        <option value="Judaism">Judaism</option>
+                                        <option value="Bahá'í Faith">Bahá'í Faith</option>
+                                        <option value="Confucianism">Confucianism</option>
+                                        <option value="Jainism">Jainism</option>
+                                        <option value="Shinto">Shinto</option>
+                                        <option value="Others">Others</option> <!-- Optional: For any other religions not listed -->
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form1-column">
+                                <div class="form1-group" style="padding:0px !important ;">
+                                    <label class="form1-label">Address  </label>
+                                    <textarea asp-for="Address" class="form1-input " placeholder="Enter Address"></textarea>
+                                </div>
+
+
+                                <button type="button" class="btn mt-2 btn-primary next-tab" style="float: right;">Next</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-content" id="attechments-info">
+                <div class="style-0" style="max-width:100%; margin:0px;">
+                    <strong> Students</strong> |
+                    <i class="fas fa-home home-icon"></i> - Attachments
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form1-container" id="form4">
+                            <h6 class="form1-section-header">
+                                <div class="form1-section-number">7</div> Attachments
+                                <span></span>
+                            </h6>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Student Picture*</label>
+                                    <input type="file" asp-for="StudentProfileUrlPathMV" required class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Guardian Picture</label>
+                                    <input type="file" asp-for="GuardianProfileUrlPathMV " class="form1-input" />
+                                </div>
+                            </div>
+
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">School Leaving Certificate</label>
+                                    <input type="file" asp-for=" SchoolLeavingCertificateUrlPathMV" class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Form-B</label>
+                                    <input type="file" asp-for="StudentFormBUrlPathMV" class="form1-input" />
+                                </div>
+
+                            </div>
+                            <div class="form1-column">
+                                <div class="form1-group">
+                                    <label class="form1-label">Guardian CNIC Front*</label>
+                                    <input type="file" asp-for="GuardianCNICFrontUrlPathMV" required class="form1-input" />
+                                </div>
+                                <div class="form1-group">
+                                    <label class="form1-label">Guardian CNIC Back*</label>
+                                    <input type="file" asp-for="GuardianCNICBackUrlPathMV" required class="form1-input" />
+                                </div>
+
+                            </div>
+                            <div class="form1-column" style=" display: flex;gap: 4px;border: 1px solid #fffcfc;padding: 13px;">
+                                <div class="form1-group" style="flex: 1;">
+                                    <label class="form1-label">Other Documents</label>
+                                    <input type="file" asp-for="OtherDocumentsUrl1PathMV" class="form1-input" />
+                                </div>
+                                <div class="form1-group" style="flex: 1;">
+                                    <label class="form1-label">Title</label>
+                                    <input type="text" asp-for="OtherDocumentsTitle1" placeholder="Image Title" class="form1-input" />
+                                </div>
+                            </div>
+
+                            <div class="form1-column" style="display: flex; gap: 4px; border: 1px solid #fffcfc; padding: 13px;">
+                                <div class="form1-group" style="flex: 1;">
+                                    <label class="form1-label">Other Documents</label>
+                                    <input type="file" asp-for="OtherDocumentsUrl2PathMV" class="form1-input" />
+                                </div>
+                                <div class="form1-group" style="flex: 1;">
+                                    <label class="form1-label">Title</label>
+                                    <input type="text" asp-for="OtherDocumentsTitle2" placeholder="Image Title"  class="form1-input" />
+                                </div>
+                            </div>
+
+                          
+                            <div class="form1-column" style="margin-top: 60px;">
+                                <button type="submit" class="btn mt-2 btn-primary submit-form" style="float: right;">Submit</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+ 
+<script>
+    document.querySelectorAll('.next-tab').forEach(button => {
+        button.addEventListener('click', () => {
+            const currentTab = button.closest('.tab-content');
+            const form = button.closest('form');
+            const formGroups = Array.from(currentTab.querySelectorAll('.form1-input[required], .form1-select[required]'));
+
+            // Check if all required fields are filled
+            let allValid = true;
+            let firstInvalidField = null;
+
+            formGroups.forEach(group => {
+                if (!group.checkValidity()) {
+                    allValid = false;
+                    if (!firstInvalidField) {
+                        firstInvalidField = group;
+                    }
+                }
+            });
+
+            if (allValid) {
+                // Move to the next tab
+                const nextTab = currentTab.nextElementSibling;
+
+                if (nextTab && nextTab.classList.contains('tab-content')) {
+                    currentTab.classList.remove('active');
+                    nextTab.classList.add('active');
+
+                    // Set the active state on the corresponding tab button
+                    const nextTabButton = document.querySelector(`.tab-button[data-tab="${nextTab.id}"]`);
+                    document.querySelectorAll('.tab-button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    if (nextTabButton) {
+                        nextTabButton.classList.add('active');
+                    }
+                }
+            } else {
+                // Focus on the first invalid field
+                if (firstInvalidField) {
+                    firstInvalidField.focus();
+                }
+                form.reportValidity();
+            }
+        });
+    });
+
+</script>
+
+
+
+
+<script>
+    function validateFields() {
+        debugger;
+
+        // Retrieve and trim the values from input fields
+        var parentName = document.getElementById('parentName').value.trim();
+        var guardianName = document.getElementById('guardianName').value.trim();
+
+        // Check if both fields are empty
+        if (parentName === "" && guardianName === "") {
+
+            // Show an alert if both fields are empty
+            alert("At least one section (Parent or Guardian) must be filled before proceeding.");
+
+            // Focus on the parentName field
+            document.getElementById('parentName').focus();
+
+            // Prevent moving to the next tab
+            return false;
+
+        } else {
+            // Proceed to the next tab or other logic
+            console.log("Proceeding to next tab");
+            switchToNextTab(); // Ensure this function switches to the next tab
+            return true;
+        }
+    }
+
+    function switchToNextTab() {
+        // Example logic to switch to the next tab
+        // This needs to be customized based on how you manage tab navigation
+        var nextTabButton = document.getElementById('nextTab');
+        if (nextTabButton) {
+            nextTabButton.click(); // Simulate clicking the button to switch to the next tab
+        }
+    }
+</script>
+
+<script>
+    // Function to convert file to base64 format
+    function fileToBase64(file, callback) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            callback(e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+
+
+
+    // document.querySelectorAll('.next-tab').forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const currentForm = button.closest('form');
+    //         const currentTab = currentForm.closest('.tab-content');
+    //         const nextTab = currentTab.nextElementSibling;
+
+    //         if (currentForm.checkValidity()) {
+    //             currentTab.classList.remove('active');
+    //             nextTab.classList.add('active');
+    //             const nextTabButton = document.querySelector(`.tab-button[data-tab="${nextTab.id}"]`);
+    //             document.querySelectorAll('.tab-button').forEach(btn => {
+    //                 btn.classList.remove('active');
+    //             });
+    //             nextTabButton.classList.add('active');
+    //         } else {
+    //             currentForm.reportValidity();
+    //         }
+    //     });
+    // });
+
+
+
+
+
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const tabs = button.parentElement;
+            const tabContainer = tabs.parentElement;
+            const tabNumber = button.dataset.tab;
+            const tabToActivate = tabContainer.querySelector(`.tab-content#${tabNumber}`);
+
+            tabs.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            tabContainer.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            button.classList.add('active');
+            tabToActivate.classList.add('active');
+        });
+    });
+
+
+
+
+
+
+
+    // document.querySelectorAll('.submit-form').forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const currentForm = button.closest('form');
+
+    //         if (currentForm.checkValidity()) {
+    //             // Perform form submission here, e.g., using AJAX
+    //             alert('Form submitted successfully!');
+    //         } else {
+    //             currentForm.reportValidity();
+    //         }
+    //     });
+    // });
+</script>
+
+<script>
+    function SelectClass() {
+        var classId = $('#class-dropdown').val();
+
+        if (!classId) {
+            return; // No class selected, do nothing
+        }
+
+        $.ajax({
+            type: "GET",
+            url: "/Admin/AdmissionManagement/GetTheRelatedSection",
+            data: { classId: classId },
+            success: function (data) {
+                var sectionDropdown = $('#SectionId');
+                sectionDropdown.empty();  // Clear existing options
+
+                // Add default option
+                sectionDropdown.append('<option value="">Select Section</option>');
+
+                // Check if data.data is defined and has length
+                if (data && data.data && data.data.length > 0) {
+                    // Iterate through data.data and add options
+                    $.each(data.data, function (index, item) {
+                        sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                    });
+                } else {
+                    console.error("No data or incorrect data format received.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching section data:", status, error);
+            }
+        });
+    }
+
+
+</script>

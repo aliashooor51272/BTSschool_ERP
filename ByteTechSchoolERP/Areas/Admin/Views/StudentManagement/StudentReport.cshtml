@@ -1,0 +1,192 @@
+﻿<style>
+    .flip-card {
+        perspective: 1000px;
+    }
+
+    .flip-card-inner {
+        width: 300px;
+        height: 200px;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: background-color 0.4s, transform 0.4s;
+    }
+
+    .flip-card-front {
+        background: linear-gradient(135deg, #FF6E6E, #FFC66E);
+        color: white;
+        transform: rotateY(0deg);
+    }
+
+    .flip-card-back {
+        background: linear-gradient(135deg, #FFC66E, #FF6E6E);
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+    .flip-card h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .flip-card p {
+        font-size: 16px;
+    }
+
+    .flip-card:hover .flip-card-front {
+        background: linear-gradient(135deg, #FFC66E, #FF6E6E);
+        transform: scale(0.9);
+    }
+
+    .flip-card:hover .flip-card-back {
+        background: linear-gradient(135deg, #FF6E6E, #FFC66E);
+        transform: rotateY(180deg) scale(0.9);
+    }
+
+    .flip-card-button {
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .flip-card-button:hover {
+            background-color: #fff;
+            color: #FF6E6E;
+        }
+</style>
+<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width: 97%;">
+                <strong>Student Management  </strong> |
+                <i class="fas fa-home home-icon"></i> - Student Reports
+            </div>
+        </div>
+
+
+    </div>
+    <div class="tab-container container-fluid">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width: 97%;">
+
+
+                <div class="container mt-5 mb-5">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front" style="background: linear-gradient(135deg, #ffd166, #06d6a0);">
+                                        <h3 style="text-align: center;">All Active Students</h3>
+                                    </div>
+                                    <div class="flip-card-back" style="background: linear-gradient(135deg, #06d6a0, #ffd166);">
+                                        <button class="btn btn-primary flip-card-button">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front" style="background: linear-gradient(135deg, #8a2be2,#FF6E6E);">
+                                        <h3 style="text-align: center;">All Inactive Students</h3>
+                                    </div>
+                                    <div class="flip-card-back" style="background: linear-gradient(135deg, #ef476f, #118ab2);">
+                                        <button class="btn btn-primary flip-card-button">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front" style="background: linear-gradient(135deg, #6e72a24a, #93aec6);">
+                                        <h3 style="text-align: center;">Class Wise Students</h3>
+                                    </div>
+                                    <div class="flip-card-back" style="background: linear-gradient(135deg, #6e72a24a, #93aec6)">
+                                        <button class="btn btn-primary flip-card-button">Print</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+        </div>
+    </div>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            $('#example').on('click', '.editBtn', function () {
+                var rowData = $(this).closest('tr').find('td').map(function () {
+                    return $(this).text();
+                }).get();
+                $('#studentName').val(rowData[0]);
+                $('#email').val(rowData[4]);
+                $('#status').val(rowData[5]);
+                $('#myModal').modal('show');
+            });
+
+            // Update data
+            $('#editForm').submit(function (e) {
+                e.preventDefault();
+                var newStatus = $('#status').val();
+                // Update the status in your database or wherever you store the data
+                // Close modal after saving
+                $('#myModal').modal('hide');
+            });
+        });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+}

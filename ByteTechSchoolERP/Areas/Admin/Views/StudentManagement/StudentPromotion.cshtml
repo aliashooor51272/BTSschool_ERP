@@ -1,0 +1,359 @@
+﻿@model ByteTechSchoolERP.Models.ViewModels.PromoteStudentViewModel
+<div class="page-wrapper">
+
+    <div class="row container">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0">
+                <strong>Student Management  </strong> |
+                <i class="fas fa-home home-icon"></i> -  Student Promotion
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="row container ">
+        <div class="col-md-12">
+            <div class="style-0">
+                <div class="row ">
+                    <div class="col-sm-12">
+
+                        <form class="row">
+                            <!-- First Column -->
+                            <!-- Second Column -->
+                            <div class="col-md-3">
+                                <div class="form-group local-forms" style="position: relative;">
+                                    <label class="lable1 requiredLabel" style="background: #3d5ee1; color: white;"> Promotion from Class*</label>
+                                    <select class="form-control form-select"  id="ClassId" asp-items="@ViewBag.Clasess" onchange="SelectClass()" required
+                                    >
+                                        <option value="">Select class</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group local-forms" style="position: relative;">
+                                    <label class="lable1 requiredLabel" style="background: #3d5ee1; color: white;"> Section*</label>
+                                    <select class="form-control asp-for=" SectionId" id="SectionId" form-select" required>
+                                        <option value="">select section</option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group local-forms" style="position: relative;">
+                                    <label class="lable1 requiredLabel" style="background: #3d5ee1; color: white;"> Promotion To Class*</label>
+                                    <select class="form-control form-select" required asp-for="PromoteClassId" id="PromotoClassId" asp-items="@ViewBag.Clasess" onchange="SelectPromotoClass()">
+
+                                        <option value="">select class</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group local-forms" style="position: relative;">
+                                    <label class="lable1 requiredLabel" style="background: #3d5ee1; color: white;"> Section*</label>
+                                    <select class="form-control form-select" asp-for="PromoteSectionId" id="PormotoSectionId" required>
+
+                                        <option value="">select section</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="student-submit" style="float: right; text-align: right;">
+                                <button type="button" class="btn btn-primary" id="filterButton">
+                                    <i class="fas fa-search"></i> Filter Data
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row container">
+        <div class="col-md-12">
+            <div class="style-0">
+                <div class="row">
+                    <div class="col-md-5">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-file-csv"></i> CSV
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button type="button" class="btn btn-success">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                        <button type="button" class="btn btn-info">
+                            <i class="fas fa-file-excel"></i> Excel
+                        </button>
+                    </div>
+                </div><br />
+                <table id="studentPromotiontable" class="display mt-2" style="width:100%">
+                    <thead style="background-color:rgb(94, 114, 228);">
+                        <tr style="color: white;">
+                            <th><input type="checkbox" id="select-all"></th>
+
+                            <th>Roll no</th>
+                            <th>Student Name</th>
+                            <th>Father Name</th>
+                            <th>Class</th>
+                            <th>Section</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="student-submit" style="float: right; text-align: right;">
+            <button type="button" class="btn btn-primary" id="promoteButton">
+                <i class="fas fa-thumbs-up"></i>
+                Promote Selected Students
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 ByteTech Solution.</p>
+    </footer>
+
+
+
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#studentPromotiontable').on('click', '.editBtn', function () {
+                var rowData = $(this).closest('tr').find('td').map(function () {
+                    return $(this).text();
+                }).get();
+                $('#studentName').val(rowData[0]);
+                $('#email').val(rowData[4]);
+                $('#status').val(rowData[5]);
+                $('#myModal').modal('show');
+            });
+
+            // Update data
+            $('#editForm').submit(function (e) {
+                e.preventDefault();
+                var newStatus = $('#status').val();
+                // Update the status in your database or wherever you store the data
+                // Close modal after saving
+                $('#myModal').modal('hide');
+            });
+        });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+    <script>
+        function SelectPromotoClass() {
+            var classId = $('#PromotoClassId').val();
+            $.ajax({
+                type: "GET",
+                url: "/Admin/StudentManagement/GetSectiondata",
+                data: { classId: classId },
+                success: function (data) {
+                    var sectionDropdown = $('#PormotoSectionId');
+                    sectionDropdown.empty();  // Clear existing options
+
+                    // Add default option
+                    sectionDropdown.append('<option value="">Select Section</option>');
+
+                    // Check if data.data is defined and has length
+                    if (data && data.data && data.data.length > 0) {
+                        // Iterate through data.data and add options
+                        $.each(data.data, function (index, item) {
+                            sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                        });
+                    } else {
+                        console.error("No data or incorrect data format received.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error fetching section data:", status, error);
+                }
+            });
+        }
+
+        function SelectClass() {
+            debugger
+            var classId = $('#ClassId').val();
+            $.ajax({
+                type: "GET",
+                url: "/Admin/StudentManagement/GetSectiondata",
+                data: { classId: classId },
+                success: function (data) {
+                    var sectionDropdown = $('#SectionId');
+                    sectionDropdown.empty();  // Clear existing options
+
+                    // Add default option
+                    sectionDropdown.append('<option value="">Select Section</option>');
+
+                    // Check if data.data is defined and has length
+                    if (data && data.data && data.data.length > 0) {
+                        // Iterate through data.data and add options
+                        $.each(data.data, function (index, item) {
+                            sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                        });
+                    } else {
+                        console.error("No data or incorrect data format received.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error fetching section data:", status, error);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            var table = $('#studentPromotiontable').DataTable({
+                columns: [
+                    {
+                        data: null,
+                        render: function (data, type, row) {
+                            return '<input type="checkbox" class="student-checkbox" value="' + data.id + '">';
+                        },
+                        orderable: false
+                    },
+                    { data: 'id', title: 'Roll Id' },
+                    { data: 'fullName', title: 'Name' },
+                    { data: 'fatherName', title: 'Parent Name' },
+                    { data: 'className', title: 'Class' },
+                    { data: 'sectionName', title: 'Section' }
+                ]
+            });
+
+            // Function to filter data
+ 
+            // Function to filter data
+            function filterData() {
+                debugger
+                var isValid = true;
+
+                var classId = $('#ClassId').val();
+                var sectionId = $('#SectionId').val();
+                var promoteClassId = $('#PromotoClassId').val();
+                var promoteSectionId = $('#PormotoSectionId').val();
+
+                if (classId === '') {
+                    $('#ClassId').focus();
+                    isValid = false;
+                } else if (sectionId === '') {
+                    $('#SectionId').focus();
+                    isValid = false;
+                } else if (promoteClassId === '') {
+                    $('#PromoteClassId').focus();
+                    isValid = false;
+                } else if (promoteSectionId === '') {
+                    $('#PromoteSectionId').focus();
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    calltheTable();
+                }
+            }
+
+            // Function to call the table and fetch data
+            function calltheTable() {
+                var classId = $('#ClassId').val();
+                var sectionId = $('#SectionId').val();
+
+                $.ajax({
+                    url: "/Admin/StudentManagement/GetFilteredStudentData",
+                    type: "GET",
+                    data: {
+                        classId: classId,
+                        sectionId: sectionId
+                    },
+                    success: function (response) {
+                        if (response !== null && response.data && response.data.length > 0) {
+                            table.clear().rows.add(response.data).draw();
+                        } else {
+                            table.clear().draw();
+                            alert('No records found!');
+                        }
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            }
+
+            // Attach filterData function to button click
+            $('#filterButton').on('click', filterData);
+
+
+
+            $('#select-all').on('click', function () {
+                var rows = table.rows({ 'search': 'applied' }).nodes();
+                $('input[type="checkbox"].student-checkbox', rows).prop('checked', this.checked);
+            });
+
+            // Handle individual row checkbox
+            $('#studentPromotiontable tbody').on('change', 'input[type="checkbox"].student-checkbox', function () {
+                var allCheckboxes = $('input[type="checkbox"].student-checkbox', table.rows().nodes());
+                var checkedCheckboxes = allCheckboxes.filter(':checked');
+
+                // Set the state of the 'select-all' checkbox
+                if (checkedCheckboxes.length === allCheckboxes.length) {
+                    $('#select-all').prop('checked', true).prop('indeterminate', false);
+                } else if (checkedCheckboxes.length === 0) {
+                    $('#select-all').prop('checked', false).prop('indeterminate', false);
+                } else {
+                    $('#select-all').prop('checked', false).prop('indeterminate', true);
+                }
+            });
+
+
+
+            $('#promoteButton').on('click', function () {
+                debugger
+                var classID = $('#PromotoClassId').val();
+                var sectionID = $('#PormotoSectionId').val();
+
+
+                var selectedStudents = [];
+                $('.student-checkbox:checked').each(function () {
+                    selectedStudents.push($(this).val());
+                });
+
+                // Send selected students' IDs along with promotion class and section IDs to the server
+                $.ajax({
+                    url: "/Admin/StudentManagement/PromoteStudents",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        studentIds: selectedStudents,
+                        promoteClassId: classID,
+                        promoteSectionId: sectionID
+                    }),
+                    success: function (response) {
+                        alert('Students promoted successfully');
+                        // Optionally, refresh the table or handle UI updates
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            });
+
+        });
+    </script>
+}

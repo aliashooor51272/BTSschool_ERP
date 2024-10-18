@@ -1,0 +1,267 @@
+﻿@model ByteTechSchoolERP.Models.ClassAndSection.SubjectAllocation
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<!-- Modal for Assigning Subject -->
+<div class="modal fade" id="assignSubjectModal" tabindex="-1" aria-labelledby="assignSubjectModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="assignSubjectModalLabel">Assign Subject</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="assignSubjectForm" asp-action="AssignSubject" method="post">
+                    <!-- Class Dropdown -->
+                    <div class="form-group">
+                        <label for="ClassId">Class<span class="text-danger">*</span></label>
+                        <select id="classDropdown" class="form-control" asp-for="ClassId" asp-items="ViewBag.Classes" required>
+                            <option value="">Select Class</option>
+                        </select>
+                    </div>
+
+                    <!-- Section Dropdown -->
+                    <div class="form-group mt-3">
+                        <label for="SectionId">Section<span class="text-danger">*</span></label>
+                        <select id="sectionDropdown" class="form-control" asp-for="SectionId" asp-items="ViewBag.Sections" required>
+                            <option value="">Select Section</option>
+                        </select>
+                    </div>
+
+                    <!-- Subject Dropdown -->
+                    <div class="form-group mt-3">
+                        <label for="SubjectId">Subject<span class="text-danger">*</span></label>
+                        <select id="subjectDropdown" class="form-control" asp-for="SubjectId" asp-items="ViewBag.Subjects" required>
+                            <option value="">Select Subject</option>
+                        </select>
+                    </div>
+
+                    <!-- Teacher Dropdown -->
+                    <div class="form-group mt-3">
+                        <label for="TeacherId">Teacher<span class="text-danger">*</span></label>
+                        <select id="teacherDropdown" class="form-control" asp-for="TeacherId" asp-items="ViewBag.Teachers" required>
+                            <option value="">Select Teacher</option>
+                        </select>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="form-group mt-4">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%;margin:0px;">
+                <strong> Subject  Management</strong> |
+                <i class="fas fa-home home-icon"></i> -  Assign class teacher
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-12 mt-4" id="classFormContainers">
+            <div class="style-0" id="classFormData" style="max-width:100%; margin:0px;">
+                <div class="col-12 d-flex justify-content-center">
+                <h5 class="formTitle">Subject List</h5>
+                </div>
+                <!-- Add Campus Button -->
+                <div class="d-flex justify-content-end mb-3">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assignSubjectModal">
+                        Assign Subject
+                    </button>
+                </div>
+
+                <div class="table-responsive">
+                                        <div class="card">
+                        <div class="card-header">
+                            <h5>Search Filters</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="filterForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="firstNameFilter">Teacher</label>
+                                            <input type="text" class="form-control" id="firstNameFilter" placeholder="Teacher" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="firstNameFilter">Class</label>
+                                            <input type="text" class="form-control" id="lastNameFilter" placeholder="Class" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="subFilter">Subject</label>
+                                            <input type="text" class="form-control" id="emailFilter" placeholder="Subject" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="emailFilter">Section</label>
+                                            <input type="text" class="form-control" id="subFilter" placeholder="Section " />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <table id="subjectAllocationsTable" class="display mt-2" style="width:100%">
+                    <thead style="background-color: rgb(94, 114, 228); color: white;">
+                        <tr>
+                           
+                            <th>Teacher</th>
+                            <th>Class</th>
+                            <th>Subject</th>
+                            <th>Section</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated here by DataTables -->
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Function to check if the combination already exists
+            function doesCombinationExist(classId, sectionId, subjectId) {
+                let exists = false;
+                $('#subjectAllocationsTable tbody tr').each(function () {
+                    let currentClass = $(this).find('td').eq(1).text().trim();
+                    let currentSection = $(this).find('td').eq(3).text().trim();
+                    let currentSubject = $(this).find('td').eq(2).text().trim();
+
+                    if (currentClass == classId && currentSection == sectionId && currentSubject == subjectId) {
+                        exists = true;
+                        return false; // Exit loop if combination is found
+                    }
+                });
+                return exists;
+            }
+
+            // Handle form submission
+            $('#addClassForm').on('submit', function (e) {
+                let classId = $('#classDropdown option:selected').text().trim();
+                let sectionId = $('#sectionDropdown option:selected').text().trim();
+                let subjectId = $('#subjectDropdown option:selected').text().trim();
+
+                if (doesCombinationExist(classId, sectionId, subjectId)) {
+                    e.preventDefault();
+                    alert('This combination of Class, Section, and Subject already exists.');
+                }
+            });
+
+            // Update DataTable with existing data
+            $.ajax({
+                url: '@Url.Action("GetSubjectAllocations")',
+                type: 'GET',
+                success: function (response) {
+                    console.log('Response:', response);
+
+                    // Initialize DataTable
+                    $('#subjectAllocationsTable').DataTable({
+                        data: response.data,
+                        columns: [
+                            { "data": "teacher" },
+                            { "data": "class" },
+                            { "data": "subject" },
+                            { "data": "section" }
+                        ]
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('An error occurred:', status, error);
+                }
+            });
+
+                        // Filter by First Name
+            $('#firstNameFilter').on('keyup', function () {
+                table.column(0).search(this.value).draw();
+            });
+            $('#lastNameFilter').on('keyup', function () {
+                table.column(1).search(this.value).draw();
+            });
+
+            // Filter by Email
+            $('#emailFilter').on('keyup', function () {
+                table.column(2).search(this.value).draw();
+            });
+            // Filter by Email
+            $('#subFilter').on('keyup', function () {
+                table.column(3).search(this.value).draw();
+            });
+
+            // Update sections when a class is selected
+            $('#classDropdown').change(function () {
+                var classId = $(this).val();
+                if (classId) {
+                    $.ajax({
+                        url: '/Admin/SubjectManagement/GetSectionsByClass',
+                        type: 'GET',
+                        data: { classId: classId },
+                        success: function (data) {
+                            var sectionDropdown = $('#sectionDropdown');
+                            sectionDropdown.empty();
+                            sectionDropdown.append('<option value="">Select Section</option>');
+                            $.each(data, function (index, item) {
+                                sectionDropdown.append('<option value="' + item.id + '">' + item.name + '</option>');
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Update subjects when a section is selected
+            $('#sectionDropdown').change(function () {
+                var sectionId = $(this).val();
+                if (sectionId) {
+                    $.ajax({
+                        url: '/Admin/SubjectManagement/GetSubjectsBySection',
+                        type: 'GET',
+                        data: { sectionId: sectionId },
+                        success: function (data) {
+                            console.log('Received data:', data);
+                            var subjectDropdown = $('#subjectDropdown');
+                            subjectDropdown.empty();
+                            subjectDropdown.append('<option value="">Select Subject</option>');
+                            $.each(data, function (index, item) {
+                                console.log('Appending option:', item);
+                                subjectDropdown.append('<option value="' + item.id + '">' + item.subjectName + '</option>');
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            console.error('Error fetching subjects:', error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
+
+
+
+                    

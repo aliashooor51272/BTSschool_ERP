@@ -1,0 +1,401 @@
+.style-0 {
+    border-radius: 10px;
+    background: #fff;
+    vertical-align: middle;
+    font-size: 16px;
+    padding: 20px;
+    flex: 0 0 100%;
+    max-width: 90%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-left:22px;
+}
+
+.style-1 {
+    border-right: 1px solid #777;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+   
+    .style-1 {
+        border-right: none; /* Remove right border on small screens */
+        padding-right: 0;
+        margin-right: 0;
+        margin-bottom: 10px; /* Add space between elements on small screens */
+    }
+}
+.style-2 {
+    font-family: themify;
+    
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 16px;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+.style-3 {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 8px;
+    padding: 8px 14px 8px 8px;
+    line-height: 16px;
+    font-size: 11px;
+    text-transform: capitalize;
+    cursor: pointer;
+    float: right;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(45, 206, 137) 0px, rgb(45, 206, 204) 100%) repeat scroll 0% 0% / auto padding-box border-box;
+    display: block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    
+    user-select: none;
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: all 0.15s ease-in-out 0s;
+    appearance: button;
+    overflow: visible;
+    margin: 0px;
+    font-family: Poppins, sans-serif;
+    touch-action: manipulation;
+    box-sizing: border-box;
+}
+
+.style-4 {
+    margin-right: 5px;
+    font-family: themify;
+   
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 11px;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+
+
+#main {
+margin-top: 45px;
+padding: 20px 30px;
+transition: all 0.3s;
+max-width: 90%;
+margin-left: 19%;
+}
+
+@media only screen and (max-width: 767px) {
+    #main {
+        margin: 30px auto; /* Center horizontally with top margin */
+        padding: 15px 20px;
+        max-width: 90%; /* Limit width to maintain readability */
+    }
+}
+.form-container {
+width: 400px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.form-row {
+margin-bottom: 10px;
+}
+.form-row::after {
+content: "";
+display: table;
+clear: both;
+}
+.form-row label {
+float: left;
+width: 40%;
+text-align: right;
+margin-right: 10px;
+}
+.form-row input[type="text"] {
+float: left;
+width: 50%;
+}
+
+.form-group {
+margin-top: 15px;
+}
+
+.form-heading {
+text-align: center;
+font-weight: 600;
+font-size: 24px;
+margin-bottom: 8px;
+}
+
+.accordion-divider {
+width: 20px;
+height: 7px;
+border-radius: 10px;
+display: inline-block;
+margin-left: 10px;
+}
+
+.editable-label {
+font-size: 12px;
+color: rgb(77, 76, 172);
+}
+
+.fixed-label {
+font-size: 12px;
+}
+
+.form-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+.form-column {
+flex: 0 0 50%;
+max-width: 50%;
+padding: 0 15px;
+box-sizing: border-box;
+}
+
+.input-group {
+margin-bottom: 15px;
+}
+
+.input-label {
+font-size: 14px;
+}
+
+.input-field {
+border: 1px solid rgb(150, 152, 214);
+border-radius: 25px;
+padding: 8px 12px;
+width: 100%;
+font-size: 14px;
+}
+
+.select-field {
+border: 1px solid rgb(150, 152, 214);
+border-radius: 25px;
+padding: 8px 12px;
+width: 100%;
+font-size: 14px;
+}
+
+.style-5 {
+    float: right;
+    margin-right: 10px;
+    font-size: 13px;
+    color: rgb(34, 34, 34);
+    touch-action: manipulation;
+    text-decoration: none solid rgb(34, 34, 34);
+    background-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.style-6 {
+    border-radius: 20px;
+    padding: 8px 14px;
+    line-height: 16px;
+    font-size: 11px;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(33, 37, 41) 0px, rgb(33, 34, 41) 100%) repeat scroll 0% 0% / auto padding-box border-box;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    transition: all 0.15s ease-in-out 0s;
+    appearance: button;
+    overflow: visible;
+    margin: 0px;
+    font-family: Poppins, sans-serif;
+    touch-action: manipulation;
+    box-sizing: border-box;
+}
+
+.style-7 {
+    margin-right: 5px;
+    font-family: themify;
+
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 11px;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+.style-17 {
+border: 1px solid rgb(102, 107, 249);
+border-radius: 25px;
+margin-top: 15px;
+box-sizing: border-box;
+padding: 5px;
+}
+
+.style-18 {
+background: rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(94, 114, 228) 0px, rgb(130, 94, 228) 100%) repeat scroll 0% 0% / auto padding-box border-box;
+margin-top: -10px;
+position: absolute;
+margin-left: 8px;
+padding-left: 3px;
+padding-right: 3px;
+font-size: 12px;
+color: rgb(255, 255, 255);
+display: block;
+margin-bottom: 8px;
+touch-action: manipulation;
+box-sizing: border-box;
+border: 1px solid rgb(153, 153, 153);
+border-radius: 12px;
+}
+
+.style-19 {
+width: 120px;
+height: 120px;
+height: 120px;
+margin: 10px;
+border-radius: 50%;
+vertical-align: middle;
+border-style: none;
+box-sizing: border-box;
+}
+
+.style-20 {
+font-size: 14px;
+border-radius: 25px;
+border: 0px none rgb(73, 80, 87);
+display: block;
+width: 100%;
+padding: 8px 12px;
+line-height: 17.5px;
+color: rgb(73, 80, 87);
+background-color: rgb(232, 232, 232);
+background-image: none;
+
+transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+overflow: hidden;
+margin: 0px;
+font-family: Poppins, sans-serif;
+touch-action: manipulation;
+box-sizing: border-box;
+
+}
+
+.style-21 {
+display: inline-block;
+border-radius: 20px;
+padding: 8px 14px;
+line-height: 16px;
+font-size: 11px;
+text-transform: capitalize;
+cursor: pointer;
+color: rgb(255, 255, 255);
+background: rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(94, 114, 228) 0px, rgb(130, 94, 228) 100%) repeat scroll 0% 0% / auto padding-box border-box;
+font-weight: 400;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+user-select: none;
+border: 1px solid rgba(0, 0, 0, 0);
+transition: all 0.15s ease-in-out 0s;
+box-sizing: border-box;
+}
+
+.style-22 {
+margin-right: 5px;
+font-family: themify;
+
+font-style: normal;
+font-weight: 400;
+font-variant: normal;
+text-transform: none;
+line-height: 11px;
+-webkit-font-smoothing: antialiased;
+box-sizing: border-box;
+}
+
+.style-148 {
+    display: none;
+    -webkit-box-flex: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.style-149 {
+    line-height: 16px;
+    text-align: center;
+    margin-top: 30px;
+    margin: 30px 0px 0px;
+    font-weight: 600;
+    width: 100% !important;
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-family: Poppins, sans-serif;
+    color: rgb(34, 34, 34);
+    box-sizing: border-box;
+}
+
+.style-150 {
+    box-sizing: border-box;
+}
+
+.style-152 {
+    display: inline-block;
+    font-weight: 100;
+    font-size: 12px;
+    color: rgb(77, 76, 172);
+    box-sizing: border-box;
+}
+
+.style-154 {
+    display: inline-block;
+    font-weight: 100;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+#label-color{
+    background-color:#7475e5;
+
+}
+.local-forms label{font-size:13px;color:#fff;border: 1px solid rgb(153, 153, 153);border-radius: 12px;font-weight:500;position:absolute;top:-15px;left:10px;background:#fff;margin-bottom:0;padding:0 5px;z-index:99}
+
+.form-control{border:1px solid #ddd;box-shadow:none;color:#333;font-size:15px;height:45px;border-radius: 25px;border: 1px solid #b4b5e1;margin-bottom:15px;}
+
+.sidebar {
+    overflow-y: auto; /* Add a vertical scrollbar */
+  
+}
+/* 
+background: rgb(204, 204, 204);
+width: 6px;
+position: absolute;
+top: 18px;
+opacity: 0.4;
+display: none;
+border-radius: 7px;
+z-index: 99;
+right: 1px;
+height: 89.3439px; */

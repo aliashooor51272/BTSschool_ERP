@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ByteTechSchoolERP.Models.HomeDiary.HomeWork>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Results</title>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <div class="page-wrapper">
+         <div class="tab-container container-fluid">
+            <div class="col-md-12 mt-4">
+                <div class="style-0" style="max-width:100%; margin:0px; border: 1px solid #ebe4e4;" id="classFormData">
+                    <table id="HomeworkTable" class="display mt-2" style="width:100%">
+                        <thead style="background-color: rgb(94, 114, 228); color: white;">
+                            <tr>
+                                <th>Id</th>
+                                <th>DiaryId</th>
+                                <th>StudentId</th>
+                                <th>SectionId</th>
+                                <th>ClassId</th>
+                                <th>SubjectId</th>
+                                <th>Submission Date</th>
+                                <th>Created On</th>
+                                <th>File URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var homework in Model)
+                            {
+                                <tr>
+                                    <td>@homework.Id</td>
+                                    <td>@homework.DiaryId</td>
+                                    <td>@homework.Student.FullName</td>
+                                    <td>@homework.Section.Name</td>
+                                    <td>@homework.ClassId</td>
+                                    <td>@homework.SubjectName</td>
+                                    <td>@homework.SubmissioDate.ToString("MM/dd/yyyy")</td>
+                                    <td>@homework.Createdon.ToString("MM/dd/yyyy")</td>
+                                    <td><a href="@homework.fileurl" target="_blank">View File</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+            </div>
+
+   
+
+
+
+</body>
+</html>

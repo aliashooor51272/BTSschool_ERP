@@ -1,0 +1,370 @@
+﻿  @model IEnumerable<ByteTechSchoolERP.Models.ViewModels.TeacherSubjectAllocationViewModel>
+@{
+    var examDropdown = ViewBag.ExamDropdown as List<SelectListItem>;
+}
+<!DOCTYPE html>
+<html lang="en">
+ 
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/feather/feather.css">
+    <link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-style.css">
+     <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <!-- DataTables Responsive CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
+    <!-- DataTables Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <!-- Animate.css CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
+    <style>
+ 
+ .style-0 {
+                    border-radius: 10px;
+                    background: #fff;
+                    vertical-align: middle;
+                    font-size: 16px;
+                    padding: 20px;
+                    flex: 0 0 100%;
+                     position: relative;
+                    width: 100%;
+                    min-height: 1px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                    margin-top: 20px;
+                    box-shadow: rgb(128, 128, 128) 0px 0px 1px 0px;
+                 }
+     
+        /* Admission Form*/
+
+
+@@media (max-width: 768px) {
+    .form1-column {
+        flex: 0 0 100%;
+        max-width:100%;
+    }
+}
+.card{
+    margin-left: 59px;
+  width: 90%;
+  margin-top: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 208px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 18px 9px;
+    z-index: 1;
+}
+ </style>
+    
+</head>
+
+
+
+<body>
+        <div class="page-wrapper">
+            <div class="tab-container container-fluid mt-3">
+                <div class="col-md-12">
+                    <div class="style-0" style="max-width: 100%;margin:0px;">
+                        <strong>Exam Marks</strong> |
+                        <i class="fas fa-home home-icon"></i> - Marks Entry
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="tab-container container-fluid d-md-flex">
+                <div class="col-md-12 mt-4" id="classFormContainer">
+                    <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                        <form id="marksForm" method="post" asp-area="teacher" asp-controller="teacher" asp-action="SaveMarks">
+
+                            <!-- First Row -->
+                            <div class="row">
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="classDropdown" id="label-color">Class</label>
+                                    <select id="classDropdown" name="ClassId" class="form-control">
+                                        <option value="">Select Class</option>
+                                        @foreach (var cls in Model.Select(m => new { m.ClassId, m.ClassName }).Distinct())
+                                        {
+                                            <option value="@cls.ClassId">@cls.ClassName</option>
+                                        }
+                                    </select>
+                                </div>
+
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="sectionDropdown" id="label-color">Section</label>
+                                    <select id="sectionDropdown" name="SectionId" class="form-control">
+                                        <option value="">Select Section</option>
+                                        <!-- Sections will be loaded via AJAX -->
+                                    </select>
+                                </div>
+                            <div class="form-group">
+                                <label for="ExamId">Select Exam</label>
+                                <select id="ExamId" name="ExamId" class="form-control">
+                                    <option value="">-- Select Exam --</option>
+                                    @foreach (var exam in examDropdown)
+                                    {
+                                        <option value="@exam.Value">@exam.Text</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="subjectDropdown" id="label-color">Subject</label>
+                                    <select id="subjectDropdown" name="SubjectId" class="form-control">
+                                        <option value="">Select Subject</option>
+                                        <!-- Subjects will be loaded via AJAX -->
+                                    </select>
+                                </div>
+
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="studentDropdown" id="label-color">Student</label>
+                                    <select id="studentDropdown" name="StudentId" class="form-control">
+                                        <option value="">Select Student</option>
+                                        <!-- Students will be loaded via AJAX -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Second Row -->
+                            <div class="row">
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="obtainedMarks" id="label-color">Obtained Marks</label>
+                                <input id="obtainedMarks" name="ObtainedMarks" class="form-control" min="0">
+                            </div>
+
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="totalMarks" id="label-color">Total Marks</label>
+                                    <input type="text" id="totalMarks" name="TotalMarks" class="form-control" readonly>
+                                </div>
+
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="percentage" id="label-color">Percentage</label>
+                                    <input type="text" id="percentage" name="Percentage" class="form-control" readonly>
+                                </div>
+
+                            <div class="col-md-3 form-group local-forms label">
+                                <label for="grade" id="label-color">Grade</label>
+                                    <input type="text" id="grade" name="Grade" class="form-control" readonly>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+
+                        </form>
+                        <script>
+                            document.getElementById('studentDropdown').addEventListener('change', function () {
+                                var selectedStudent = this.value;
+                                var marksFields = document.getElementById('marksFields');
+
+                                if (selectedStudent) {
+                                    marksFields.style.display = 'block'; // Show fields
+                                } else {
+                                    marksFields.style.display = 'none'; // Hide fields
+                                }
+                            });
+
+                            document.getElementById('obtainedMarks').addEventListener('input', function () {
+                                var obtainedMarks = parseFloat(this.value) || 0;
+                                var totalMarks = parseFloat(document.getElementById('totalMarks').value) || 1; // Prevent division by zero
+
+                                // Check if obtained marks are within the valid range
+                                if (obtainedMarks < 0) {
+                                    alert("Obtained Marks cannot be less than 0.");
+                                    this.value = 0;
+                                    return;
+                                }
+                                if (obtainedMarks > totalMarks) {
+                                    alert("Obtained Marks cannot be greater than Total Marks.");
+                                    this.value = totalMarks;
+                                    return;
+                                }
+
+                                // Calculate percentage
+                                var percentage = (obtainedMarks / totalMarks) * 100;
+                                document.getElementById('percentage').value = percentage.toFixed(2);
+
+                                // Determine grade
+                                var grade = '';
+                                var color = '';
+                                if (percentage >= 80) {
+                                    grade = 'A+';
+                                    color = 'darkgreen';
+                                } else if (percentage >= 70) {
+                                    grade = 'A';
+                                    color = 'green';
+                                } else if (percentage >= 50) {
+                                    grade = 'B';
+                                    color = 'black';
+                                } else if (percentage >= 33) {
+                                    grade = 'C';
+                                    color = 'orange';
+                                } else {
+                                    grade = 'F';
+                                    color = 'red';
+                                }
+                                var gradeInput = document.getElementById('grade');
+                                gradeInput.value = grade;
+                                gradeInput.style.color = color;
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-4">
+            <p>Copyright © 2024 ByteTech Solution.</p>
+        </footer>
+  
+
+
+
+
+  
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- DataTables JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+<!-- DataTables Responsive JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+<!-- DataTables Bootstrap JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+          
+
+<!-- Bootstrap JS -->
+ <!-- DataTables JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+            @section Scripts {
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+
+                        $('#classDropdown').change(function () {
+                            var classId = $(this).val();
+                            if (classId) {
+                                $.ajax({
+                                    url: "/Teacher/Teacher/GetSectionsByClassId",
+                                    data: { classId: classId },
+                                    success: function (data) {
+                                        $('#sectionDropdown').empty().append('<option value="">Select Section</option>');
+                                        $.each(data, function (i, section) {
+                                            $('#sectionDropdown').append($('<option>', {
+                                                value: section.id,
+                                                text: section.name
+                                            }));
+                                        });
+                                    }
+                                });
+                            } else {
+                                $('#sectionDropdown').empty().append('<option value="">Select Section</option>');
+                                $('#subjectDropdown').empty().append('<option value="">Select Subject</option>');
+                                $('#studentDropdown').empty().append('<option value="">Select Student</option>');
+                                $('#totalMarks').val('');
+                            }
+                        });
+
+                        $('#sectionDropdown').change(function () {
+                            var sectionId = $(this).val();
+                            var classId = $('#classDropdown').val();
+                            if (sectionId) {
+                                $.ajax({
+                                    url: "/Teacher/Teacher/GetSubjectsBySectionId",
+                                    data: { sectionId: sectionId },
+                                    success: function (data) {
+                                        $('#subjectDropdown').empty().append('<option value="">Select Subject</option>');
+                                        $.each(data, function (i, subject) {
+                                            $('#subjectDropdown').append($('<option>', {
+                                                value: subject.id,
+                                                text: subject.subjectName
+                                            }));
+                                        });
+                                    }
+                                });
+
+                                $.ajax({
+                                    url: "/Teacher/Teacher/GetStudentsByClassAndSection",
+                                    data: { classId: classId, sectionId: sectionId },
+                                    success: function (data) {
+                                        $('#studentDropdown').empty().append('<option value="">Select Student</option>');
+                                        $.each(data, function (i, student) {
+                                            $('#studentDropdown').append($('<option>', {
+                                                value: student.id,
+                                                text: student.fullName
+                                            }));
+                                        });
+                                    }
+                                });
+                            } else {
+                                $('#subjectDropdown').empty().append('<option value="">Select Subject</option>');
+                                $('#studentDropdown').empty().append('<option value="">Select Student</option>');
+                                $('#totalMarks').val('');
+                            }
+                        });
+
+                        $('#subjectDropdown').change(function () {
+                            var subjectId = $(this).val();
+                            if (subjectId) {
+                                $.ajax({
+                                    url: "/Teacher/Teacher/GetSubjectTotalMarks",
+                                    data: { subjectId: subjectId },
+                                    success: function (data) {
+                                        $('#totalMarks').val(data.totalMarks);
+                                    }
+                                });
+                            } else {
+                                $('#totalMarks').val('');
+                            }
+                        });
+
+                      
+
+
+                    });
+                </script>
+            }
+
+ <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/feather.min.js"></script>
+<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+<script src="assets/plugins/apexchart/chart-data.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+
+</html>

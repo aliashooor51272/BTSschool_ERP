@@ -1,0 +1,174 @@
+﻿@model List<ByteTechSchoolERP.Models.ViewModels.DiaryViewModel>
+
+@{
+    ViewData["Title"] = "Daily Diary";
+}
+
+<div class="page-wrapper">
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%; margin:0px;">
+                <strong>Student</strong> |
+                <i class="fas fa-home home-icon"></i> - Attendance
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-12 mt-4" id="classFormContainer">
+            <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                <div class="table-responsive">
+                    <table id="diaryTable" class="display mt-2" style="width:100%">
+                        <thead style="background-color: rgb(94, 114, 228); color: white; height:40px;">
+                            <tr>
+                                <th>Diary ID</th>
+                                <th>Class</th>
+                                <th>Section</th>
+                                <th>Subject</th>
+                               
+                                <th>Homework Date</th>
+                                <th>Submission Date</th>
+                                <th>Description</th>
+                                <th>Attachment</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var entry in Model)
+                            {
+                                <tr>
+                                    <td>@entry.DiaryId</td>
+                                    <td>@entry.ClassName</td>
+                                    <td>@entry.SectionName</td>
+                                    <td>@entry.SubjectName</td>
+                                   
+                                    <td>@entry.HomeworkDate.ToShortDateString()</td>
+                                    <td>@entry.SubmissioDate.ToShortDateString()</td>
+                                    <td>@entry.Description</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(entry.AttachDocument))
+                                        {
+                                            <a href="@entry.AttachDocument" target="_blank">View File</a>
+                                        }
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#diaryModal"
+                                                data-diaryid="@entry.DiaryId"
+                                                data-classid="@entry.ClassId"
+                                                data-sectionid="@entry.SectonId"
+                                                data-subjectid="@entry.SubjectName"
+                                                data-submissiondate="@entry.SubmissioDate.ToShortDateString()">
+                                            Submit Homework
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div class="modal fade" id="diaryModal" tabindex="-1" role="dialog" aria-labelledby="diaryModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="diaryModalLabel">Submit Homework</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form asp-area="Parent" asp-controller="Home" asp-action="SubmitHomework" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="form-group" style="display:none">
+                                    <label for="modalClassId">Class ID</label>
+                                    <input type="text" class="form-control" name="classId" id="modalClassId" readonly />
+                                </div>
+                                <div class="form-group" style="display:none">
+                                    <label for="modalSectionId">Section ID</label>
+                                    <input type="text" class="form-control" name="SectionId" id="modalSectionId" readonly />
+                                </div>
+                                <div class="form-group" style="display:none">
+                                    <label for="modalSubjectId">Subject ID</label>
+                                    <input type="text" class="form-control" name="SubjectId" id="modalSubjectId" readonly />
+                                </div>
+                                <div class="form-group" style="display:none">
+                                    <label for="modalDiaryId">Diary ID</label>
+                                    <input type="text" class="form-control" name="diaryId" id="modalDiaryId" readonly />
+                                </div>
+                                <div class="form-group">
+                                    <label for="modalSubmissionDate">Submission Date</label>
+                                    <input type="text" class="form-control" name="submissionDate" id="modalSubmissionDate" readonly />
+                                </div>
+                                <div class="form-group">
+                                    <label for="homeworkFile">Upload PDF</label>
+                                    <input type="file" class="form-control-file" id="homeworkFile" name="homeworkFile" accept=".pdf" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save Homework</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#diaryTable').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "autoWidth": false
+            });
+
+            $('#diaryModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var classId = button.data('classid');
+                var sectionId = button.data('sectionid');
+                var subjectId = button.data('subjectid');
+                var diaryId = button.data('diaryid');
+                var submissionDate = button.data('submissiondate');
+
+                var modal = $(this);
+                modal.find('#modalClassId').val(classId);
+                modal.find('#modalSectionId').val(sectionId);
+                modal.find('#modalSubjectId').val(subjectId);
+                modal.find('#modalDiaryId').val(diaryId);
+                modal.find('#modalSubmissionDate').val(submissionDate);
+            });
+
+            $('#homeworkForm').submit(function (event) {
+                event.preventDefault();
+
+                var formData = new FormData(this);
+                $.ajax({
+                    url: "/Parent/Home/SubmitHomework",
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Homework submitted successfully!');
+                            location.reload();
+                        } else {
+                            alert('Failed to submit homework.');
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred.');
+                    }
+                });
+            });
+        });
+    </script>
+}

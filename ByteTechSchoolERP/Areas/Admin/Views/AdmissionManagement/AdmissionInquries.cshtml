@@ -1,0 +1,172 @@
+﻿@model ByteTechSchoolERP.Models.ViewModels.StudentViewModel
+
+<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid mt-3">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <strong>Admission  </strong> |
+                <i class="fas fa-home home-icon"></i> -  Manage Inquries
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width:100%; margin:0px;">
+                <div class="row">
+                    <div class="col-md-5">
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-file-csv"></i> CSV
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button type="button" class="btn btn-success">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                        <button type="button" class="btn btn-info">
+                            <i class="fas fa-file-excel"></i> Excel
+                        </button>
+                    </div>
+                </div><br />
+                   <div class="table-responsive">
+
+                <table id="example" class="display mt-2" style="width:100%">
+                    <thead style="background-color:rgb(94, 114, 228);">
+                        <tr style="color: white;">
+                            <th>Student Name</th>
+                            <th>Parent</th>
+
+                            <th>Gender</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Admit</th>
+                            <th>Send Sms</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>John Nixon</td>
+                            <td> Male</td>
+                            <td>abc@gmail.com</td>
+                            <td>03408920282</td>
+                            <td>aa</td>
+                            <td>Sent</td>
+                            <td>
+                                <button class="btn btn-primary editBtn">
+                                    <i class="fas fa-edit edit-icon"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal HTML -->
+<!-- Modal HTML -->
+<div id="myModal" class="modal animated bounceInDown faster">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="form-group">
+                        <label for="studentName">Student Name:</label>
+                        <input type="text" class="form-control" id="studentName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select class="form-control" id="status">
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Denied">Denied</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+            </div>
+
+
+
+
+           </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+<footer>
+    <p>Copyright © 2024 ByteTech Solution.</p>
+</footer>
+        </div>
+    </div>
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            $('#example').on('click', '.editBtn', function () {
+                var rowData = $(this).closest('tr').find('td').map(function () {
+                    return $(this).text();
+                }).get();
+                $('#studentName').val(rowData[0]);
+                $('#email').val(rowData[4]);
+                $('#status').val(rowData[5]);
+                $('#myModal').modal('show');
+            });
+
+            // Update data
+            $('#editForm').submit(function (e) {
+                e.preventDefault();
+                var newStatus = $('#status').val();
+                // Update the status in your database or wherever you store the data
+                // Close modal after saving
+                $('#myModal').modal('hide');
+            });
+        });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+}
+

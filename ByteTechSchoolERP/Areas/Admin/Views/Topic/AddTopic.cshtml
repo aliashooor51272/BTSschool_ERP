@@ -1,0 +1,325 @@
+﻿@model ByteTechSchoolERP.Models.Topic.Topic
+
+@{
+    ViewData["Title"] = "Add New Topic";
+}
+<head>
+   
+</head>
+<!-- Modal for Creating Lesson -->
+<div class="modal fade" id="createLessonModal" tabindex="-1" aria-labelledby="createLessonModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createLessonModalLabel">Create Lesson</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addLessonForm" method="post" asp-action="CreateLesson">
+                    <!-- Class Dropdown -->
+                    <div class="form-group">
+                        <label id="label-color">Class<span class="text-danger">*</span></label>
+                        <select asp-for="ClassId" class="form-control" asp-items="@ViewBag.Classes" id="class-dropdown" onchange="SelectClass()" style="border-radius: 19px;">
+                            <option value="">Select Class</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <!-- Section Dropdown -->
+                    <div class="form-group mt-3">
+                        <label id="label-color">Section<span class="text-danger">*</span></label>
+                        <select asp-for="SectionId" class="form-control" asp-items="@ViewBag.Sections">
+                            <option value="">Select Section</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <!-- Subject Dropdown -->
+                    <div class="form-group mt-3">
+                        <label id="label-color">Subject<span class="text-danger">*</span></label>
+                        <select asp-for="SubjectId" class="form-control" asp-items="@ViewBag.Subjects">
+                            <option value="">Select Subject</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <!-- Lesson Dropdown -->
+                    <div class="form-group mt-3">
+                        <label id="label-color">Lesson<span class="text-danger">*</span></label>
+                        <select asp-for="LessonId" class="form-control" asp-items="@ViewBag.Lessons">
+                            <option value="">Select Lesson</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <!-- Topic Name Input -->
+                    <div class="form-group mt-3">
+                        <label class="form-label requiredLabel">Topic Name<span class="text-danger">*</span></label>
+                        <input type="text" placeholder="Topic Name" asp-for="TopicName" required class="form-control" />
+                    </div>
+                    <br>
+
+                    <!-- Save Button -->
+                    <div class="form-group mt-4">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper">
+
+    <div class="tab-container container-fluid">
+
+
+        <div class="col-md-12">
+
+            <div class="style-0" style="max-width: 100%;margin-left: 5px;">
+
+                <strong> Lesson </strong> | <i class="fas fa-home home-icon"></i> - Add Lesson
+            </div>
+        </div>
+
+
+    </div>
+    <button type="button" class="btn btn-primary mt-3 mr-4" data-bs-toggle="modal" data-bs-target="#createLessonModal" style="float: right;">
+        Create Lesson
+    </button>
+
+    <div class="tab-container container-fluid d-md-flex">
+@*         <div class="col-md-4 " id="classFormContainer">
+            <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                <form id="addLessonForm" method="post">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h5 class="formTitle">Create Lesson</h5>
+                    </div>
+                    <br />
+                    <br />
+
+                    <div class="col-md-12 local-forms label">
+                        <label id="label-color">Class<span class="login-danger">*</span></label>
+                        <select asp-for="ClassId" class="form1-input form-select" asp-items="@ViewBag.Classes" id="class-dropdown" onchange="SelectClass()" style="border-radius: 19px;">
+                            <option value="">Select Class</option>
+                        </select>
+                    </div>
+                    </br>
+
+                    <div class="col-md-12 local-forms label">
+                        <label id="label-color">Section<span class="login-danger">*</span></label>
+                        <select asp-for="SectionId" class="form-control" asp-items="@ViewBag.Sections">
+                            <option value="">Select Section</option>
+                        </select>
+                    </div>
+                    </br>
+
+                    <div class="col-md-12 local-forms label">
+                        <label id="label-color">Subject<span class="login-danger">*</span></label>
+                        <select asp-for="SubjectId" class="form-control" asp-items="@ViewBag.Subjects">
+                            <option value="">Select Subject</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12 local-forms label">
+                        <label id="label-color">Lesson<span class="login-danger">*</span></label>
+                        <select asp-for="LessonId" class="form-control" asp-items="@ViewBag.Lessons">
+                            <option value="">Select Lesson</option>
+                        </select>
+                    </div>
+
+                    <div class="inputContainer">
+                        <label class="formLabel requiredLabel"> Topic Name*</label>
+                        <input type="text" placeholder="Topic Name" asp-for="TopicName" required class="formInput" />
+                    </div>
+
+                    <div class="buttonContainer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div> *@
+
+        <div class="col-md-12 mt-3" id="classFormContainers">
+            <div class="style-0" id="SubjectDataId" style="max-width:100%; margin:0px;">
+                <div class="col-12 d-flex justify-content-center">
+                    <h5 class="formTitle">Lesson List</h5>
+                </div>
+                </br>
+                <div class="table-responsive">
+                     <div class="card">
+     <div class="card-header">
+         <h5>Search Filters</h5>
+     </div>
+     <div class="card-body">
+         <form id="filterForm">
+             <div class="row">
+                 <div class="col-md-4">
+                     <div class="form-group">
+                         <label for="firstNameFilter">Class</label>
+                         <input type="text" class="form-control" id="firstNameFilter" placeholder="Class" />
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="form-group">
+                         <label for="firstNameFilter">Section</label>
+                         <input type="text" class="form-control" id="lastNameFilter" placeholder="Section" />
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="form-group">
+                         <label for="subFilter">Subject</label>
+                         <input type="text" class="form-control" id="emailFilter" placeholder="Subject" />
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="form-group">
+                         <label for="emailFilter">Lesson</label>
+                         <input type="text" class="form-control" id="subFilter" placeholder="Lesson " />
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="form-group">
+                         <label for="newFilter">Topic</label>
+                         <input type="text" class="form-control" id="newFilter" placeholder="Topic " />
+                     </div>
+                 </div>
+
+             </div>
+
+         </form>
+     </div>
+ </div>
+                  
+                    <table id="TopicId" class="display mt-2" style="width:100%">
+                        <thead style="background-color:rgb(94, 114, 228);">
+                            <tr style="color: white;">
+                                <th>Class</th>
+                                <th>Section</th>
+                                <th>Subject</th>
+                                <th>Lesson</th>
+                                <th>Topic</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated by DataTables -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+   <script>
+    $(document).ready(function () {
+        // Initialize DataTable
+        var table = $('#TopicId').DataTable({
+            "ajax": {
+                "url": "/Admin/Topic/TopicList",
+                "type": "GET",
+                "dataType": "json",
+                "dataSrc": "data"
+            },
+            "columns": [
+                { "data": "className" },
+                { "data": "sectionName" },
+                { "data": "subjectName" },
+                { "data": "lessonName" },
+                { "data": "topicName" },
+                {
+                    "data": "Id",
+                    "render": function (data, type, row) {
+                        return `
+                            <div class="container">
+                                <button class="btn btn-primary btn-sm edit-btn" data-id="${data}" data-class-id="${row.ClassName}" data-section-id="${row.SectionName}" data-subject-id="${row.SubjectName}" data-lesson-name="${row.LessonName}" data-bs-toggle="modal" data-bs-target="#editLessonModal">
+                                    <i style="font-size:15px" class="fa">&#xf044;</i>
+                                </button>
+                                <button class="btn btn-danger btn-sm delete-btn" data-id="${data}">
+                                    <i style="font-size:15px" class="fa">&#xf1f8;</i>
+                                </button>
+                            </div>
+                        `;
+                    }
+                }
+            ]
+        });
+         // Filter by First Name
+ $('#firstNameFilter').on('keyup', function () {
+     table.column(0).search(this.value).draw();
+ });
+ $('#lastNameFilter').on('keyup', function () {
+     table.column(1).search(this.value).draw();
+ });
+
+ // Filter by Email
+ $('#emailFilter').on('keyup', function () {
+     table.column(2).search(this.value).draw();
+ });
+ // Filter by Email
+ $('#subFilter').on('keyup', function () {
+     table.column(3).search(this.value).draw();
+ });
+ // Filter by Email
+ $('#newFilter').on('keyup', function () {
+     table.column(4).search(this.value).draw();
+ });
+
+        // Handle form submission for adding new topic
+        $('#addLessonForm').on('submit', function (e) {
+            e.preventDefault();
+            var formData = $(this).serialize();
+
+            $.post('/Admin/Topic/AddTopic', formData, function (response) {
+                if (response.isSuccess) {
+                    table.ajax.reload();
+                    $('#addLessonForm')[0].reset();
+                    toastr.success('Topic added successfully!');
+                } else {
+                    toastr.error('Failed to add topic.');
+                }
+            });
+        });
+
+        // Handle form submission for editing topic (if applicable)
+        $('#editClassForm').on('submit', function (e) {
+            e.preventDefault();
+            var formData = $(this).serialize();
+
+            $.post('/Admin/Topic/EditTopic', formData, function (response) {
+                if (response.isSuccess) {
+                    table.ajax.reload();
+                    $('#editModal').modal('hide');
+                    toastr.success('Topic updated successfully!');
+                } else {
+                    toastr.error('Failed to update topic.');
+                }
+            });
+        });
+
+        // Handle delete topic action
+        $('#TopicId').on('click', '.delete-btn', function () {
+            var id = $(this).data('id');
+
+            if (confirm('Are you sure you want to delete this topic?')) {
+                $.ajax({
+                    url: '/Admin/Topic/DeleteTopic',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (response) {
+                        if (response.isSuccess) {
+                            table.ajax.reload();
+                            toastr.success('Topic deleted successfully!');
+                        } else {
+                            toastr.error('Failed to delete topic.');
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+}

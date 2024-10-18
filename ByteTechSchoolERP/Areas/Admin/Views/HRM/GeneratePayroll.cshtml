@@ -1,0 +1,150 @@
+﻿@model List<ByteTechSchoolERP.DataAccess.HRModels.Payroll>
+
+@{
+    ViewData["Title"] = "Generate Payroll";
+}
+
+<div class="page-wrapper" style="background-color: #f7f7fa;">
+    <div class="tab-container container-fluid mt-3">
+        <div class="style-0" style="max-width:97%; margin-left:20px;">
+            <strong class="style-1">Human Resource</strong> <i class="fas fa-home home-icon"></i>
+            Generate Payroll
+        </div>
+        <div class="tab-container container-fluid mt-3" style="background-color: #f7f7fa;">
+    <form asp-area="Admin" asp-controller="HRM" asp-action="GeneratePayroll" method="post" class="w-50" id="payrollForm">
+        <div class="form-group">
+            <label class="control-label"></label>
+            <input name="PayrollDate" id="payrollDate" class="form-control" type="date" required />
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Generate Payroll</button>
+        </div>
+    </form>
+
+    <hr />
+
+    <h3 class="text-center">Payroll Records</h3>
+    <div class="table-responsive">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Search Filters</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="filterForm">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="firstNameFilter">Start Date</label>
+                                        <input type="date" class="form-control" id="firstNameFilter" placeholder="Start Date" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="firstNameFilter">End Date</label>
+                                        <input type="date" class="form-control" id="lastNameFilter" placeholder="End Date" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="emailNameFilter">Total Amount</label>
+                                        <input type="text" class="form-control" id="emailNameFilter" placeholder="Total Amount" />
+                                    </div>
+                                </div>
+              
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+        <table id="payrollTable" class="table table-bordered table-striped">
+                    <thead style="background-color: #3d5ee1; color: #fff;">
+                <tr>
+                    <th>Payroll Date</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var payroll in Model)
+                {
+                    <tr>
+                        <td>@payroll.PayrollDate.ToString("yyyy-MM-dd")</td>
+                                <td>@payroll.TotalAmount.ToString("N0")</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+   </div>
+</div>   
+</div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            var table = $('#payrollTable').DataTable();
+
+            // Form submission handler
+            $('#payrollForm').on('submit', function (event) {
+                // Get the selected date
+                var selectedDate = $('#payrollDate').val();
+                var selectedMonth = new Date(selectedDate).getMonth(); // Get month (0-11)
+                var selectedYear = new Date(selectedDate).getFullYear(); // Get year (YYYY)
+                var dateExists = false;
+
+                // Loop through the rows in the DataTable to check for existing month and year
+                $('#payrollTable tbody tr').each(function () {
+                    var rowDate = $(this).find('td').eq(0).text(); // Get the payroll date from the first cell
+                    var rowMonth = new Date(rowDate).getMonth(); // Extract month from row date
+                    var rowYear = new Date(rowDate).getFullYear(); // Extract year from row date
+
+                    // Compare month and year only
+                    if (rowMonth === selectedMonth && rowYear === selectedYear) {
+                        dateExists = true;
+                        return false; // Break out of the loop
+                    }
+                });
+
+                // If the date exists, alert the user and prevent form submission
+                if (dateExists) {
+                    alert('Payroll for the selected month and year has already been generated. Please select another one.');
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+
+            // Filter by Date Range
+            $('#filterForm input[type="date"]').on('change', function () {
+                var startDate = $('#firstNameFilter').val();
+                var endDate = $('#lastNameFilter').val();
+                table.draw(); // Redraw the table after filtering
+
+                // Filter function for date range
+                $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+                    var date = new Date(data[0]); // Get the date from the first column
+                    if (
+                        (startDate === "" && endDate === "") ||
+                        (startDate === "" && date <= new Date(endDate)) ||
+                        (new Date(startDate) <= date && endDate === "") ||
+                        (new Date(startDate) <= date && date <= new Date(endDate))
+                    ) {
+                        return true;
+                    }
+                    return false;
+                });
+            });
+
+            // Filter by Total Amount
+            $('#emailNameFilter').on('keyup change', function () {
+                var totalAmount = $(this).val();
+                table.column(1).search(totalAmount).draw(); // Filter by total amount
+            });
+        });
+    </script>
+}
+

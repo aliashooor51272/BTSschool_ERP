@@ -1,0 +1,86 @@
+﻿
+<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid mt-3">
+        <div class="col-md-12">
+            <div class="style-0" style="max-width: 100%;margin:0px;">
+                <strong>General Settings</strong> |
+                <i class="fas fa-home home-icon"></i> - Roles
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="tab-container container-fluid d-md-flex">
+        <div class="col-md-6 mt-4" id="classFormData">
+            <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                <form id="addClassForm" action="AddRole" method="post">
+                    <h5 class="formTitle">Add New Role</h5>
+                    <div class="modal-body">
+                    <div class ="form-group">
+                        <label class="col-form-label"> Role  *</label>
+                        <input type="text" id="editClassName" placeholder="Name Of Role" name="roleName" required class="form-control" />
+                    </div>
+                    </div>
+                    <div class="buttonContainer">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4" id="classFormContainers">
+            <div class="style-0" id="classFormData" style="max-width:100%; margin:0px;">
+                <div class="custom-table-header">
+                    <div class="custom-table-header-left">
+                        <label for="example_length" class="table-label">
+                            Show
+                            <select id="example_length" name="example_length" aria-controls="example">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select> entries
+                        </label>
+                    </div>
+                    <div class="custom-table-header-righ mt-3">
+                        <label for="searchInput" class="table-label">
+                            Search:
+                            <input type="search" id="searchInput" placeholder="" aria-controls="example">
+                        </label>
+                    </div>
+                </div>
+                <table id="ClassId" class="display mt-2" style="width:100%;" id="customTable" aria-describedby="example_info">
+                    <thead style="background-color:rgb(94, 114, 228); height: 38px;">
+                        <tr style="color: white;">
+                            <th tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Bank Name: activate to sort column descending">  Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var role in Model)
+                        {
+                            <tr>
+                                <td>@role.Name</td>
+                                <td>
+                                    <button class="btn btn-primary ">
+                                        <i class="fas fa-edit edit-icon"></i>
+                                    </button>
+                                    <button class="btn btn-danger ">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ByteTechSchoolERP.DataAccess.HRModels.Loan>
+
+@{
+    ViewData["Title"] = "User Loans";
+}
+
+<style>
+    /* Center the table both horizontally and vertically */
+    body, html {
+        height: 100%; /* Make sure the body takes full height */
+        margin: 0; /* Remove default margin */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+
+    .table-container {
+        width: 80%; /* Set width for the table container */
+        overflow: auto; /* Add scroll if needed */
+        margin: 20px; /* Margin around the table */
+    }
+
+    table {
+        width: 100%; /* Full width of the container */
+        border-collapse: collapse; /* Remove space between cells */
+    }
+
+    th, td {
+        padding: 10px; /* Space inside cells */
+        text-align: left; /* Align text to the left */
+        border: 1px solid #ddd; /* Add border to cells */
+    }
+
+    th {
+        background-color: #f2f2f2; /* Background for headers */
+    }
+
+    /* Optional: Style for table on smaller screens */
+    @@media (max-width: 768px) {
+        .table-container {
+            width: 100%; /* Full width on smaller screens */
+        }
+    }
+</style>
+
+<div class="table-container">
+    <h2>User Loans</h2>
+
+    <table id="loansTable" class="display">
+        <thead>
+            <tr>
+                <th>Loan ID</th>
+                <th>User ID</th>
+                <th>Loan Amount</th>
+                <th>Number of Installments</th>
+                <th>Per Installment Amount</th>
+                <th>Due Date</th>
+                <th>Paid Date</th>
+                <th>Remaining Amount</th>
+                <th>Paid Installments</th>
+                <th>Remaining Installments</th>
+                <th>User Name</th> <!-- If you want to show User details -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loan in Model)
+            {
+                <tr>
+                    <td>@loan.Id</td>
+                    <td>@loan.EmployeeId</td>
+                    <td>@loan.LoanAmount</td>
+                   @*  <td>@loan.NumberOfInstallments</td>
+                    <td>@loan.PerInstallmentAmount</td>
+                    <td>@loan.DueDate.ToShortDateString()</td>
+                    <td>@loan.PaidDate.ToShortDateString()</td>
+                    <td>@loan.RemainingAmount</td>
+                    <td>@loan.PaidInstallments</td> *@
+                    <td>@loan.RemainingInstallments</td>
+                    <td>@loan.Employee?.FirstName ?? "N/A"</td> <!-- Assuming UserName is a property in your User model -->
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#loansTable').DataTable(); // Initialize DataTable
+    });
+</script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>

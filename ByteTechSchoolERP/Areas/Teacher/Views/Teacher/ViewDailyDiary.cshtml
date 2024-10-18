@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ByteTechSchoolERP.Models.HomeDiary.Diary>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+
+    <div class="page-wrapper">
+
+        <div class="tab-container container-fluid mt-3">
+            <div class="col-md-12">
+                <div class="style-0" style="max-width: 100%;margin:0px;">
+                    <strong>Exam Marks</strong> |
+                    <i class="fas fa-home home-icon"></i> - Marks Entry
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-container container-fluid d-md-flex">
+            <div class="col-md-12 mt-4" id="classFormContainer">
+                <div class="style-0" style="max-width:100%; margin:0px;" id="classFormData">
+                    <div class="table-responsive">
+
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Subject</th>
+                    <th>Homework Date</th>
+                    <th>Submission Date</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var diary in Model)
+                {
+                    <tr>
+                        <td>@diary.Class.ClassName</td>
+                                        <td>@diary.Section.Name</td>
+                                        <td>@diary.Subject.SubjectName</td>
+                        <td>@diary.HomeworkDate.ToString("yyyy-MM-dd")</td>
+                        <td>@diary.SubmissioDate.ToString("yyyy-MM-dd")</td>
+                        <td>@diary.Description</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(diary.AttachDocument))
+                            {
+                                                <a href="@Url.Action("DownloadFile", "Teacher", new { area = "Teacher", filePath = diary.AttachDocument })" class="btn btn-primary">Download File</a>
+                                            }
+                            else
+                            {
+                                <span>No Document</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+

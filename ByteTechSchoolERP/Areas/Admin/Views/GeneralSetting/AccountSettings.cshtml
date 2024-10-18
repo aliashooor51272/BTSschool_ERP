@@ -1,0 +1,209 @@
+﻿<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <style>
+
+
+        .style-0 {
+            border-radius: 10px;
+            background: #fff;
+            vertical-align: middle;
+            font-size: 16px;
+            padding: 20px;
+            flex: 0 0 100%;
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 10px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+
+
+
+        .formTitle {
+            line-height: 16px;
+            text-align: center;
+            margin-top: 10px;
+            margin: 10px 0px 0px;
+            font-weight: 600;
+            width: 100% !important;
+            font-size: 20px;
+            margin-bottom: 0px;
+            font-family: Poppins, sans-serif;
+            color: rgb(34, 34, 34);
+            box-sizing: border-box;
+        }
+
+        .formLabel {
+            background: rgba(0, 0, 0, 0) linear-gradient(87deg, rgb(94, 114, 228) 0px, rgb(130, 94, 228) 100%);
+            padding-left: 3px;
+            padding-right: 3px;
+            font-size: 12px;
+            color: rgb(255, 255, 255);
+            display: block;
+            margin-bottom: 8px;
+            touch-action: manipulation;
+            box-sizing: border-box;
+            border: 0.666667px solid rgb(153, 153, 153);
+            border-radius: 12px;
+        }
+
+        .requiredLabel {
+            margin-top: -10px;
+            position: absolute;
+            margin-left: 8px;
+        }
+
+        .formInput {
+            font-size: 14px;
+            border-radius: 25px;
+            border: 0px none rgb(73, 80, 87);
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            line-height: 17.5px;
+            color: rgb(73, 80, 87);
+            background-color: rgb(255, 255, 255);
+            background-image: none;
+            transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+            overflow: visible;
+            margin: 0px;
+            font-family: Poppins, sans-serif;
+            touch-action: manipulation;
+            box-sizing: border-box;
+        }
+
+        .inputContainer {
+            border: 0.666667px solid rgb(150, 152, 214);
+            border-radius: 25px;
+            margin-top: 15px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .formSelect {
+            font-size: 14px;
+            border-radius: 25px;
+            border: 0px none rgb(73, 80, 87);
+            height: 38px;
+            width: 100%;
+            padding: 8px 12px;
+            line-height: normal;
+            color: rgb(73, 80, 87);
+            background-color: rgb(255, 255, 255);
+            background-image: none;
+            transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+            text-transform: none;
+            margin: 0px;
+            font-family: Poppins, sans-serif;
+            touch-action: manipulation;
+            box-sizing: border-box;
+        }
+
+        .selectDropdown {
+            padding: 0px;
+            height: auto;
+            border: 0px none rgb(73, 80, 87);
+            background: rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box;
+            box-shadow: none;
+            border-radius: 25px;
+            position: relative;
+            font-size: 14px;
+            display: block;
+            width: 100%;
+            line-height: 17.5px;
+            color: rgb(73, 80, 87);
+            background-color: rgba(0, 0, 0, 0);
+            background-image: none;
+            transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+            box-sizing: border-box;
+        }
+
+        .buttonContainer {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            box-sizing: border-box;
+        }
+
+        .formButton {
+            border-radius: 25px;
+            text-transform: capitalize;
+            font-size: 15px;
+            padding: 10px 19px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0) linear-gradient(45deg, rgb(255, 182, 77), rgb(255, 203, 128)) repeat scroll 0% 0% / auto padding-box border-box;
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            line-height: 18.75px;
+            transition: all 0.15s ease-in-out 0s;
+            appearance: button;
+            overflow: visible;
+            margin: 0px;
+            font-family: Poppins, sans-serif;
+            touch-action: manipulation;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+
+<div class="page-wrapper">
+
+
+    <div class="tab-container container-fluid">
+
+
+
+        <div style="background:linear-gradient(45deg, #5e81f4, #7191f7)!important;border-radius:10px; max-width:100%; height:80px; margin-top:50px; padding-left:20px; display:flex; align-items: center; ">
+
+                <i style="color: white;" class="fa fa-cogs" data-bs-toggle="tooltip" title="" data-bs-original-title="fa fa-cogs" aria-label="fa fa-cogs"></i>
+                <strong style="color: white;">  -  Account Settings</strong>
+            </div>
+      
+
+
+    </div>
+
+    <div class="tab-container container-fluid p-3 d-md-flex mt-5" style="background-color:  #fff; border-radius: 30px;  ">
+        <div id="classFormContainer" class="col-md-6  ">
+            <div id="classFormData" class="class-form-data">
+                <form id="addClassForm" action="addnewclass.php" method="post">
+                    <div class="inputContainer">
+                        <label class="formLabel requiredLabel"> Username*</label>
+                        <input type="text" value="Demo" name="classname" required class="formInput" />
+                    </div>
+                    <div class="inputContainer">
+                        <label class="formLabel requiredLabel"> Email*</label>
+                        <input type="text" value="demo@gmail.com" name="classname" required class="formInput" />
+                    </div>
+                    <div class="inputContainer">
+                        <label class="formLabel requiredLabel"> Phone Number*</label>
+                        <input type="text" value="034502382803" name="classname" required class="formInput" />
+                    </div>
+                    <div class="inputContainer">
+                        <label class="formLabel requiredLabel"> Password*</label>
+                        <input type="password" value="abcowdjjdskdss" name="classname" required class="formInput" />
+                    </div>
+
+                    <div class="buttonContainer">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="classFormContainer" class="col-md-6  ">
+            <img src="~/assets/img/profiles/ac.jpg" width="100%" height="100%" alt="">
+        </div>
+    </div>
+
+
+
+</div>

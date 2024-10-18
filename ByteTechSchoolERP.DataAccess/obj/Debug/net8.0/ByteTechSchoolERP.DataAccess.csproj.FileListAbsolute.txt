@@ -1,0 +1,15 @@
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.deps.json
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.dll
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.pdb
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.Models.dll
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.Models.pdb
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.csproj.AssemblyReference.cache
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.AssemblyInfoInputs.cache
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.AssemblyInfo.cs
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.csproj.CoreCompileInputs.cache
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTech.35FE5FEA.Up2Date
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.dll
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\refint\ByteTechSchoolERP.DataAccess.dll
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.pdb
+G:\ByteTechSchoolERP7766\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ref\ByteTechSchoolERP.DataAccess.dll
