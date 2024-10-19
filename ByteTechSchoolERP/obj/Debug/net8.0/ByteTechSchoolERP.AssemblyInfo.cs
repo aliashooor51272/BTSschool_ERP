@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ByteTechSchoolERP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8da0b7d45413455d360ca5e8c6461cbb5c009f59")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+235b4b006f5c2603d5c79cfdfae4e94d965410aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("ByteTechSchoolERP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ByteTechSchoolERP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

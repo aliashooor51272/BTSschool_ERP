@@ -2051,7 +2051,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2"
         },
         "runtime": {
-          "ByteTechSchoolERP.DataAccess.dll": {}
+          "ByteTechSchoolERP.DataAccess.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "ByteTechSchoolERP.Models/1.0.0": {
@@ -2061,7 +2064,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.4"
         },
         "runtime": {
-          "ByteTechSchoolERP.Models.dll": {}
+          "ByteTechSchoolERP.Models.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

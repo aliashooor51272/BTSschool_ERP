@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ByteTechSchoolERP.DataAccess.Migrations
 {
     [DbContext(typeof(ByteTechSchoolERPContext))]
-<<<<<<<< HEAD:ByteTechSchoolERP.DataAccess/Migrations/20241018152629_initial.Designer.cs
-    [Migration("20241018152629_initial")]
-    partial class initial
-========
-    [Migration("20241018105600_First")]
-    partial class First
->>>>>>>> ef81e2828fe8e135252013b9e1b5b7c629594ae6:ByteTechSchoolERP.DataAccess/Migrations/20241018105600_First.Designer.cs
+    [Migration("20241019195451_schoolERP")]
+    partial class schoolERP
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ByteTechSchoolERP.DataAccess.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:ByteTechSchoolERP.DataAccess/Migrations/20241018152629_initial.cs
-    public partial class initial : Migration
-========
-    public partial class First : Migration
->>>>>>>> ef81e2828fe8e135252013b9e1b5b7c629594ae6:ByteTechSchoolERP.DataAccess/Migrations/20241018105600_First.cs
+    public partial class schoolERP : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

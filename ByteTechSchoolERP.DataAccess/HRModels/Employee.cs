@@ -30,6 +30,7 @@ namespace ByteTechSchoolERP.Models.HR
         public string? PANNumber { get; set; }
         public string? Qualification { get; set; }
         public string? WorkExperience { get; set; }
+        public bool Status { get; set; }
         public decimal? Salary { get; set; } // Add this property
 
         // Foreign keys for relationships

@@ -8,14 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ByteTechSchoolERP.Models
-<<<<<<< HEAD
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Administrator\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\
-=======
-build_property.ProjectDir = C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.Models\
->>>>>>> ef81e2828fe8e135252013b9e1b5b7c629594ae6
-=======
-build_property.ProjectDir = D:\SCHOOL\BTSschool_ERP\ByteTechSchoolERP.Models\
->>>>>>> 2618206478b1935bc108a58ffe576c4b5b3a70c1
+build_property.ProjectDir = C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
