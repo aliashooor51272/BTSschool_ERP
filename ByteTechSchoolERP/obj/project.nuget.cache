@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B9HHLff/C7A=",
+  "dgSpecHash": "Y5zLxkC9Hco=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP\\ByteTechSchoolERP.csproj",
+  "projectFilePath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP\\ByteTechSchoolERP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sohail Khan\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Sohail Khan\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,14 +1,7 @@
 ﻿@model ByteTechSchoolERP.Models.Accounts.Control_Account
 
 <div class="page-wrapper">
-    <div class="tab-container container-fluid mt-3">
-        <div class="col-md-12">
-            <div class="style-0" style="max-width:100%; margin:0px;">
-                <strong>Account Management</strong> |
-                <i class="fas fa-home home-icon"></i> - Create Control
-            </div>
-        </div>
-    </div>
+
 
     <!-- Create Control Form -->
     <div class="tab-container container-fluid mt-3">
@@ -21,7 +14,7 @@
                         <form id="createForm" class="row g-3 needs-validation" novalidate method="post">
                             <div class="col-md-12">
                                 <div class="row">
-                                    <div class="col-md-6 local-forms label">
+                                    <div class="col-md-4 local-forms label">
                                         <label for="elemntCode" class="form-label" id="label-color">Element A/C Title<span class="text-danger">*</span></label>
                                         <select asp-for="Element_AccountId" required asp-items="ViewBag.AccountList" id="elemntCode" onchange="onChangeElementAccount()" class="form-control">
                                             <option value="">Please select any one</option>
@@ -29,20 +22,20 @@
                                         <span asp-validation-for="Element_AccountId" class="text-danger"></span>
                                     </div>
 
-                                    <div class="col-md-6 local-forms label">
+                                    <div class="col-md-4 local-forms label">
                                         <label for="elementcodeId" class="form-label" id="label-color">Element A/C Code<span class="text-danger">*</span></label>
                                         <input type="text" asp-for="Control_Complete_Code" required id="elementcodeId" class="form-control">
                                         <input type="hidden" asp-for="Control_Account_Code" id="txtAccountConCodeHidd" />
                                         <span asp-validation-for="Control_Account_Code" class="text-danger"></span>
                                     </div>
-                                </div>
                                 <br>
-                                <div class="row">
-                                    <div class="col-md-6 local-forms label">
+                                    <div class="col-md-4 local-forms label">
                                         <label for="controlAccountTitle" class="form-label" id="label-color">Control A/C Title<span class="text-danger">*</span></label>
                                         <input type="text" asp-for="Control_Account_Title" class="form-control" required>
                                         <span asp-validation-for="Control_Account_Title" class="text-danger"></span>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-12">
                                         <div class="float-end">
                                             <button type="submit" class="btn btn-primary">Save</button>
@@ -58,17 +51,16 @@
     </div>
 
     <!-- Control Details Table -->
-    <div class="tab-container container-fluid mt-3">
+    <div class="tab-container container-fluid mt-2">
         <div class="col-md-12">
             <div class="style-0" style="max-width: 100%; margin:0px;">
-                <h4>Control Details</h4>
-                <br>
+    
                 <div class="table-responsive">
-                                    <div class="card">
+                                  
                     <div class="card-header">
                         <h5>Search Filters</h5>
                     </div>
-                    <div class="card-body">
+           
                         <form id="filterForm">
                             <div class="row">
                                 <div class="col-md-4">
@@ -94,8 +86,7 @@
 
 
                         </form>
-                    </div>
-                </div>
+               
                     <table class="table table-bordered" id="controlTable">
                         <thead>
                             <tr style="background-color: #3d5ee1; color: #fff;">

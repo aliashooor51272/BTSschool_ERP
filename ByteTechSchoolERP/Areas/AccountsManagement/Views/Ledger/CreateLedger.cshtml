@@ -2,7 +2,7 @@
 <div class="page-wrapper">
 
 
-    <div class="tab-container container-fluid mt-3">
+@*     <div class="tab-container container-fluid mt-3">
 
 
         <div class="col-md-12">
@@ -14,7 +14,7 @@
         </div>
 
 
-    </div>
+    </div> *@
     <!-- Create Ledger Form -->
     <div class="tab-container container-fluid mt-3 ">
         <div class="col-md-12">
@@ -25,7 +25,7 @@
                             <div class="col-md-12">
                                 <div class="row">
 
-                                    <div class="col-md-6  local-forms label">
+                                    <div class="col-md-4  local-forms label">
                                         <label for="inputName5" class="form-label" id="label-color">Element Account<span class="text-danger">*</span></label>
                                         <select asp-for="Element_AccountId" required asp-items="ViewBag.ElementAccountList" id="elementId" onchange="SelectElement()" class="form-control">
                                             <option value="">please select any one</option>
@@ -33,20 +33,17 @@
                                         <span asp-validation-for="Element_AccountId" class="text-dabger"></span>
                                     </div>
 
-                                    <div class="col-md-6 local-forms label">
+                                    <div class="col-md-4 local-forms label">
                                         <label class="form-label  local-forms label" id="label-color">Control Account<span class="text-danger">*</span></label>
                                         <select class="form-control" required asp-for="Control_AccountId" id="cmbItem" name="Control_AccountId" onchange="SelectConAC()">
                                             <option value="">Select Item</option>
                                             <!-- Items will be populated dynamically using jQuery -->
                                         </select>
                                     </div>
-                                </div>
-                            </div>
-
-                            <br />
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-6  local-forms label">
+                                
+                           
+                            
+                                    <div class="col-md-4  local-forms label">
                                         <label for="inputName5" class="form-label" id="label-color">Ledger A/C Code<span class="text-danger">*</span></label>
                                         <input type="text" required asp-for="Ledger_Complete_Code" id="ledgercodeId" class="form-control" >
                                         <input type="hidden" name="Ledger_Account_Code" id="txtAccountConCodeHidd" value="" />
@@ -54,24 +51,21 @@
                                         <span asp-validation-for="Ledger_Account_Code" class="text-dabger"></span>
                                     </div>
 
-                                    <div class="col-md-6  local-forms label">
+                                    <div class="col-md-4  local-forms label">
                                         <label for="inputName5" class="form-label" id="label-color">Ledger A/C Title<span class="text-danger">*</span></label>
                                         <input type="text" asp-for="Ledger_Account_Title" class="form-control" required>
                                         <span asp-validation-for="Ledger_Account_Title" class="text-dabger"></span>
                                     </div>
-                                </div>
-                            </div>
-                            <br />
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-md-6  local-forms label">
+                                
+                       
+                                    <div class="col-md-4  local-forms label">
                                         <label for="inputName5" class="form-label" id="label-color">Balance<span class="text-danger">*</span></label>
                                         <input type="number" asp-for="Balance" class="form-control" required>
                                         <span asp-validation-for="Balance" class="text-dabger"></span>
                                     </div>
                                 </div>
 
-                            </div>
+                         
 
                             <div class="col-md-12">
                                 <div class="float-end">
@@ -90,11 +84,11 @@
                 <div class="style-0" style="max-width: 100%; margin:0px;">
 
                     <div class="table-responsive">
-                        <div class="card">
+                   
                             <div class="card-header">
                                 <h5>Search Filters</h5>
                             </div>
-                            <div class="card-body">
+                        
                                 <form id="filterForm">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -116,7 +110,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+@*                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="phoneFilter">Ledger Account Title</label>
                                                 <input type="text" class="form-control" id="phoneFilter" placeholder="Ledger Account Title" />
@@ -127,13 +121,12 @@
                                                 <label for="newFilter">Balance</label>
                                                 <input type="text" class="form-control" id="newFilter" placeholder="Balance" />
                                             </div>
-                                        </div>
+                                        </div> *@
                                     </div>
 
 
                                 </form>
-                            </div>
-                        </div>
+                     
                         <table class="table table-bordered" id="ledgerTable">
                             <thead>
                                 <tr style="background-color: #3d5ee1; color: #fff;">

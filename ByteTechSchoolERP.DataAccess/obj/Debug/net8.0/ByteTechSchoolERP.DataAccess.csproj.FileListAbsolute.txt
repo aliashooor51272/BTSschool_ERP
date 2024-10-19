@@ -29,3 +29,19 @@ C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj
 C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\refint\ByteTechSchoolERP.DataAccess.dll
 C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.pdb
 C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ref\ByteTechSchoolERP.DataAccess.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.deps.json
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.DataAccess.pdb
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.Models.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\bin\Debug\net8.0\ByteTechSchoolERP.Models.pdb
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.csproj.AssemblyReference.cache
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.AssemblyInfoInputs.cache
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.AssemblyInfo.cs
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.csproj.CoreCompileInputs.cache
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.sourcelink.json
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTech.35FE5FEA.Up2Date
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\refint\ByteTechSchoolERP.DataAccess.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ByteTechSchoolERP.DataAccess.pdb
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.DataAccess\obj\Debug\net8.0\ref\ByteTechSchoolERP.DataAccess.dll

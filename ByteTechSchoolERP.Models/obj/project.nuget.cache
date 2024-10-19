@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "etaCSgQWyEo=",
+  "dgSpecHash": "mipYxhFQ7/8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+  "projectFilePath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sohail Khan\\.nuget\\packages\\microsoft.aspnet.razor\\3.3.0\\microsoft.aspnet.razor.3.3.0.nupkg.sha512",
     "C:\\Users\\Sohail Khan\\.nuget\\packages\\microsoft.aspnet.webpages\\3.3.0\\microsoft.aspnet.webpages.3.3.0.nupkg.sha512",

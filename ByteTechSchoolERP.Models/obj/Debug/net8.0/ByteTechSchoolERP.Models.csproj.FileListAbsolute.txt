@@ -23,3 +23,16 @@ C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Deb
 C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\refint\ByteTechSchoolERP.Models.dll
 C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.pdb
 C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ref\ByteTechSchoolERP.Models.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.deps.json
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.pdb
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.csproj.AssemblyReference.cache
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.AssemblyInfoInputs.cache
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.AssemblyInfo.cs
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.csproj.CoreCompileInputs.cache
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.sourcelink.json
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\refint\ByteTechSchoolERP.Models.dll
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.pdb
+D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ref\ByteTechSchoolERP.Models.dll

@@ -17,623 +17,623 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ByteTechSchoolERP
 build_property.RootNamespace = ByteTechSchoolERP
-build_property.ProjectDir = C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP\
+build_property.ProjectDir = D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 2.1
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Sohail Khan\Source\Repos\BTSschool_ERP\ByteTechSchoolERP
+build_property.MSBuildProjectDirectory = D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccessControl/Views/Account/Login.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccessControl/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjZXNzQ29udHJvbFxWaWV3c1xBY2NvdW50XExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccessControl/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccessControl/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjZXNzQ29udHJvbFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccessControl/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccessControl/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjZXNzQ29udHJvbFxfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Control/CreateControl.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Control/CreateControl.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNNYW5hZ2VtZW50XFZpZXdzXENvbnRyb2xcQ3JlYXRlQ29udHJvbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Element/CreateElement.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Element/CreateElement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNNYW5hZ2VtZW50XFZpZXdzXEVsZW1lbnRcQ3JlYXRlRWxlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Inventory/CreateInventory.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Inventory/CreateInventory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNNYW5hZ2VtZW50XFZpZXdzXEludmVudG9yeVxDcmVhdGVJbnZlbnRvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Ledger/CreateLedger.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/Views/Ledger/CreateLedger.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNNYW5hZ2VtZW50XFZpZXdzXExlZGdlclxDcmVhdGVMZWRnZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNNYW5hZ2VtZW50XF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/AccountsManagement/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWNjb3VudHNNYW5hZ2VtZW50XF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Academics/AssignClassTeacher.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Academics/AssignClassTeacher.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNhZGVtaWNzXEFzc2lnbkNsYXNzVGVhY2hlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Academics/ClassTimetable.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Academics/ClassTimetable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNhZGVtaWNzXENsYXNzVGltZXRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Academics/TeacherTimetable.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Academics/TeacherTimetable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNhZGVtaWNzXFRlYWNoZXJUaW1ldGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmissionInquries.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmissionInquries.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaXNzaW9uTWFuYWdlbWVudFxBZG1pc3Npb25JbnF1cmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmissionReports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmissionReports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaXNzaW9uTWFuYWdlbWVudFxBZG1pc3Npb25SZXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmissionRequest.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmissionRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaXNzaW9uTWFuYWdlbWVudFxBZG1pc3Npb25SZXF1ZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmitBulkStudent.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmitBulkStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaXNzaW9uTWFuYWdlbWVudFxBZG1pdEJ1bGtTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmitStudent.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/AdmitStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaXNzaW9uTWFuYWdlbWVudFxBZG1pdFN0dWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/UploadStudentExcel.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/AdmissionManagement/UploadStudentExcel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaXNzaW9uTWFuYWdlbWVudFxVcGxvYWRTdHVkZW50RXhjZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/ClassesandSection/AddNewClass.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/ClassesandSection/AddNewClass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2xhc3Nlc2FuZFNlY3Rpb25cQWRkTmV3Q2xhc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/ClassesandSection/AddNewSection.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/ClassesandSection/AddNewSection.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2xhc3Nlc2FuZFNlY3Rpb25cQWRkTmV3U2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Dashboard/Index.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Dashboard/Parent.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Dashboard/Parent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXFBhcmVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Dashboard/Teacher.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Dashboard/Teacher.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXFRlYWNoZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Examinations/CreateExam.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Examinations/CreateExam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbWluYXRpb25zXENyZWF0ZUV4YW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Examinations/DesingCard.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Examinations/DesingCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbWluYXRpb25zXERlc2luZ0NhcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Examinations/MarkSheetDesing.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Examinations/MarkSheetDesing.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbWluYXRpb25zXE1hcmtTaGVldERlc2luZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Exams/AddGrade.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Exams/AddGrade.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbXNcQWRkR3JhZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Exams/AddTerm.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Exams/AddTerm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXhhbXNcQWRkVGVybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/AccountSettings.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/AccountSettings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbFNldHRpbmdcQWNjb3VudFNldHRpbmdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/AddRole.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/AddRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbFNldHRpbmdcQWRkUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/FeeChallanDetails.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/FeeChallanDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbFNldHRpbmdcRmVlQ2hhbGxhbkRldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/FeeParticulars.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/FeeParticulars.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbFNldHRpbmdcRmVlUGFydGljdWxhcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/InstituteProfile.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/InstituteProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbFNldHRpbmdcSW5zdGl0dXRlUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/MarksGrading.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/GeneralSetting/MarksGrading.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbFNldHRpbmdcTWFya3NHcmFkaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Hostel/Hostel.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Hostel/Hostel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9zdGVsXEhvc3RlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Hostel/HostelRoom.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Hostel/HostelRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9zdGVsXEhvc3RlbFJvb20uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Hostel/RoomType.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Hostel/RoomType.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9zdGVsXFJvb21UeXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/AddDepartment.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/AddDepartment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEFkZERlcGFydG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/AddEmployee.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/AddEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEFkZEVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/EmployeeAttendence.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/EmployeeAttendence.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEVtcGxveWVlQXR0ZW5kZW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/EmployeeList.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/EmployeeList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEVtcGxveWVlTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/EmployeeLoanReport.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/EmployeeLoanReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEVtcGxveWVlTG9hblJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/Employeemanagement.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/Employeemanagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEVtcGxveWVlbWFuYWdlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/GeneratePayroll.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/GeneratePayroll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEdlbmVyYXRlUGF5cm9sbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/GetLoansByUser.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/GetLoansByUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXEdldExvYW5zQnlVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/LeaveRequest.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/LeaveRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXExlYXZlUmVxdWVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/Loan.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/Loan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXExvYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/LoanDetails.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/LoanDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXExvYW5EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/ManageRole.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/ManageRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXE1hbmFnZVJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/Payroll.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/Payroll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXFBheXJvbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/SalaryList.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/HRM/SalaryList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSFJNXFNhbGFyeUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/AddItem.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/AddItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XEFkZEl0ZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/AddItemStock.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/AddItemStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XEFkZEl0ZW1TdG9jay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/IssueItem.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/IssueItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XElzc3VlSXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/ItemCategory.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/ItemCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XEl0ZW1DYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/ItemStore.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/ItemStore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XEl0ZW1TdG9yZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/ItemSupplier.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Inventory/ItemSupplier.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XEl0ZW1TdXBwbGllci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/AddLesson.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/AddLesson.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGVzc29uUGxhblxBZGRMZXNzb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/AddTopic.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/AddTopic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGVzc29uUGxhblxBZGRUb3BpYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/ManageLesson.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/ManageLesson.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGVzc29uUGxhblxNYW5hZ2VMZXNzb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/ManageSyllabus.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/LessonPlan/ManageSyllabus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGVzc29uUGxhblxNYW5hZ2VTeWxsYWJ1cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Parent/ManageAccount.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Parent/ManageAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGFyZW50XE1hbmFnZUFjY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/EditInformation.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/EditInformation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudE1hbmFnZW1lbnRcRWRpdEluZm9ybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentAttendence.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentAttendence.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudE1hbmFnZW1lbnRcU3R1ZGVudEF0dGVuZGVuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentInformation.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentInformation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudE1hbmFnZW1lbnRcU3R1ZGVudEluZm9ybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentPromotion.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentPromotion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudE1hbmFnZW1lbnRcU3R1ZGVudFByb21vdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentReport.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudE1hbmFnZW1lbnRcU3R1ZGVudFJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentTransfer.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/StudentManagement/StudentTransfer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3R1ZGVudE1hbmFnZW1lbnRcU3R1ZGVudFRyYW5zZmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubAdminRegister/Create.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubAdminRegister/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViQWRtaW5SZWdpc3RlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubAdminRegister/CreateCampus.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubAdminRegister/CreateCampus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViQWRtaW5SZWdpc3RlclxDcmVhdGVDYW1wdXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubjectManagement/AddSubject.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubjectManagement/AddSubject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViamVjdE1hbmFnZW1lbnRcQWRkU3ViamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubjectManagement/AssignSubject.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/SubjectManagement/AssignSubject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3ViamVjdE1hbmFnZW1lbnRcQXNzaWduU3ViamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Topic/AddTopic.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Topic/AddTopic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVG9waWNcQWRkVG9waWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Transport/AssignVehicle.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Transport/AssignVehicle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJhbnNwb3J0XEFzc2lnblZlaGljbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Transport/Routes.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Transport/Routes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJhbnNwb3J0XFJvdXRlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Transport/Vehicle.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/Views/Transport/Vehicle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVHJhbnNwb3J0XFZlaGljbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Admin/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Lockout.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Error.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/Attendance.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/Attendance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XFZpZXdzXEhvbWVcQXR0ZW5kYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/HomeWork.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/HomeWork.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XFZpZXdzXEhvbWVcSG9tZVdvcmsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/HomeWorkHistory.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/HomeWorkHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XFZpZXdzXEhvbWVcSG9tZVdvcmtIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/Index.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/StudentMarks.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/StudentMarks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XFZpZXdzXEhvbWVcU3R1ZGVudE1hcmtzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/Students.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/Views/Home/Students.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XFZpZXdzXEhvbWVcU3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Parent/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFyZW50XF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/AddLoan/AddNewLoan.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/AddLoan/AddNewLoan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF5cm9sbHNcVmlld3NcQWRkTG9hblxBZGROZXdMb2FuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/AddSalary/AddNewSalary.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/AddSalary/AddNewSalary.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF5cm9sbHNcVmlld3NcQWRkU2FsYXJ5XEFkZE5ld1NhbGFyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/ManageLoan/ManageNewLoan.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/ManageLoan/ManageNewLoan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF5cm9sbHNcVmlld3NcTWFuYWdlTG9hblxNYW5hZ2VOZXdMb2FuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/ManageOverTime/AddNewOverTime.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/Views/ManageOverTime/AddNewOverTime.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF5cm9sbHNcVmlld3NcTWFuYWdlT3ZlclRpbWVcQWRkTmV3T3ZlclRpbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF5cm9sbHNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Payrolls/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF5cm9sbHNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Home/Index.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/Attendance.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/Attendance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xUZWFjaGVyXEF0dGVuZGFuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/DailyDairy.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/DailyDairy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xUZWFjaGVyXERhaWx5RGFpcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/Marks.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/Marks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xUZWFjaGVyXE1hcmtzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/Result.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/Result.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xUZWFjaGVyXFJlc3VsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/StudentMarks.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/StudentMarks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xUZWFjaGVyXFN0dWRlbnRNYXJrcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/ViewDailyDiary.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/Views/Teacher/ViewDailyDiary.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxWaWV3c1xUZWFjaGVyXFZpZXdEYWlseURpYXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Areas/Teacher/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVhY2hlclxfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Home/Index.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Home/Privacy.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/Error.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_Layout.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutAccessControl.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutAccessControl.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBY2Nlc3NDb250cm9sLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutAdmin.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutParent.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutParent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRQYXJlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutTeacher.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LayoutTeacher.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRUZWFjaGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LoginPartial.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/_ViewImports.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sohail Khan/Source/Repos/BTSschool_ERP/ByteTechSchoolERP/Views/_ViewStart.cshtml]
+[D:/BTS projects/update school project/BTSschool_ERP/ByteTechSchoolERP/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -747,9 +747,34 @@
 
             <div class="col-md-12 mt-4" id="gradeFormContainers">
                 <div class="style-0" id="gradeFormData" style="max-width:100%; margin:0px;">
-                    <div class="col-12 d-flex justify-content-center">
-                        <h5 class="formTitle">Grade List</h5>
+                    <div class="card-header">
+                        <h5>Search Filters</h5>
                     </div>
+                    <form id="filterForm">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="firstNameFilter">Grade Title</label>
+                                    <input type="text" class="form-control" id="firstNameFilter" placeholder="Grade Title" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="firstNameFilter">Description</label>
+                                    <input type="text" class="form-control" id="lastNameFilter" placeholder="Description" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="subFilter">Grades</label>
+                                    <input type="text" class="form-control" id="emailFilter" placeholder="Grades" />
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </form>
                     <div class="d-flex justify-content-end mb-3">
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addGradeModal">
                             Add Grade
@@ -861,6 +886,25 @@
                         }
                     }
                 ]
+            });
+            $('#firstNameFilter').on('keyup', function () {
+                table.column(0).search(this.value).draw();
+            });
+            $('#lastNameFilter').on('keyup', function () {
+                table.column(1).search(this.value).draw();
+            });
+
+            // Filter by Email
+            $('#emailFilter').on('keyup', function () {
+                table.column(2).search(this.value).draw();
+            });
+            // Filter by Email
+            $('#subFilter').on('keyup', function () {
+                table.column(3).search(this.value).draw();
+            });
+            // Filter by Email
+            $('#newFilter').on('keyup', function () {
+                table.column(4).search(this.value).draw();
             });
 
             // Handle form submission for adding a new grade

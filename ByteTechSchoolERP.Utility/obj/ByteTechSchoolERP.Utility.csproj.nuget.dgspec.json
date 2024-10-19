@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj": {}
+    "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
+    "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
+        "projectUniqueName": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
         "projectName": "ByteTechSchoolERP.DataAccess",
-        "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
+        "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\obj\\",
+        "outputPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
-                "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
+              "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+                "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
+    "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "projectUniqueName": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
         "projectName": "ByteTechSchoolERP.Models",
-        "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+        "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
         "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
+        "outputPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -166,14 +166,14 @@
         }
       }
     },
-    "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj": {
+    "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
+        "projectUniqueName": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
         "projectName": "ByteTechSchoolERP.Utility",
-        "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
+        "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
         "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\obj\\",
+        "outputPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -191,8 +191,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
+              "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
+                "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
               }
             }
           }

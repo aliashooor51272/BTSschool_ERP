@@ -1177,11 +1177,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+      "projectUniqueName": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
       "projectName": "ByteTechSchoolERP.Models",
-      "projectPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
+      "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\ByteTechSchoolERP.Models.csproj",
       "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sohail Khan\\Source\\Repos\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
+      "outputPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
