@@ -45,6 +45,11 @@ namespace ByteTechSchoolERP.Models.ViewModels
         [StringLength(100)]
         public string? ParentEmail { get; set; }
 
+        [StringLength(100)]
+        public string? Password { get; set; }
+        [StringLength(100)]
+        public string? ConfirmPassword { get; set; }
+
         [StringLength(15)]
         public string? ParentContactNo { get; set; }
 

@@ -22,7 +22,8 @@ ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
 // Configure DbContext
 builder.Services.AddDbContext<ByteTechSchoolERPContext>(options =>
-    options.UseSqlServer(connectionString));
+    
+options.UseSqlServer(connectionString));
 
 // Configure Identity
 builder.Services.AddDefaultIdentity<ByteTechSchoolERPUser>(options =>

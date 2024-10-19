@@ -3679,7 +3679,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.6"
         },
         "runtime": {
-          "ByteTechSchoolERP.DataAccess.dll": {}
+          "ByteTechSchoolERP.DataAccess.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         },
         "compile": {
           "ByteTechSchoolERP.DataAccess.dll": {}
@@ -3692,7 +3695,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.4"
         },
         "runtime": {
-          "ByteTechSchoolERP.Models.dll": {}
+          "ByteTechSchoolERP.Models.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         },
         "compile": {
           "ByteTechSchoolERP.Models.dll": {}
@@ -3704,7 +3710,10 @@
           "Microsoft.EntityFrameworkCore": "8.0.10"
         },
         "runtime": {
-          "ByteTechSchoolERP.Utility.dll": {}
+          "ByteTechSchoolERP.Utility.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         },
         "compile": {
           "ByteTechSchoolERP.Utility.dll": {}

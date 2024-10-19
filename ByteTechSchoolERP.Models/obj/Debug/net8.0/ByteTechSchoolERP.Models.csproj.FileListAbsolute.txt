@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 G:\ByteTechSchoolERP7766\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.deps.json
 G:\ByteTechSchoolERP7766\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.dll
 G:\ByteTechSchoolERP7766\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.pdb
@@ -36,3 +37,18 @@ D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj
 D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\refint\ByteTechSchoolERP.Models.dll
 D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.pdb
 D:\BTS projects\update school project\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ref\ByteTechSchoolERP.Models.dll
+=======
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.deps.json
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.dll
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\bin\Debug\net8.0\ByteTechSchoolERP.Models.pdb
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.csproj.AssemblyReference.cache
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.AssemblyInfoInputs.cache
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.AssemblyInfo.cs
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.csproj.CoreCompileInputs.cache
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.sourcelink.json
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.dll
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\refint\ByteTechSchoolERP.Models.dll
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ByteTechSchoolERP.Models.pdb
+C:\Users\AL Shahbaz\source\repos\BTSschool_ERP\ByteTechSchoolERP.Models\obj\Debug\net8.0\ref\ByteTechSchoolERP.Models.dll
+>>>>>>> 99559095b724215d40fa463b9747a5185cf77fd5

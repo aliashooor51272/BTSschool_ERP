@@ -8535,19 +8535,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sohail Khan\\.nuget\\packages\\": {}
+    "C:\\Users\\AL Shahbaz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
       "projectName": "ByteTechSchoolERP.Utility",
       "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
       "packagesPath": "C:\\Users\\Sohail Khan\\.nuget\\packages\\",
       "outputPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\AL Shahbaz\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
+      "projectName": "ByteTechSchoolERP.Utility",
+      "projectPath": "C:\\Users\\AL Shahbaz\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\ByteTechSchoolERP.Utility.csproj",
+      "packagesPath": "C:\\Users\\AL Shahbaz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AL Shahbaz\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.Utility\\obj\\",
+>>>>>>> 99559095b724215d40fa463b9747a5185cf77fd5
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sohail Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AL Shahbaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8562,8 +8570,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+<<<<<<< HEAD
             "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
               "projectPath": "D:\\BTS projects\\update school project\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
+=======
+            "C:\\Users\\AL Shahbaz\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\AL Shahbaz\\source\\repos\\BTSschool_ERP\\ByteTechSchoolERP.DataAccess\\ByteTechSchoolERP.DataAccess.csproj"
+>>>>>>> 99559095b724215d40fa463b9747a5185cf77fd5
             }
           }
         }
@@ -8604,7 +8617,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

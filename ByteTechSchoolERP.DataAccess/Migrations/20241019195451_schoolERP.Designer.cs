@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ByteTechSchoolERP.DataAccess.Migrations
 {
     [DbContext(typeof(ByteTechSchoolERPContext))]
-    [Migration("20241018105600_First")]
-    partial class First
+    [Migration("20241019195451_schoolERP")]
+    partial class schoolERP
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -862,14 +862,13 @@ namespace ByteTechSchoolERP.DataAccess.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DateOfJoining")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DepartmentName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -1368,8 +1367,6 @@ namespace ByteTechSchoolERP.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ClassId");
-
-                    b.HasIndex("ParentId");
 
                     b.HasIndex("SectionId");
 
@@ -2127,17 +2124,11 @@ namespace ByteTechSchoolERP.DataAccess.Migrations
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("ByteTechSchoolERP.Models.Parents.Parent", "Parent")
-                        .WithMany("Students")
-                        .HasForeignKey("ParentId");
-
                     b.HasOne("ByteTechSchoolERP.Models.ClassAndSection.Section", "Section")
                         .WithMany()
                         .HasForeignKey("SectionId");
 
                     b.Navigation("Class");
-
-                    b.Navigation("Parent");
 
                     b.Navigation("Section");
                 });
@@ -2285,11 +2276,6 @@ namespace ByteTechSchoolERP.DataAccess.Migrations
             modelBuilder.Entity("ByteTechSchoolERP.Models.ClassAndSection.Class", b =>
                 {
                     b.Navigation("Sections");
-                });
-
-            modelBuilder.Entity("ByteTechSchoolERP.Models.Parents.Parent", b =>
-                {
-                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("ByteTechSchoolERP.Models.SubAdmin.SubAdminn", b =>

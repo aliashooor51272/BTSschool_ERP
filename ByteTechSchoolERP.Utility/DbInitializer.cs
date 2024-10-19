@@ -235,44 +235,7 @@ namespace ByteTechSchoolERP.Utility
             var class1 = await dbContext.Classes.FirstOrDefaultAsync(c => c.ClassName == "Class 1");
             var sectionA = await dbContext.Sections.FirstOrDefaultAsync(s => s.Name == "Section A");
 
-            // Define student data
-            var studentData = new[]
-            {
-        new { FullName = "Aqib", Surname = "Azad", Gender = "Male", ParentEmail = "john.doe@example.com" },
-        new { FullName = "Ali", Surname = "aHMED", Gender = "Male", ParentEmail = "jane.smith@example.com" }
-    };
-
-            foreach (var data in studentData)
-            {
-                // Check if student already exists
-                var existingStudent = await dbContext.Students
-                    .FirstOrDefaultAsync(s => s.FullName == data.FullName && s.Surname == data.Surname && s.Parent.Email == data.ParentEmail);
-
-                if (existingStudent == null)
-                {
-                    // Student does not exist, create and add
-                    var parent = await dbContext.Parents.FirstOrDefaultAsync(p => p.Email == data.ParentEmail);
-                    if (parent == null)
-                    {
-                        throw new Exception($"Parent with email {data.ParentEmail} not found.");
-                    }
-
-                    var newStudent = new Student
-                    {
-                        FullName = data.FullName,
-                        Surname = data.Surname,
-                        ClassId = class1?.Id,
-                        SectionId = sectionA?.Id,
-                        Gender = data.Gender,
-                        StudentProfileUrl = "",
-                        AdmissionDate = DateTime.Now,
-                        ParentId = parent.Id
-                    };
-
-                    dbContext.Students.Add(newStudent);
-                }
-            }
-
+            
             // Save changes for students
             await dbContext.SaveChangesAsync();
         }
