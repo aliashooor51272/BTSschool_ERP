@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ByteTechSchoolERP.Utility")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef81e2828fe8e135252013b9e1b5b7c629594ae6")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+235b4b006f5c2603d5c79cfdfae4e94d965410aa")]
->>>>>>> 99559095b724215d40fa463b9747a5185cf77fd5
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+510ee20311ed1ecbb10ba85b857b5ecd6188bd61")]
 [assembly: System.Reflection.AssemblyProductAttribute("ByteTechSchoolERP.Utility")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ByteTechSchoolERP.Utility")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
